@@ -87,6 +87,8 @@ UPDATE `register` SET `regMidScore` =16, `regFinalScore` = 65 WHERE `regStdNo` =
 UPDATE `register` SET `regMidScore` =18, `regFinalScore` = 38 WHERE `regStdNo` = '20201016' AND `regLecNo` = 167;
 UPDATE `register` SET `regMidScore` =25, `regFinalScore` = 58 WHERE `regStdNo` = '20220416' AND `regLecNo` = 349;
 
+SELECT * FROM `Register`;
+
 #실습3-10
 UPDATE `register` SET 
 	`regTotalScore` = `regMidScore` + `regFinalScore`,
@@ -149,7 +151,8 @@ SELECT
 FROM `Student` AS a
 JOIN `Register` AS b
 ON a.stdNo = b.regStdNo
-GROUP BY a.stdNo;
+GROUP BY a.stdNo
+ORDER BY a.stdno asc;
 
 #실습3-22
 SELECT * FROM `Register` AS a
@@ -173,6 +176,12 @@ SELECT
 	AVG(`regTotalScore`) AS `사회복지 마케팅 평균`
 FROM  `Register` AS a JOIN `Lecture` AS b ON a.reglecno = b.lecno
 WHERE a.regLecNo = 349;
+
+SELECT
+	COUNT(*) AS `사회복지 마케팅 수강 신청건수`,
+	AVG(`regTotalScore`) AS `사회복지 마케팅 평균`
+FROM  `Register` AS a JOIN `Lecture` AS b ON a.reglecno = b.lecno
+WHERE `lecName` = '사회복지 마케팅';
 
 #실습3-25
 SELECT
@@ -200,7 +209,7 @@ SELECT
 FROM `Student` AS a
 JOIN `register` AS b ON a.`stdNo` = b.regStdNo
 JOIN `lecture` AS c ON b.regLecNo = c.lecNo
-ORDER BY regGrade asc;
+ORDER BY regGrade ASC;
 
 #실습3-28
 SELECT
