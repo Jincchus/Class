@@ -254,7 +254,11 @@ SELECT `bookname` FROM `book` order BY `price` DESC LIMIT 1;
 SELECT a.`name`
 FROM `customer` AS a
 left JOIN `order` AS b ON a.custid = b.custid
-WHERE `orderid` is Null;
+WHERE `orderid` is NULL;
+
+
+SELECT `name` FROM `Customer`
+	WHERE `custId` NOT IN(SELECT DISTINCT `custId` FROM `order`);
 
 #실습4-44
 INSERT INTO `book` (`bookid`,`bookname`, `publisher`) 
