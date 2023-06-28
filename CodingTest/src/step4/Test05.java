@@ -9,13 +9,20 @@ public class Test05 {
 		int n = sc.nextInt();
 		int m = sc.nextInt();
 		
-		int arr[] = new int[n];
+		int arr[] = new int[n+1];
 		
-		for(int i=0 ; i<n; i++) {
+		for(int i=0 ; i<m; i++) {
 			int start = sc.nextInt();
 			int end = sc.nextInt();
 			int num = sc.nextInt();
 			
+			for(int j=start; j<=end; j++) {
+				arr[j] = num;
+			}
+		}
+		
+		for(int i = 1; i<=n; i++) {
+			System.out.print(arr[i] + " ");
 		}
 		
 		
