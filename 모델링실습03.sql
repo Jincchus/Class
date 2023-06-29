@@ -189,15 +189,28 @@ LEFT JOIN `orderitems` AS c ON b.prodNo = c.prodNo
 WHERE c.itemCount IS null;
 
 
-#문제9. 모든 주문상세내역 중 개별 상품 가격과 개수에 맞는 총합과
-#각 할인율을 적용한 최종 총합을 구하고 최종 총합이 10만원이상 그리고 큰 금액순으로 조회하시오
+#문제9. 모든 주문상세내역 중 개별 상품 가격과 개수 그리고 할인율이 적용된 최종 총합을 구하고
+# 최종 총합이 10만원이상 그리고 큰 금액순 `주문번호`, ` 최종총합`을 조회하시오
 
 
 SELECT 
-	(`itemPrice`*`itemCount`) AS `총합`,
+	orderNO,
 	((`itemPrice`*`itemCount`)-((`itemPrice`*`itemCount`)*(`itemDiscount` / 100))) AS `최종총합`
 FROM `orderitems`
 HAVING `최종총합` >= 100000
 ORDER BY `최종총합` DESC;
 
 SELECT * FROM `orderitems`;
+
+#문제10. 장보고 고객이 주문했던 모든 상품명을 `고객명`, `상품명`으로 조회하시오. 단 상품명은 중복 안됨, 상품명은 구분자, 로 나열
+
+SELECT DISTINCT
+	userName AS `고객명`,
+	GROUP_CONCAT(prodName SEPARATOR ', ') AS `상품명`            
+FROM `PRODUCTS` AS a
+JOIN `carts` AS b ON a.prodNo = b.prodNo
+JOIN `users` AS c ON  b.userId = c.userId
+WHERE `userName` = '장보고'
+GROUP BY userName;
+
+SELECT * FROM `products`;
