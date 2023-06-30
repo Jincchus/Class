@@ -275,4 +275,4 @@ UPDATE `customer` SET `address` = '대한민국 부산'
 WHERE `custid` = 5  ;
 
 #실습4-46
-DELETE FROM `Customer` WHERE `custid` = 5;
+DELETE FROM `Customer` WHERE `custid` = 5;mysqlmarket_dbmysqlermodel
