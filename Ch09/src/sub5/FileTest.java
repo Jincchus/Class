@@ -18,7 +18,7 @@ public class FileTest {
 		
 		// 파일 객체 생성
 		File f1 = new File("C:\\Users\\Java\\Desktop\\file1.txt");
-		File f2 = new File("C:\\Users\\Java\\Desktop\\file2");
+		File f2 = new File("../../../../../file2");
 		
 		try {
 			// 파일 생성
