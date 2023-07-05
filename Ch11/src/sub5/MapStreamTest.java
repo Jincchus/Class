@@ -11,7 +11,7 @@ import java.util.List;
  * 
  * 맵 스트림
  *  - 스트림 요소(컬렉션 원소)를 다른 요소로 변환 시키는 스트림
- *  - map(), flatMao() 등
+ *  - map(), flatMap() 등
  */
 
 public class MapStreamTest {

@@ -14,7 +14,7 @@ public class DaemonThreadTest {
 	public static void main(String[] args) throws InterruptedException {
 		
 		SubThread st = new SubThread();
-		st.setDaemon(true);
+		st.setDaemon(true);	// 데몬스레드 설정
 		
 		
 		st.start();
