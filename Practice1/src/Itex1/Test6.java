@@ -5,7 +5,7 @@ class Connection {
 	private int count =0;
 	public static Connection get() {
 		if (_inst == null) {
-			_inst = new Connection();
+			_inst = new Connection();햣 
 			return _inst;
 		}
 		return _inst;
