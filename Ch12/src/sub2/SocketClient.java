@@ -14,13 +14,15 @@ import java.net.Socket;
 
 public class SocketClient {
 	public static void main(String[] args) {
+		
 		System.out.println("[Client]");
-
+		
 		Socket socket = null;
 		
-		socket = new Socket();
 		
 		try {
+			socket = new Socket();
+			
 			System.out.println("연결 요청...");
 			socket.connect(new InetSocketAddress("127.0.0.1", 5001));
 			
@@ -38,7 +40,7 @@ public class SocketClient {
 			// 데이터 수신(Server -> Client)
 			InputStream is = socket.getInputStream();
 			byte[] bytes = new byte[100];
-			int readBytes = is.read();
+			int readBytes = is.read(bytes);
 			
 			String result = new String(bytes, 0, readBytes, "UTF-8");
 			System.out.println(result);
