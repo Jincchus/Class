@@ -211,14 +211,6 @@ aside > article > ul > li {
     line-height: 0px;
 }
 
-#inli {margin-top: 6px;}
-.notice > ul > li {
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    line-height: 0px;
-}
-
 aside> article > ul > li > a::before {content: url('../images/ico_latest.gif');}
 aside > article > a {
     display: block;
