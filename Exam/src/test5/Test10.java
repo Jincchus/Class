@@ -20,7 +20,7 @@ public class Test10 {
 		for (int i = 1; i <= n; i++)
 		{
 			int fact = 1;
-			for (int j = 2; j <= i; j++)
+			for (int j g= 2; j <= i; j++)
 			{
 				fact *= j;
 			}
