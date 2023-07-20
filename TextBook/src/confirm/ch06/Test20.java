@@ -14,53 +14,54 @@ class BankAccount {
 	private String id ;
 	private String name ;
 	private int balance ;
-	
+
 	public BankAccount(String id, String name, int balance) {
 		this.id = id;
 		this.name = name;
 		this.balance = balance;
 	}
-	
+
 	@Override
-		public String toString() {
-			return id + "\t" + name + "\t" + balance;
-		}
-	
+	public String toString() {
+		return id + "\t" + name + "\t" + balance;
+	}
+
 }
 
 
 public class Test20 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		
+
 		BankAccount[] accounts = new BankAccount[100];
-		
+
+		int balance = 0;
 		while(true) {
 			System.out.println("-----------------------------------------");
 			System.out.println("1.계좌생성 | 2.계좌목록 | 3.예금 | 4.출금 | 5.종료");
 			System.out.println("-----------------------------------------");
-			
+
 			System.out.print("선택>");
 			int choice = sc.nextInt();
-			
+
 			if(choice == 5) {
 				break;
 			} else if(choice == 1) {
 				System.out.println("--------");
 				System.out.println("계좌생성");
 				System.out.println("--------");
-				
+
 				System.out.print("계좌번호 : ");
 				String id = sc.next();
-				
+
 				System.out.print("계좌주 : ");
 				String name = sc.next();
-				
+
 				System.out.print("초기입금액 : ");
-				int balance = sc.nextInt();
-				
+				balance = sc.nextInt();
+
 				BankAccount account = new BankAccount(id, name, balance);
-				
+
 				for(int i = 0 ; i < accounts.length ; i++) {
 					if(accounts[i] == null) {
 						accounts[i] = account;
@@ -68,7 +69,7 @@ public class Test20 {
 						break;
 					}
 				}
-				
+
 			} else if(choice == 2) {
 				System.out.println("--------");
 				System.out.println("계좌목록");
@@ -79,18 +80,51 @@ public class Test20 {
 						System.out.println(account);
 					}
 				}
-				
+
 			} else if(choice == 3) {
 				System.out.println("--------");
 				System.out.println("예금");
 				System.out.println("--------");
-				
+
+				System.out.print("계좌번호 : ");
+				String id = sc.next();
+
+				for(int i = 0 ; i < accounts.length ; i++) {
+					if(id.equals(accounts[i])) {
+						System.out.print("예금액 : ");
+						int deposit = sc.nextInt();
+
+						balance += deposit;
+					}else {
+						System.out.println("선택하신 계좌번호가 없습니다.");
+						break;
+					};
+				}
+			} else if(choice == 4) {
+				System.out.println("--------");
+				System.out.println("출금");
+				System.out.println("--------");
+
+				System.out.print("계좌번호 : ");
+				String id = sc.next();
+
+				for(int i = 0 ; i < accounts.length ; i++) {
+					if(id.equals(accounts[i])) {
+						System.out.print("출금액 : ");
+						int withdraw = sc.nextInt();
+
+						balance -= withdraw;
+					}else {
+						System.out.println("선택하신 계좌번호가 없습니다.");
+						break;
+					};
+				}
+
+
 			}
-			
-			
+
+			System.out.println("프로그램 종료");
 		}
-	
-		System.out.println("프로그램 종료");
+
 	}
-	
 }
