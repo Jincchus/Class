@@ -25,6 +25,31 @@ class BankAccount {
 	public String toString() {
 		return id + "\t" + name + "\t" + balance;
 	}
+	
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getBalance() {
+		return balance;
+	}
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+	public void deposit(int amount) {
+		balance += amount;
+	}
+	public void withdraw(int amount) {
+		balance -= amount;
+	}
 
 }
 
@@ -90,14 +115,14 @@ public class Test20 {
 				String id = sc.next();
 
 				for(int i = 0 ; i < accounts.length ; i++) {
-					if(id.equals(accounts[i])) {
+					if(accounts[i] != null && id.equals(accounts[i].getId())) {
 						System.out.print("예금액 : ");
 						int deposit = sc.nextInt();
 
-						balance += deposit;
-					}else {
-						System.out.println("선택하신 계좌번호가 없습니다.");
+						accounts[i].deposit(deposit);
 						break;
+					}else if(i == accounts.length -1) {
+						System.out.println("선택하신 계좌번호가 없습니다.");
 					};
 				}
 			} else if(choice == 4) {
@@ -109,22 +134,22 @@ public class Test20 {
 				String id = sc.next();
 
 				for(int i = 0 ; i < accounts.length ; i++) {
-					if(id.equals(accounts[i])) {
+					if(accounts[i] != null && id.equals(accounts[i].getId())) {
 						System.out.print("출금액 : ");
 						int withdraw = sc.nextInt();
-
-						balance -= withdraw;
-					}else {
-						System.out.println("선택하신 계좌번호가 없습니다.");
+						
+						accounts[i].withdraw(withdraw);
 						break;
+					}else if(i == accounts.length -1){
+						System.out.println("선택하신 계좌번호가 없습니다.");
 					};
 				}
 
 
 			}
 
-			System.out.println("프로그램 종료");
 		}
+		System.out.println("프로그램 종료");
 
 	}
 }
