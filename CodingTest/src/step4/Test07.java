@@ -13,33 +13,32 @@ public class Test07 {
 		 * 5. 안한 사람 2명, 출석 번호 중 작은것부터 출력됨
 		 */
 		
-		int student = 30;
-		int students[] = new int[student+1]; //1
+		int students[] = new int[30]; //1
 		
-		int work =0 ;
-		int student2 = 0;
-		int donwork[] = new int[student2+1];
+		int report = 0 ;
+		int compStu = 28 ;
+		int donRep[] = new int[compStu];
 		
-		for(int i=0; i<=student; i++ ) {
-			students[i] = i;
+		for(int i=0; i<=students.length; i++ ) {
+			students[i] = i+1;
 		}
-		
-		
-		
-		for(int i=0; i<student2-1; i++) {
-			work = sc.nextInt();
-			if (students[i]!=work) {
-				donwork[student2] = students[i];
-				student2++;
-			}
-		}
-		
-		for (int i = 0; i<student2-1;i++) {
-			System.out.println(donwork[i]+" ");
-		}
-		
-		
-		
+//		
+//		
+//		
+//		for(int i=0; i<student2-1; i++) {
+//			work = sc.nextInt();
+//			if (students[i]!=work) {
+//				donwork[student2] = students[i];
+//				student2++;
+//			}
+//		}
+//		
+//		for (int i = 0; i<student2-1;i++) {
+//			System.out.println(donwork[i]+" ");
+//		}
+//		
+//		
+//		
 		
 	}
 }

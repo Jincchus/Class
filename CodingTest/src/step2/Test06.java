@@ -11,24 +11,17 @@ public class Test06 {
 		int m = sc.nextInt();
 		int timer = sc.nextInt();
 
+		int endM = m+timer;
+		
+		if(endM>=60) {
+			h += endM / 60;
+			endM %= 60;
+		}
+		if(h>=24) {
+			h %= 24;
+		}
 
-
-		if(60<m+timer) {
-			h+=1;
-			m += timer-60;
-			if(h>23) {
-				h = 0;
-				
-			}
-			if(m==60) {
-				m=0;
-				h+=1;
-			}
-		} else if(60>m+timer) {
-			m += timer;
-		} 
-
-		System.out.println(h+" "+m);
+		System.out.println(h+" "+endM);
 	}
 }
 
