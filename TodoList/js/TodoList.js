@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const todoList = document.getElementById('todoList');
     const inputTodo = document.getElementById('inputTodo');
     const btnAdd = document.getElementById('btnAdd');
+    let todoArr = [];
 
     btnAdd.addEventListener('click', function(e) {
         let todoValue = inputTodo.value;
@@ -10,9 +11,19 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
+        const newTodoItem = {
+            id : Date.now(),
+            text : todoValue,
+        };
+
+        todoArr.push(newTodoItem);
+        localStorage.setItem("listItem", JSON.stringify(todoArr));
+
+
+
         const listItem = document.createElement('li');
         listItem.className = 'd-flex list-group-item';
-        listItem.innerText = todoValue;
+        listItem.innerText = newTodoItem;
 
         const listBtn = document.createElement('button');
         listBtn.className = 'btn-close ms-auto';
