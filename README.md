@@ -1,4 +1,3 @@
-![image](https://github.com/Jincchus/Java/assets/136421962/43424ae6-424a-424c-9c6f-e7cc92b31274)
 # Java 프로그래밍 
 ### Ch01.Java 소개 및 개발환경 구축
 ```
