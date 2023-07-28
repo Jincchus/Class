@@ -14,6 +14,11 @@
 		<h3>1.JDBC CRUD 실습</h3>
 		
 		<a href="/Ch06/user1/register.jsp">User1 실습</a>
+		<a href="/Ch06/user2/register.jsp">User2 실습</a>
+		<a href="/Ch06/user3/register.jsp">User3 실습</a>
+		<a href="/Ch06/user4/register.jsp">User4 실습</a>
+		<a href="/Ch06/user5/register.jsp">User5 실습</a>
+		<a href="/Ch06/member/register.jsp">Member 실습</a>
 		
 	</body>
 </html>
