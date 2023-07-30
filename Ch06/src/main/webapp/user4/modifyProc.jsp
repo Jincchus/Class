@@ -26,6 +26,8 @@
 		psmt.setString(4, addr);
 		psmt.setString(5, seq);
 		
+		psmt.executeUpdate();
+		
 		psmt.close();
 		conn.close();
 	

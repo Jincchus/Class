@@ -23,17 +23,16 @@
 		ResultSet rs =  psmt.executeQuery();
 		
 		if(rs.next()){
-			vo.setName(rs.getString(2));
-			vo.setGender(rs.getInt(3));
-			vo.setAge(rs.getInt(4));
-			vo.setAddr(rs.getString(5));
+			
+			vo.setName(rs.getString("name"));
+			vo.setGender(rs.getInt("gender"));
+			vo.setAge(rs.getInt("age"));
+			vo.setAddr(rs.getString("addr"));
 		}
 		
 		rs.close();
 		psmt.close();
 		conn.close();
-		
-		
 	}catch(Exception e){
 		e.printStackTrace();
 	}
@@ -70,7 +69,7 @@
 					<td><input type="text" name="addr" value="<%= vo.getAddr() %>"></td>
 				</tr>
 				<tr>
-					<td colspan="2" align="right"><input type="submit" value="수정"></td>
+					<td colspan="2" align="right"><input type="hidden" name="seq" value="<%= vo.getSeq() %>"><input type="submit" value="수정"></td>
 				</tr>
 			</table>
 		</form>
