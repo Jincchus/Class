@@ -5,11 +5,11 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 
-	String seq  = request.getParameter("seq");
-	String name = request.getParameter("name");
+	String seq    = request.getParameter("seq");
+	String name   = request.getParameter("name");
 	String gender = request.getParameter("gender");
-	String age = request.getParameter("age");
-	String addr = request.getParameter("addr");
+	String age    = request.getParameter("age");
+	String addr   = request.getParameter("addr");
 	
 	String host = "jdbc:mysql://127.0.0.1:3306/userdb";
 	String user = "root";
@@ -18,8 +18,8 @@
 	try{
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection conn = DriverManager.getConnection(host, user, pass);
-		PreparedStatement psmt = conn.prepareStatement("UPDATE `user4` SET `name`=?, `gender`=?, `age`=?, `addr`=? WHERE `seq`=?");
-
+		PreparedStatement psmt = conn.prepareStatement("UPDATE `user4` SET `name`=?, `gender` = `gender`^?, `age`=?, `addr`=? WHERE `seq`=?");	
+		
 		psmt.setString(1, name);
 		psmt.setString(2, gender);
 		psmt.setString(3, age);

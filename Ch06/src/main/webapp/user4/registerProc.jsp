@@ -5,7 +5,7 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	
-	String seq = request.getParameter("seq");
+	String seq	  = request.getParameter("seq");
 	String name   = request.getParameter("name");
 	String gender = request.getParameter("gender");
 	String age 	  = request.getParameter("age");

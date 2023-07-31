@@ -23,7 +23,7 @@
 		ResultSet rs =  psmt.executeQuery();
 		
 		if(rs.next()){
-			
+			vo.setSeq(rs.getInt("seq"));
 			vo.setName(rs.getString("name"));
 			vo.setGender(rs.getInt("gender"));
 			vo.setAge(rs.getInt("age"));
@@ -57,8 +57,12 @@
 					<td><input type="text" name="name" value="<%= vo.getName() %>"></td>
 				</tr>
 				<tr>
- 					<td>성별</td>
-                	<td><input type="text" name="gender" value="<%= vo.getGender() == 1 ? "남자" : "여자" %>" ></td>
+					<td>성별</td>
+					<td>
+						<input type="radio" name="gender" value="1">남
+						<input type="radio" name="gender" value="2">여
+						
+					</td>
 				</tr>
 				<tr>
 					<td>나이</td>
