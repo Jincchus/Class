@@ -1,4 +1,7 @@
 
+<%@page import="javax.sql.DataSource"%>
+<%@page import="javax.naming.InitialContext"%>
+<%@page import="javax.naming.Context"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page import="vo.User2VO"%>
@@ -8,14 +11,17 @@
 <%@page import="java.sql.DriverManager"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-	String host = "jdbc:mysql://127.0.0.1:3306/userdb";
-	String user = "root";
-	String pass = "1234";
-	
+
 	List<User2VO> users = new ArrayList<>();  
 	try{
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn= DriverManager.getConnection(host, user, pass);
+		// JNDI 서비스 객체 생성
+		Context initCtx = new InitialContext();
+		Context ctx = (Context) initCtx.lookup("java/comp/env");
+		
+		// 커넥션 풀에서 커넥션 가져오기
+		DataSource ds = (DataSource) ctx.lookup("jdbc/userdb");
+		Connection conn = ds.getConnection();
+		
 		Statement stmt = conn.createStatement();
 		ResultSet rs = stmt.executeQuery("SELECT * FROM `user2`");
 		
@@ -46,7 +52,7 @@
 	</head>
 	<body>
 		<h3>User2 목록</h3>
-		<a href="/Ch06/1_JDBC.jsp">처음으로</a>
+		<a href="/Ch06/2_DBCP.jsp">처음으로</a>
 		<a href="/Ch06/user2/register.jsp">User2 등록</a>
 		
 		<table border="1">

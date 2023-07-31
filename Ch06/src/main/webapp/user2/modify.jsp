@@ -1,3 +1,6 @@
+<%@page import="javax.sql.DataSource"%>
+<%@page import="javax.naming.InitialContext"%>
+<%@page import="javax.naming.Context"%>
 <%@page import="vo.User2VO"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
@@ -8,15 +11,17 @@
 	request.setCharacterEncoding("UTF-8");
 	String uid = request.getParameter("uid");
 	
-	String host = "jdbc:mysql://127.0.0.1:3306/userdb";
-	String user = "root";
-	String pass = "1234";
-	
 	User2VO vo = new User2VO();
 	
 	try{
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		Connection conn = DriverManager.getConnection(host, user, pass);
+		// JNDI 서비스 객체 생성
+		Context initCtx = new InitialContext();
+		Context ctx = (Context) initCtx.lookup("java:comp/env");
+		
+		// 커넥션 풀에서 커넥션 가져오기
+		DataSource ds = (DataSource) ctx.lookup("jdbc/userdb");
+		Connection conn = ds.getConnection();
+		
 		PreparedStatement psmt = conn.prepareStatement("SELECT * FROM `user2` WHERE `uid` = ?");
 		psmt.setString(1, uid);
 		
@@ -47,7 +52,7 @@
 	</head>
 	<body>
 		<h3>User2 수정</h3>
-		<a href="/Ch06/1_JDBC.jsp">처음으로</a>
+		<a href="/Ch06/2_DBCP.jsp">처음으로</a>
 		<a href="/Ch06/user2/list.jsp">User2 목록</a>
 		
 		<form action="/Ch06/user2/modifyProc.jsp" method="post">
