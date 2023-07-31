@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<h3>User2 등록</h3>
-		<a href="/Ch06/1_JDBC.jsp">처음으로</a>
+		<a href="/Ch06/2_DBCP.jsp">처음으로</a>
 		<a href="/Ch06/user2/list.jsp">User2 목록</a>
 		
 		<form action="/Ch06/user2/registerProc.jsp" method="post">
