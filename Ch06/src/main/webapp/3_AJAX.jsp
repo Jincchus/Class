@@ -10,12 +10,10 @@
 			내용 : JSP AJAX 실습
 		 -->
 		 <script>
-		 
 		 	window.onload = function(){
 				
 		 		const btn1 = document.getElementById("btn1");
 		 		const spans = document.getElementsByTagName('span');
-		 		
 		 		
 		 		btn1.onclick = function(){
 					
@@ -35,7 +33,6 @@
 								spans[1].innerText = data.name;
 								spans[2].innerText = data.hp;
 								spans[3].innerText = data.age;
-									
 							}
 						}		
 					} // onreadystatechange end
@@ -76,9 +73,6 @@
 						});
 				}); // btn2 click end
 				
-				
-				
-				
 		 	} // window.oncload end
 		 
 		 </script>
@@ -90,7 +84,7 @@
 		<h4>JSON/XML 실습</h4>
 		<a href="./data/json1.jsp">JSON1 데이터 생성</a>
 		<a href="./data/json2.jsp">JSON2 데이터 생성</a>
-		<a href="./data/xml.jsp">xml 데이터 생성</a>
+		<a href="./data/xml.jsp">xml1 데이터 생성</a>
 		<a href="./data/xml2.jsp">xm2 데이터 생성</a>
 
 		<h4>AJAX 실습</h4>
@@ -112,6 +106,5 @@
 			<tr>
 			</tr>
 		</table>
-				
 	</body>
 </html>

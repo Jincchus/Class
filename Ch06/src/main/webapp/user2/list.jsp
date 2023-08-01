@@ -16,7 +16,7 @@
 	try{
 		// JNDI 서비스 객체 생성
 		Context initCtx = new InitialContext();
-		Context ctx = (Context) initCtx.lookup("java/comp/env");
+		Context ctx = (Context) initCtx.lookup("java:comp/env");
 		
 		// 커넥션 풀에서 커넥션 가져오기
 		DataSource ds = (DataSource) ctx.lookup("jdbc/userdb");
