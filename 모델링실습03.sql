@@ -120,7 +120,8 @@ SELECT
 	a.userId,
 	a.userName,
 	a.userHp,
-	(a.`userPoint` + IFNULL(SUM(b.`point`),0)) AS `totalPoint`
+	a.userPoint,
+	IF(SUM(`point`) IS NULL,0, SUM(`point`)) AS `totalPoint`
 FROM `users` AS a
 left JOIN `points` AS b ON a.userId = b.userId
 GROUP BY a.userId;
@@ -140,10 +141,9 @@ JOIN `users` AS b ON a.userId = b.userId
 WHERE a.orderTotalPrice >= 100000
 ORDER BY a.orderTotalPrice DESC, userName ASC;
 
-SELECT * FROM `orders`;
 #문제5. 모든 주문의 주문번호, 주문자 아이디, 고객명, 상품명, 주문일자를 조회하시오. 주문번호는 중복없이 상품명은 구분자 ,로 나열 할 것
 SELECT 
-	DISTINCT a.orderNo,
+	a.orderNo,
 	b.userId,
 	b.userName,
 	group_concat(d.prodName SEPARATOR ',') AS prodNames,
@@ -160,7 +160,7 @@ SELECT
 	prodName,
 	prodPrice,
 	prodDiscount,
-	prodPrice-(prodPrice*prodDiscount/100) AS `할인가격`
+	floor(prodPrice*(1-prodDiscount/100)) AS `할인가격`
 FROM `products`;
 
 
@@ -184,21 +184,26 @@ SELECT
 	sellerManager,
 	sellerPhone
 FROM `sellers` AS a
-JOIN products AS b on a.sellerNo = b.sellerNo
-LEFT JOIN `orderitems` AS c ON b.prodNo = c.prodNo
-WHERE c.itemCount IS null;
+left JOIN products AS b on a.sellerNo = b.sellerNo
+WHERE `prodNo` IS null;
 
 
 #문제9. 모든 주문상세내역 중 개별 상품 가격과 개수 그리고 할인율이 적용된 최종 총합을 구하고
-# 최종 총합이 10만원이상 그리고 큰 금액순 `주문번호`, ` 최종총합`을 조회하시오
+# 주문별 총합 구해서 주문별 총합이 10만원이상 그리고 큰 금액순 `주문번호`, ` 최종총합`을 조회하시오
 
-
-SELECT 
+SELECT
 	orderNO,
-	((`itemPrice`*`itemCount`)-((`itemPrice`*`itemCount`)*(`itemDiscount` / 100))) AS `최종총합`
+	SUM(`할인가`) AS `최종 총합`
+FROM
+(
+SELECT 
+	*,
+	FLOOR(`itemPrice`*(1 - `itemDisCount`/100) *`itemcount` ) AS `할인가`
 FROM `orderitems`
-HAVING `최종총합` >= 100000
-ORDER BY `최종총합` DESC;
+) AS a
+GROUP BY `orderNo`
+HAVING `최종 총합` >= 100000
+ORDER BY `최종 총합` DESC;
 
 SELECT * FROM `orderitems`;
 
@@ -207,10 +212,10 @@ SELECT * FROM `orderitems`;
 SELECT DISTINCT
 	userName AS `고객명`,
 	GROUP_CONCAT(prodName SEPARATOR ', ') AS `상품명`            
-FROM `PRODUCTS` AS a
-JOIN `carts` AS b ON a.prodNo = b.prodNo
-JOIN `users` AS c ON  b.userId = c.userId
-WHERE `userName` = '장보고'
-GROUP BY userName;
+FROM `Orders` AS a
+JOIN `Users` AS b ON a.userId = b.userId
+JOIN `OrderItems` AS c ON  a.orderNo = c.orderNo
+JOIN `Products` AS d ON d.prodNo = c.prodNo
+WHERE `useName` = '장보고';
 
-SELECT * FROM `products`;
+
