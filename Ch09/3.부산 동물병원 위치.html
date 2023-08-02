@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.부산 동물병원 위치</title>
+
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=85ce466b876362338bc35b900d997650"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+
+    <script>
+        window.onload = function(){
+            
+            var mapContainer = document.getElementById('map1'), // 지도를 표시할 div 
+            mapOption = { 
+                center: new kakao.maps.LatLng(35.13714416343587, 129.09886912767436), // 지도의 중심좌표
+                level: 3 // 지도의 확대 레벨
+            };
+
+            // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+            var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+            const url='https://apis.data.go.kr/6260000/BusanAnimalHospService/getTblAnimalHospital?serviceKey=EqpdxaNMZ01BZSZzoe8whQxuY1mOhPWlkTmPlc07PcxSpVQxBQEFdH4yyu4fUVBtSCDtXHcxzb11Sr7xnhl%2FiQ%3D%3D&pageNo=1&numOfRows=200&resultType=json';
+
+            fetch(url)   
+                .then((res)=>res.json())
+                .then((data)=>{
+                    console.log(data.getTblAnimalHospital.body.items.item)
+                    const items = data.getTblAnimalHospital.body.items.item;
+
+                    for(let item of items){
+                        console.log(item.animal_hospital);
+
+                        // 마커를 생성합니다
+                        var marker = new kakao.maps.Marker({
+                            map: map, // 마커를 표시할 지도
+                            position: new kakao.maps.LatLng(item.lat, item.lon), // 마커를 표시할 위치
+                            title : item.animal_hospital // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+                        });
+
+                        marker.setMap(map);
+                    }
+                });
+            }
+    </script>
+</head>
+<body>
+    <h3>부산 동물병원 위치</h3>
+    <div id="map1" style="width:1200px;height:800px;"></div>
+
+</body>
+</html>
