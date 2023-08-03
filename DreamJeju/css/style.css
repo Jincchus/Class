@@ -138,7 +138,7 @@ main {
 #tabMenu > label > input[type=radio] {
     display: none;
 }
-#tabMenu > label:first-child {
+#tabMenu > label.on {
     color: #bb0000;
 }
 

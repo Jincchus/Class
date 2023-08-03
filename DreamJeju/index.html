@@ -9,6 +9,65 @@
 
         <!--외부 css 파일 적용-->
         <link rel="stylesheet" href="./css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script>
+            $(function(){
+                const slides = $('.slides');
+
+                let i = 0;
+
+                $('.left').click(function(){
+
+                    slides.eq(i).animate({'left':'-100%'},1000 );
+                    i++;
+                    
+                    if(i == 3){
+                        i =0;
+                    }
+
+                    slides.eq(i).css('left', '100%').animate({'left':'0'},1000);
+
+                });
+
+                $('.right').click(function(){
+                    slides.eq(i).animate({'left':'100%'},1000);
+                    i--;
+
+                    if(i == 3){
+                        i = 0;
+                    }
+
+                    slides.eq(i).css('left','-100%').animate({'left':'0'},1000);
+                });
+
+                window.onload = function(){
+
+                    const tabBtn = document.querySelectorAll('#tabMenu > label');
+                    const tabContent = document.querySelectorAll('#tabMenu > section > article');
+
+                    tabBtn[0].onclick = function(){
+                        tabBtn[1].classList.remove('on');
+                        this.classList.add('on');
+                        tabContent[0].classList.add('on');
+                        tabContent[1].classList.remove('on');
+                    }
+                    tabBtn[1].onclick = function(){
+                        tabBtn[0].classList.remove('on');
+                        this.classList.add('on');
+                        tabContent[0].classList.remove('on');
+                        tabContent[1].classList.add('on');
+                    }
+
+
+                }
+
+
+
+            });
+
+
+
+        </script>
     </head>
 
     <body>
@@ -58,7 +117,7 @@
                 </div>
                 <div id="contents">
                     <div id="tabMenu">
-                        <label><input type="radio" name="tabs" id="tab1" checked>공지사항</label>
+                        <label class="on"><input type="radio" name="tabs" id="tab1" checked>공지사항</label>
                         <label><input type="radio" name="tabs" id="tab2">갤러리</label>
                         <section>
                             <article class="on">
