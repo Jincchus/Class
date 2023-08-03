@@ -115,8 +115,7 @@
             main > section {
                 width: 100%;
                 height: auto;
-                border: 1px solid green;
-                box-sizing:  border-box;
+                box-sizing: border-box;
                 padding: 40px 0;
             }
             main > section:nth-child(1) {height: 480px;} 
@@ -131,7 +130,19 @@
                 width: 1126px;
                 height: 100%;
                 margin: 0 auto;
-                border: 1px solid orange;
+            }
+
+            main > section > h3{
+                margin-bottom: 40px;
+                text-align: center;
+                font-size: 27px;
+                color: #564f47;
+            }
+
+            main > section > h3 > strong{
+                font-size: 27px;
+                font-weight: bold;
+                color: #699270;
             }
 
             main > .banner > article {
@@ -144,52 +155,206 @@
             main > .banner > article > img:nth-child(2){left: 460px; top: 40px;}
             main > .banner > article > img:nth-child(3){right: 10px; bottom: 100px;}
  
- 
- 
-            .new > article {
+
+            main > .new > article {
                 height: 480px;
-            }
-            .new > article > div {
-                float: left;
-                width: 345px;
-                border: 1px solid pink;
+                border: 1px solid #d4d4d4;
                 box-sizing: border-box;
             }
-            .new > article > div:nth-child(1) {
+
+            main > .new > article > div {
+                position: relative;
+                float: left;
+                width: 345px;
+                box-sizing: border-box;
+            }
+            main > .new > article > div:nth-child(1) {
                 width: 434px;
                 height: 100%;
+                background-image: url(../images/main_new_img1.jpg);
             }
-            .new > article > div:nth-child(2) {height: 50%;}
-            .new > article > div:nth-child(3) {height: 50%;}
-            .new > article > div:nth-child(4) {height: 50%;}
-            .new > article > div:nth-child(5) {height: 50%;}
- 
-            .master > article > div {
+            main > .new > article > div:nth-child(2) {
+                height: 50%;
+                border-right: 1px solid #d4d4d4;
+                border-bottom: 1px solid #d4d4d4;
+            }
+            main > .new > article > div:nth-child(3) {
+                height: 50%;
+                border-bottom: 1px solid #d4d4d4;
+            }
+            main > .new > article > div:nth-child(4) {
+                height: 50%;
+                border-bottom: 1px solid #d4d4d4;
+            }
+            main > .new > article > div:nth-child(5) {height: 50%;}
+            
+            main > .new div > img {position: absolute;}
+            main > .new div:nth-child(1) > img {left:0; top:0 ;}
+            main > .new div:nth-child(2) > img {left:20px; top: 20px;}
+            main > .new div:nth-child(3) > img {right:10px; bottom: 10px ;}
+            main > .new div:nth-child(4) > img {right:0; bottom: 0;}
+            main > .new div:nth-child(5) > img {right:0; bottom: 0;}
+
+            main > .new div > span {position: absolute;}
+            main > .new div > .price {color: #ef9120; font-size: 30px;}
+            main > .new div > .price::after {content: '원'; color: #ef9120; font-size: 18px;}
+            main > .new div > span > strong {
+                font-size: 32px;
+                opacity: 1;
+                color: #c3d069;
+                font-weight: bold;
+            }
+
+            main > .new div:nth-child(1) > .txt {
+                left: 40px; 
+                top: 60px; 
+                font-size: 27px; 
+                color: #564f47;
+            }
+            main > .new div:nth-child(1) > .tit {
+                left: 40px;
+                top: 116px;
+                font-size: 26px;
+                color: white;
+                padding: 4px 6px;
+                background-image: url('../images/bg_transparent.png');
+            }
+
+            main > .new div:nth-child(1) > .price {right: 20px; bottom: 20px;}
+
+            main > .new div:nth-child(2) > .txt {left: 130px; top: 40px; font-size: 16px; color:#564f47 ;}
+            main > .new div:nth-child(2) > .tit {left: 130px; top: 90px; font-size: 28px; color: #899b34;}
+            main > .new div:nth-child(2) > .price {right: 20px; bottom: 20px;}
+            
+            main > .new div:nth-child(3) > .txt {left: 30px; top: 40px; font-size: 16px; color: #564f47;}
+            main > .new div:nth-child(3) > .tit {left: 30px; top: 70px; font-size: 28px; color: #358a00;}
+            main > .new div:nth-child(3) > .price {left: 20px; bottom: 20px;}
+            
+            main > .new div:nth-child(4) > .txt {left: 30px; top: 30px; font-size: 16px; color: #564f47;}
+            main > .new div:nth-child(4) > .tit {left: 30px; top: 80px; font-size: 28px; color: #c51a1a;}
+            main > .new div:nth-child(4) > .price {left: 30px; bottom: 20px;}
+            
+            main > .new div:nth-child(5) > .txt {left: 30px; top: 30px; font-size: 16px; color: #564f47;}
+            main > .new div:nth-child(5) > .tit {left: 30px; top: 80px; font-size: 28px; color: #9e7839;}
+            main > .new div:nth-child(5) > .price {left: 30px; bottom: 20px;}
+
+            main > .master {
+                background-image: url(../images/main_master_bg.png);
+                background-attachment: fixed;
+                background-position: bottom;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            main > .master > article > div {
                 float: left;
                 width: 25%;
                 height: 334px;
-                border: 1px solid pink;
+                padding: 6px;
+                box-sizing: border-box;
+                background-color: #fff;
+                border: 1px solid #d4d4d4;
+            }
+             
+            main > .master > article > div:nth-child(1) {border-right: none;}
+            main > .master > article > div:nth-child(2) {border-right: none;}
+            main > .master > article > div:nth-child(3) {border-right: none;}
+            
+            main > .master img {
+                width: 100%;
+                height: auto;
+            }
+            main > .master p {
+                width: 100%;
+                height: auto;
+                margin-top: 6px;
+                font-size: 14px;
+                color: #564f47;
                 box-sizing: border-box;
             }
- 
- 
-            .gallary {
-                overflow: hidden;
-                height: 800px;
+
+            main > .master p > .name {
+                display: block;
+                margin-top: 6px;
+                font-size: 20px;
+                color: #564f47;
             }
  
-            .gallary > div {
+            main .gallary {
+                overflow: hidden;
+            }
+ 
+            main .gallary > div {
+                position: relative;
                 float: left;
                 width: 25%;
-                height: 50%;
-                border: 1px solid pink;
+                height: 400px;
+                padding: 4px;
+                border: 1px solid #fff;
                 box-sizing: border-box;
+                cursor: pointer;
+            }
+
+            main .gallary > div:hover {
+                border: 1px solid #d4d4d4;
+                box-sizing: border-box;
+            }
+            main .gallary > div > img {
+                width: 100%;
+                height: 265px;
+                object-fit: cover;
+            }
+
+            main .gallary > div > .tit {left: 4px; bottom: 90px; font-size: 18px; font-weight: bold;}
+            main .gallary > div > .txt {
+                left: 4px;
+                bottom: 64px;
+                font-size: 16px;
+                color: #747373;
+                width: 90%;
+                text-overflow: ellipsis ;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            main .gallary > div > .price {
+                right: 10px;
+                bottom: 10px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            main .gallary > div > .price::after {content:'원'; color: #4f4f4f; font-size: 16px;}
+
+            main > .organic_banner {
+                position: relative;
+                background-image: url('../images/main_organic_bg.png');
+                background-size: cover;
+                background-position: center;
+            }
+            main > .organic_banner > img {
+                position: absolute;
+                left: 50%;
+                top: 50px;
+                margin-left: -180px;
+            }
+
+            main > .grain_banner {
+                position: relative;
+                background-image: url('../images/main_grain_bg.png');
+                background-size: cover;
+                background-position: center;
+            }
+            .grain_banner > img {
+                position: absolute;
+                left: 50%;
+                top: 50px;
+                margin-left: -180px;
             }
  
  
             footer{
                 width: 100%;
                 height: auto;
+                background-color: #f3f3f3;
             }
             footer > div {
                 width: 1126px;
