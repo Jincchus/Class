@@ -9,12 +9,10 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-    <script src="/Jboard1/js/checkUser.js"></script>
+    <script src="/Jboard1/js/validation.js"></script>
 	<script src="/Jboard1/js/zipcode.js"></script>
-	<script>
+    <script src="/Jboard1/js/checkUser.js"></script>
 
-	</script>
-	
 </head>
 <body>
     <div id="container">
@@ -53,7 +51,8 @@
                         <tr>
                             <td>이름</td>
                             <td>
-                                <input type="text" name="name" placeholder="이름 입력"/>                            
+                                <input type="text" name="name" placeholder="이름 입력"/>
+                                <sapn class="resultName"></sapn>                            
                             </td>
                         </tr>
                         <tr>
@@ -96,14 +95,14 @@
                     </table>
     
                     <div>
-                        <a href="#" class="btnCancel">취소</a>
+                        <a href="/Jboard/user/login.jsp" class="btnCancel">취소</a>
                         <input type="submit"   class="btnSubmit" value="회원가입"/>
                     </div>    
                 </form>
             </section>
         </main>
         <footer>
-            <p>ⓒcopyright 김철학.com</p>
+            <p>ⓒcopyright 박경진.com</p>
         </footer>
     </div>
 </body>
