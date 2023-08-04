@@ -12,51 +12,7 @@
     <script src="/Jboard1/js/checkUser.js"></script>
 	<script src="/Jboard1/js/zipcode.js"></script>
 	<script>
-		// 폼 데이터 검증결과 상태변수 선언
-		let isUidOk	  = false;
-		let isPassOk  = false;
-		let isNameOk  = false;
-		let isNickOk  = false;
-		let isEmailOk = false;
-		let isHpOk	  = false;
-	
-		//유효성 검증(Validation)
-		$(function(){
-			
-			// 아이디 검사
-			// 비밀번호 검사
-			// 이름 검사
-			// 별명 검사
-			// 이메일 검사
-			// 휴대폰 검사
-			
-			// 최종 전송
-			$('#formUser').submit(function(){
-				alert('폼전송!');
-				
-				if(!isUidOk){
-					return false; // 폼 전송 취소
-				}
-				if(!isPassOk){
-					return false; // 폼 전송 취소
-				}
-				if(!isNameOk){
-					return false; // 폼 전송 취소
-				}
-				if(!isNickOk){
-					return false; // 폼 전송 취소
-				}
-				if(!isEmailOk){
-					return false; // 폼 전송 취소
-				}
-				if(!isHpOk){
-					return false; // 폼 전송 취소
-				}
 
-				return true;  // 폼 전송 시작
-			});
-			
-		}); // 유효성 검증 끝
 	</script>
 	
 </head>
