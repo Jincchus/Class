@@ -21,10 +21,10 @@
 	$(function() {
 		
 		// 아이디 검사
-		$('input[name=uid]').keydown(function(){
+		/*$('input[name=uid]').keydown(function(){
 			$('.resultId').text('');
 			isUidOk = false;
-		});
+		});*/
 
 		// 비밀번호 검사
 		$('input[name=pass2]').focusout(function(){

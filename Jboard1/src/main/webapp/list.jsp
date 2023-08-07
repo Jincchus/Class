@@ -1,32 +1,6 @@
 <%@page import="kr.co.jboard1.vo.UserVO"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
-<%
-	// 현재 로그인 사용자 정보 가져오기
-	UserVO sessUser = (UserVO) session.getAttribute("sessUser");
-	
-	if(sessUser == null){
-		response.sendRedirect("/Jboard1/user/login.jsp?success=101");
-		return;
-	}
-
-%>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>글목록</title>
-    <link rel="stylesheet" href="./css/style.css">    
-</head>
-<body>
-    <div id="container">
-        <header>
-            <h3>Board System v1.0</h3>
-            <p>
-                <%= sessUser.getNick() %>님 반갑습니다.
-                <a href="/Jboard1/user/logout.jsp" class="logout">[로그아웃]</a>
-            </p>
-        </header>
+<%@ include file="./_header.jsp" %>
         <main>
             <section class="list">
                 <h3>글목록</h3>
@@ -59,12 +33,7 @@
                 </div>
 
                 <!-- 글쓰기 버튼 -->
-                <a href="#" class="btnWrite">글쓰기</a>
+                <a href="/Jboard1/write.jsp" class="btnWrite">글쓰기</a>
             </section>
         </main>
-        <footer>
-            <p>ⓒcopyright 김철학.com</p>
-        </footer>
-    </div>
-</body>
-</html>
+<%@ include file = "./_footer.jsp" %>

@@ -30,9 +30,10 @@ $(function() {
 
 				if (data.resultUid >= 1) {
 					$('.resultId').css('color', 'red').text('이미 사용중인 아이디 입니다.');
+					isUidOk = false;
 				} else {
 					$('.resultId').css('color', 'green').text('사용 가능한 아이디 입니다.');
-
+					isUidOk = true;
 				}
 
 			}
@@ -65,7 +66,36 @@ $(function() {
 			}
 		});
 	}); // 닉네임 중복체크 끝
+	
+	
+	// 이메일 중복체크
+	$('input[name=email]').focusout(function(){
+		// 입력 데이터 가져오기
+		const email = $(this).val();
+		
+		if(!email.match(reEmail)){
+			$('#resultEmail').css('color', 'red').text('유효하지 않은 이메일 입니다.');
+			isEmailOk = false;
+			return;
+		}
+		
+		// JSON 생성
+		const jsonData = {
+			"email" : email
+		};
+		
+		$.get('/Jboard1/user/checkUser.jsp', jsonData, function(data){
+			if(data.resultEmail >= 1){
+				$('#resultEmail').css('color','red').text('이미 사용중인 이메일입니다.');
+				isEmailOk = false;
+			} else {
+				$('#resultEmail').css('color', 'green').text('사용 가능한 이메일입니다.');
+				isEmailOk = true;
+			}
+		})
+	}) //이메일 중복체크 끝
 
+/*
 	// 이메일 중복체크
 	document.getElementsByName('email')[0].onfocusout = function() {
 		const resultEmail = document.getElementById('resultEmail');
@@ -90,8 +120,6 @@ $(function() {
 					const data = JSON.parse(xhr.response);
 					console.log('data : ' + data);
 
-					const resultEmail = document.getElementById('resultEmail');
-
 					if (data.resultEmail >= 1) {
 						resultEmail.innerText = '이미 사용중인 이메일 입니다.';
 						resultEmail.style.color = 'red';
@@ -106,7 +134,7 @@ $(function() {
 		} // onreadystatechange end
 
 	} // 이메일 중복체크 끝
-
+*/
 	// 휴대폰 중복체크
 	document.getElementsByName('hp')[0].addEventListener('focusout', function() {
 
@@ -117,7 +145,7 @@ $(function() {
 			resultHp.innerText = '유효하지 않은 휴대폰 번호 입니다.';
 			resultHp.style.color = 'red';
 			isHpOk = false;
-			retrun;
+			return;
 		}
 		
 		const url = '/Jboard1/user/checkUser.jsp?hp=' + this.value;

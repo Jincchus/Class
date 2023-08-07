@@ -88,7 +88,7 @@
             </section>
         </main>
         <footer>
-            <p>ⓒcopyright 김철학.com</p>
+            <p>ⓒcopyright 박경진.com</p>
         </footer>
     </div>
 </body>

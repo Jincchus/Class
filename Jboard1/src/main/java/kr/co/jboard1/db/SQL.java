@@ -24,4 +24,11 @@ public class SQL {
 
 	public static final String SELECT_TERMS    = "SELECT * FROM `Terms`";
 	
+	public static final String INSERT_ARTICLE = "INSERT INTO `Article` set "
+											  + "`title` =?, "
+											  + "`content` =?, "
+											  + "`writer` =?, "
+											  + "`regip` =?, "
+											  + "`rdate` = NOW()";
+	
 }
