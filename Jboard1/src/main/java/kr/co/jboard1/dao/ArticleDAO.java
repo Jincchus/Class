@@ -40,7 +40,7 @@ public class ArticleDAO extends DBHelper{
 		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(SQL.SELECT_ARTICLES);
+			psmt = conn.prepareStatement(SQL.SELECT_ARTICLES_JOIN);
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
@@ -57,6 +57,7 @@ public class ArticleDAO extends DBHelper{
 				article.setWriter(rs.getString(9));
 				article.setRegip(rs.getString(10));
 				article.setRdate(rs.getString(11));
+				article.setNick(rs.getString("b.nick"));
 				
 				articles.add(article);
 			}

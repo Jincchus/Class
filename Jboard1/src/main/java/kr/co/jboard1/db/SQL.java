@@ -32,5 +32,6 @@ public class SQL {
 											  + "`rdate` = NOW()";
 	
 	public static final String SELECT_ARTICLES = "SELECT * FROM `Article`";
+	public static final String SELECT_ARTICLES_JOIN = "SELECT * FROM `Article` AS a JOIN `User` AS b ON a.writer = b.uid ORDER BY `no` DESC";
 	
 }
