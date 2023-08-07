@@ -74,9 +74,15 @@ public class ArticleVO {
 		this.regip = regip;
 	}
 	public String getRdate() {
-		return rdate;
+		return rdate.substring(2, 10);
 	}
 	public void setRdate(String rdate) {
+		this.rdate = rdate;
+	}
+	public String getFullRdate() {
+		return rdate;
+	}
+	public void setFullRdate(String rdate) {
 		this.rdate = rdate;
 	}
 	
