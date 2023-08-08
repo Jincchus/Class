@@ -13,7 +13,7 @@ request.setCharacterEncoding("UTF-8");
 	String terms = request.getParameter("terms");
 	String privacy = request.getParameter("privacy");
 
-	TermsDTO vo = UserDAO.getInstance().selectTerms();
+	TermsDTO dto = UserDAO.getInstance().selectTerms();
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +62,7 @@ request.setCharacterEncoding("UTF-8");
                     <caption>사이트 이용약관</caption>
                     <tr>
                         <td>
-                            <textarea readonly><%= vo.getTerms() %></textarea>
+                            <textarea readonly><%= dto.getTerms() %></textarea>
                             <p>
                                 <label><input type="checkbox" name="chk1"/>동의합니다.</label>
                             </p>
@@ -73,7 +73,7 @@ request.setCharacterEncoding("UTF-8");
                     <caption>개인정보 취급방침</caption>
                     <tr>
                         <td>
-                            <textarea readonly><%= vo.getPrivacy() %></textarea>
+                            <textarea readonly><%= dto.getPrivacy() %></textarea>
                             <p>
                                 <label><input type="checkbox" name="chk2"/>동의합니다.</label>
                             </p>

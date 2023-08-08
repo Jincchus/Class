@@ -13,22 +13,22 @@ public class UserDAO extends DBHelper {
 	}
 	private UserDAO(){}
 	
-	public void insertUser (UserDTO  vo) {
+	public void insertUser (UserDTO  dto) {
 		
 		try{
 			conn = getConnection();
 
 			psmt = conn.prepareStatement(SQL.INSERT_USER);
-			psmt.setString(1, vo.getUid());
-			psmt.setString(2, vo.getPass());
-			psmt.setString(3, vo.getName());
-			psmt.setString(4, vo.getNick());
-			psmt.setString(5, vo.getEmail());
-			psmt.setString(6, vo.getHp());
-			psmt.setString(7, vo.getZip());
-			psmt.setString(8, vo.getAddr1());
-			psmt.setString(9, vo.getAddr2());
-			psmt.setString(10,vo.getAddr2());
+			psmt.setString(1, dto.getUid());
+			psmt.setString(2, dto.getPass());
+			psmt.setString(3, dto.getName());
+			psmt.setString(4, dto.getNick());
+			psmt.setString(5, dto.getEmail());
+			psmt.setString(6, dto.getHp());
+			psmt.setString(7, dto.getZip());
+			psmt.setString(8, dto.getAddr1());
+			psmt.setString(9, dto.getAddr2());
+			psmt.setString(10,dto.getAddr2());
 			psmt.executeUpdate();
 			
 			close();
@@ -158,15 +158,15 @@ public class UserDAO extends DBHelper {
 	}
 	
 	public TermsDTO selectTerms() {
-		TermsDTO vo = new TermsDTO();
+		TermsDTO dto = new TermsDTO();
 		try{
 			conn = getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(SQL.SELECT_TERMS);
 			
 			if(rs.next()){
-				vo.setTerms(rs.getString(1));
-				vo.setPrivacy(rs.getString(2));
+				dto.setTerms(rs.getString(1));
+				dto.setPrivacy(rs.getString(2));
 			}
 			rs.close();
 			stmt.close();
@@ -176,7 +176,7 @@ public class UserDAO extends DBHelper {
 			e.printStackTrace();
 		}
 
-		return vo;
+		return dto;
 	}
 	
 	

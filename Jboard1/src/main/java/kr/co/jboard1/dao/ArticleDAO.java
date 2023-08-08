@@ -11,17 +11,17 @@ import kr.co.jboard1.dto.ArticleDTO;
 public class ArticleDAO extends DBHelper{
 	
 	// 기본 CRUD
-	public void insertAticle(ArticleDTO vo) {
+	public void insertAticle(ArticleDTO dto) {
 		try{
 
 			// 데이터베이스 처리
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.INSERT_ARTICLE);
 			
-			psmt.setString(1, vo.getTitle());
-			psmt.setString(2, vo.getContent());
-			psmt.setString(3, vo.getWriter());
-			psmt.setString(4, vo.getRegip());
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getContent());
+			psmt.setString(3, dto.getWriter());
+			psmt.setString(4, dto.getRegip());
 			
 			psmt.executeUpdate();
 			
