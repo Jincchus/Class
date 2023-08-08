@@ -6,12 +6,12 @@ import java.util.List;
 
 import kr.co.jboard1.db.DBHelper;
 import kr.co.jboard1.db.SQL;
-import kr.co.jboard1.vo.ArticleVO;
+import kr.co.jboard1.dto.ArticleDTO;
 
 public class ArticleDAO extends DBHelper{
 	
 	// 기본 CRUD
-	public void insertAticle(ArticleVO vo) {
+	public void insertAticle(ArticleDTO vo) {
 		try{
 
 			// 데이터베이스 처리
@@ -31,13 +31,13 @@ public class ArticleDAO extends DBHelper{
 		}
 	}
 	
-	public ArticleVO selectAticle(int no) {
+	public ArticleDTO selectAticle(int no) {
 		return null;
 	}
 	
-	public List<ArticleVO> selectAticles(int start) {
+	public List<ArticleDTO> selectAticles(int start) {
 		
-		List<ArticleVO> articles = new ArrayList<>();
+		List<ArticleDTO> articles = new ArrayList<>();
 		
 		try {
 			conn = getConnection();
@@ -46,7 +46,7 @@ public class ArticleDAO extends DBHelper{
 			rs = psmt.executeQuery();
 			
 			while(rs.next()) {
-				ArticleVO article = new ArticleVO();
+				ArticleDTO article = new ArticleDTO();
 				
 				article.setNo(rs.getInt(1));
 				article.setParetn(rs.getInt(2));
@@ -73,7 +73,7 @@ public class ArticleDAO extends DBHelper{
 		return articles;
 	} // selectAticles 끝
 	
-	public void updateAticle(ArticleVO vo) {
+	public void updateAticle(ArticleDTO vo) {
 		
 	}
 	
