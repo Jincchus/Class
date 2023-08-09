@@ -72,7 +72,7 @@
                         <textarea name="comment" readonly><%= comment.getContent() %></textarea>
                         <% if(comment.getWriter().equals(sessUser.getUid())) { %>
                         <div>
-                            <a href="/Jboard1/proc/commentDelete.jsp?no= <%= comment.getNo() %>" class="del">삭제</a>
+                            <a href="/Jboard1/proc/commentDelete.jsp?no= <%= comment.getNo() %> &parent=<%= comment.getParent() %>" class="del">삭제</a>
                             <a href="#" class="mod">수정</a>
                         </div>
                         <% } %>

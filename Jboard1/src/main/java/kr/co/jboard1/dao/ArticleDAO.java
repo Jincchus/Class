@@ -215,4 +215,17 @@ public class ArticleDAO extends DBHelper{
 			e.printStackTrace();
 		}
 	}
+	
+	public void deleteArticleForComment(String no) {
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.DELETE_ARTICLE_FOR_COMMENT);
+			psmt.setString(1, no);
+			psmt.executeUpdate();
+			
+			close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

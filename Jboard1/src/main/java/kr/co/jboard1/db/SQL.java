@@ -52,6 +52,7 @@ public class SQL {
 			  + "`regip` =?, "
 			  + "`rdate` = NOW()";
 	public static final String UPDATE_ARTICLE_FOR_COMMENT = "UPDATE `Article` SET `comment` = `comment` + 1 WHERE `no` = ? "; 
+	public static final String DELETE_ARTICLE_FOR_COMMENT = "UPDATE `Article` SET `comment` = `comment` - 1 WHERE `no` = ? "; 
 	public static final String SELECT_COMMENTS = "SELECT "
 												+ "a.*, "
 												+ "b.`nick` "
