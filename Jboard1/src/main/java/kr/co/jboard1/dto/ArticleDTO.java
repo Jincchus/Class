@@ -2,7 +2,7 @@ package kr.co.jboard1.dto;
 
 public class ArticleDTO {
 	private int no;
-	private int paretn;
+	private int parent;
 	private int comment;
 	private String cate;
 	private String title;
@@ -28,11 +28,17 @@ public class ArticleDTO {
 	public void setNo(int no) {
 		this.no = no;
 	}
-	public int getParetn() {
-		return paretn;
+	public void setNo(String no) {
+		this.no = Integer.parseInt(no);
 	}
-	public void setParetn(int paretn) {
-		this.paretn = paretn;
+	public int getParent() {
+		return parent;
+	}
+	public void setParent(int parent) {
+		this.parent = parent;
+	}
+	public void setParent(String parent) {
+		this.parent = Integer.parseInt(parent);
 	}
 	public int getComment() {
 		return comment;
