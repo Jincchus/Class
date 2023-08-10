@@ -6,7 +6,7 @@
 		<title>user4::register</title>
 	</head>
 	<body>
-		<h3>User1 등록</h3>
+		<h3>User4 등록</h3>
 		<a href="/Ch06/1_JDBC.jsp">처음으로</a>
 		<a href="/Ch06/user4/list.jsp">User4 목록</a>
 		
