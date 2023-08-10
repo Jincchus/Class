@@ -17,17 +17,31 @@
 
 %>
 <script>
-	$(function(){
-		$('.del').click(function(){
-			
+	
+	// 댓글 삭제
+
+	$(function() {
+		$('.del').click(function() {
+
 			const result = confirm('댓글을 삭제 하시겠습니까?')
-			
-			if(result){
+
+			if (result) {
 				return true;
-			}else{
+			} else {
 				return false;
 			}
 		});
+		// 원글 삭제
+		const btnDelete = document.getElementsByClassName('btnDelete')[0];
+		btnDelete.onclick = function() {
+			const result = confirm('게시글을 삭제 하시겠습니까?');
+
+			if (result) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 	})
 </script>
         <main>
@@ -54,11 +68,13 @@
                         </td>
                     </tr>
                 </table>
+                <% if(dto.getWriter().equals(sessUser.getUid())){ %>
                 <div>
-                    <a href="#" class="btnDelete">삭제</a>
-                    <a href="#" class="btnModify">수정</a>
+                    <a href="/Jboard1/delete.jsp?no=<%= no %>" class="btnDelete">삭제</a>
+                    <a href="/Jboard1/modify.jsp?no=<%= no %>" class="btnModify">수정</a>
                     <a href="/Jboard1/list.jsp" class="btnList">목록</a>
                 </div>  
+                <% } %>
                 
                 <!-- 댓글리스트 -->
                 <section class="commentList">

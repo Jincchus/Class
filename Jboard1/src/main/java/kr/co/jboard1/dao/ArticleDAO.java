@@ -103,12 +103,35 @@ public class ArticleDAO extends DBHelper{
 		return articles;
 	} // selectAticles 끝
 	
-	public void updateAticle(ArticleDTO vo) {
-		
+	public void updateArticle(ArticleDTO dto) {
+
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.UPDATE_ARTICLE);
+			psmt.setString(1, dto.getTitle());
+			psmt.setString(2, dto.getContent());
+			psmt.setInt(3, dto.getNo());
+			psmt.executeUpdate();
+
+			close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
-	public void deleteAticle(int no) {
+	public void deleteAticle(String no) {
 		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.DELETE_ARTICLE);
+			psmt.setString(1, no);
+			psmt.setString(2, no);
+			psmt.executeUpdate();
+			
+			close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	// 게시물 갯수 조회 메서드
@@ -130,8 +153,7 @@ public class ArticleDAO extends DBHelper{
 		}
 		return total;
 	}
-	
-	
+
 	// 코멘트 메서드
 	public List<ArticleDTO> selectComments(String parent) {
 		

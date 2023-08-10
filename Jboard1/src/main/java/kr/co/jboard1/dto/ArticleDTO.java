@@ -70,6 +70,9 @@ public class ArticleDTO {
 	public void setFile(int file) {
 		this.file = file;
 	}
+	public void setFile(String file) {
+		this.no = Integer.parseInt(file);
+	}
 	public int getHit() {
 		return hit;
 	}
