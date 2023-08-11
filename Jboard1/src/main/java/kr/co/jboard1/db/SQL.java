@@ -43,7 +43,7 @@ public class SQL {
 													+ "ORDER BY `no` DESC "
 													+ "LIMIT ?, 10 ";
 	public static final String SELECT_COUNT_TOTAL = "SELECT COUNT(*) FROM `Article` WHERE `parent` = 0"; 
-	public static final String UPDATE_ARTICLE = "UPDATE `Article` SET `title`=?, `Content`=? WHERE `no`=? ";
+	public static final String UPDATE_ARTICLE = "UPDATE `Article` SET `title`=?, `Content`=? WHERE `no`=?";
 	public static final String DELETE_ARTICLE = "DELETE FROM `Article` WHERE `no` = ? OR `parent`=?";
 	
 	// Comment

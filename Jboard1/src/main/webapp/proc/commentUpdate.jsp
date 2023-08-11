@@ -5,15 +5,10 @@
 	request.setCharacterEncoding("UTF-8");
 	String no = request.getParameter("no");
 	String parent = request.getParameter("parent");
-	String content = request.getParameter("content");
-	
-	ArticleDTO dto = new ArticleDTO();
-	dto.setNo(no);
-	dto.setParent(parent);
-	dto.setContent(content);
+	String comment = request.getParameter("comment");
 	
 	ArticleDAO dao = new ArticleDAO();
-	dao.updateComment(dto);
+	dao.updateComment(comment, no);
 	
-	response.sendRedirect("/Jboard/view.jsp?no=?"+parent);
+	response.sendRedirect("/Jboard1/view.jsp?no="+parent);
 %>
