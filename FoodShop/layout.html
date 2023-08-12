@@ -6,8 +6,212 @@
     <!--
         참고 : http://chhak.click/FoodShop/layout.html
     -->
+    <style>
+        * { margin: 0; padding: 0; }
+        ul, ol { list-style: none; }
+        a { text-decoration: none; color: black; }
+
+        #wrapper {
+            width: 100%;
+            height: 100%;
+            border: 1px solid red;
+            box-sizing: border-box;
+        }
+        
+        header {
+            width: 100%;
+            height: auto;
+            border: 1px solid blue;
+            box-sizing: border-box;
+        }
+        header > div {
+            width: 100%;
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+        header > div > * {
+            width: 1100px;
+            height: 100%;
+            margin: 0 auto;
+            border: 1px solid orange;
+            box-sizing: border-box;
+        }
+        header > div:nth-child(1) {height: 36px ;}
+        header > div:nth-child(2) {height: 100px ;}
+        header > div:nth-child(3) {height: 54px ;}
+
+        main {
+            width: 100%;
+            height: auto;
+            border: 1px solid blue;
+            box-sizing: border-box;
+        }
+        main > section {
+            width: 100%;
+            height: auto;
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+        main > section:nth-child(1) { height: 352px ; }
+        main > section:nth-child(2) { height: 520px ; }
+        main > section:nth-child(3) { height: 190px ; }
+        main > section:nth-child(4) { height: 660px ; }
+        main > section:nth-child(5) { height: 200px ; }
+        main > section:nth-child(6) { height: 660px ; }
+
+        main > section > article {
+            width: 1100px ;
+            height: 100%;
+            border: 1px solid orange;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+        
+        main > .slider {}
+        main > .go {}
+        main > .go > article {
+            padding: 30px 10px;
+            box-sizing: border-box;
+        }
+
+        main > .go div {
+            float: left;
+            border: 1px solid gray;
+            box-sizing: border-box;
+        }
+        main > .go div:nth-child(1) { width: 412px ; height: 450px ; }
+        main > .go div:nth-child(2) { width: 322px ; height: 220px ; margin-left: 11px ; }
+        main > .go div:nth-child(3) { width: 322px ; height: 220px ; float: right; }
+        main > .go div:nth-child(4) { width: 322px ; height: 220px ; margin-left: 11px; margin-top: 10px; }
+        main > .go div:nth-child(5) { width: 322px ; height: 220px ; float: right; margin-top: 10px; }
+
+        main > .oneday {}
+
+        main > .vegetable {}
+        main > .vegetable > article {}
+        main > .vegetable ul {
+            width: 100%;
+            height: 312px;
+            border: 1px solid gray;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        main > .vegetable ul > li {
+            float: left;
+            width: 25%;
+            height: 100%;
+            border: 1px solid pink;
+            box-sizing: border-box;
+        }
+
+        main > .premium {}
+        main > .premium > article {}
+
+        main > .seafood {}
+        main > .seafood > article {}
+        main > .seafood ul {
+            width: 100%;
+            height: 312px;
+            border: 1px solid gray;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        main > .seafood ul > li {
+            float: left;
+            width: 25%;
+            height: 100%;
+            border: 1px solid pink;
+            box-sizing: border-box;
+        }
+
+        footer {
+            width: 100%;
+            height: auto;
+            border: 1px solid blue;
+            box-sizing: border-box;
+        }
+        footer > div {
+            width: 100%;
+            border: 1px solid green;
+            box-sizing: border-box;
+        }
+        footer > div:nth-child(1) { height: 50px; }
+        footer > div:nth-child(2) { height: 156px; }
+        footer > div > div {
+            width: 1100px;
+            height: 100%;
+            border: 1px solid orange;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
+
+
+
+    </style>
 </head>
 <body>
+    <div id="wrapper">
+        <header>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <article></article>
+            </div>
+            <div>
+                <nav></nav>
+            </div>
+        </header>
+        <main>
+            <section class="slider">
+                <article></article>
+            </section>
+            <section class="go">
+                <article>
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                </article>
+            </section>
+            <section class="oneday">
+                <article></article>
+            </section>
+            <section class="vegetable">
+                <article>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                </article>
+            </section>
+            <section class="premium">
+                <article></article>
+            </section>
+            <section class="seafood">
+                <article>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <div>
+                <div></div>
+            </div>
+            <div>
+                <div></div>
+            </div>
+        </footer>
+    </div>
     
 </body>
 </html>
