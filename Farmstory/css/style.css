@@ -294,7 +294,12 @@
         #sub > .introduction > aside > .lnb > li:nth-child(2).on > a {background-image: url('../images/sub_cate1_lnb2_ov.png');}
         
         /* 장보기 */
-        #sub > .market > aside > .lnb > li:nth-child(1) > a { background-image: url('../images/sub_cate2_lnb1.png');}
+        #sub > .market > aside > .lnb > li:nth-child(1) > a {background-image: url('../images/sub_cate2_lnb1.png');}
+        #sub > .market > aside > .lnb > li:nth-child(2) > a {background-image: url('../images/sub_cate2_lnb2.png');}
+        #sub > .market > aside > .lnb > li:nth-child(1) > a:hover {background-image: url('../images/sub_cate2_lnb1_ov.png');}
+        #sub > .market > aside > .lnb > li:nth-child(2) > a:hover {background-image: url('../images/sub_cate2_lnb2_ov.png');}
+        #sub > .market > aside > .lnb > li:nth-child(1).on > a {background-image: url('../images/sub_cate2_lnb1_ov.png');}
+        #sub > .market > aside > .lnb > li:nth-child(2).on > a {background-image: url('../images/sub_cate2_lnb2_ov.png');}
         
         /* 농작물이야기 */
         #sub > .croptalk > aside > .lnb > li:nth-child(1) > a {background-image: url('../images/sub_cate3_lnb1.png');}
@@ -310,6 +315,8 @@
         
         /* 이벤트 */
         #sub > .event > aside > .lnb > li:nth-child(1) > a { background-image: url('../images/sub_cate4_lnb1.png');}
+        #sub > .event > aside > .lnb > li:nth-child(1) > a:hover { background-image: url('../images/sub_cate4_lnb1_ov.png');}
+        #sub > .event > aside > .lnb > li:nth-child(1).on > a {background-image: url('../images/sub_cate4_lnb1_ov.png');}
         
         /* 커뮤니티 */
         #sub > .community > aside > .lnb > li:nth-child(1) > a { background-image: url('../images/sub_cate5_lnb1.png');}
