@@ -69,7 +69,8 @@ CREATE TABLE `Product` (
 	`thumb3`		VARCHAR(255) NOT NULL,
 	`seller`		VARCHAR(20)  NOT NULL,
 	`etc`			VARCHAR(255),
-	`rdate`		DATETIME NOT NULL
+	`rdate`		DATETIME NOT NULL,
+	FOREIGN KEY(`seller`) REFERENCES `User` (`uid`)
 );
 
 # 주문 테이블
