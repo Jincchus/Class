@@ -15,7 +15,7 @@ public class SQL {
 											+ "`regip`=?, "
 											+ "`regDate`=NOW()";
 	
-	public static final String SELECT_USER = "SELECT * FROM `User` WHERE `uid` = ? AND `pass` = ?";
+	public static final String SELECT_USER = "SELECT * FROM `User` WHERE `uid`=? AND `pass`=SHA2(?, 256)";
 	
 	// terms
 	public static final String SELECT_TERMS = "SELECT * FROM `Terms`";

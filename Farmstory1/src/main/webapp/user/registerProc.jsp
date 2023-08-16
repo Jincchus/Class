@@ -31,5 +31,5 @@
 	
 	UserDAO.getInstance().insertUser(dto);
 	
-	response.sendRedirect("/Farmstory/user/login.jsp");
+	response.sendRedirect("/Farmstory1/user/login.jsp");
 %>
