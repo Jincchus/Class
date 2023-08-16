@@ -168,9 +168,7 @@ public class UserDAO extends DBHelper {
 				dto.setTerms(rs.getString(1));
 				dto.setPrivacy(rs.getString(2));
 			}
-			rs.close();
-			stmt.close();
-			conn.close();
+			close();
 			
 		}catch(Exception e){
 			e.printStackTrace();

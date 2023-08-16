@@ -95,7 +95,7 @@
                     </table>
     
                     <div>
-                        <a href="/Jboard/user/login.jsp" class="btnCancel">취소</a>
+                        <a href="/Jboard1/user/login.jsp" class="btnCancel">취소</a>
                         <input type="submit"   class="btnSubmit" value="회원가입"/>
                     </div>    
                 </form>

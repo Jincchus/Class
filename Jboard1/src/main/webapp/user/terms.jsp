@@ -8,7 +8,7 @@
 <%@page import="javax.naming.Context"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-request.setCharacterEncoding("UTF-8");
+	request.setCharacterEncoding("UTF-8");
 
 	String terms = request.getParameter("terms");
 	String privacy = request.getParameter("privacy");
@@ -81,7 +81,7 @@ request.setCharacterEncoding("UTF-8");
                     </tr>
                 </table>
                 <div>
-                    <a href="/Jboard/user/login.jsp" class="btnCancel">취소</a>
+                    <a href="/Jboard1/user/login.jsp" class="btnCancel">취소</a>
                     <a href="#" class="btnNext">다음</a>
                 </div>
             </section>
