@@ -1,10 +1,8 @@
 <%@ page contentType="text/html;charset=EUC-KR" pageEncoding="UTF-8"%>
 <%
-	//세션 해제
+	// 세션 해제
 	session.invalidate();
 
 	// 리다이렉트
 	response.sendRedirect("/Jboard1/user/login.jsp");
-
-
 %>
