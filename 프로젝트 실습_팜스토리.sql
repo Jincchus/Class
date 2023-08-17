@@ -86,3 +86,5 @@ CREATE TABLE `Order` (
 	FOREIGN KEY(`orderProduct`) REFERENCES `Product` (`pNo`),
 	FOREIGN KEY(`orderUser`) REFERENCES `User` (`uid`)
 );
+
+# 게시물 채우기 
