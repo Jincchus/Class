@@ -19,4 +19,28 @@ public class SQL {
 	
 	// terms
 	public static final String SELECT_TERMS = "SELECT * FROM `Terms`";
+	
+	// article
+	public static final String INSERT_ARTICLE = "INSERT INTO `Article` SET "
+												+ "`cate` =?, "
+												+ "`title` =?, "
+												+ "`content` =?, "
+												+ "`writer` =?, "
+												+ "`regip` =?, "
+												+ "`rdate` = NOW()";
+	
+	public static final String SELECT_ARTICLES_JOIN = "SELECT "
+													+ "a.*, "
+													+ "b.`nick` "
+													+ "FROM `Article` AS a "
+													+ "JOIN `User` AS b "
+													+ "ON a.writer = b.uid "
+													+ "WHERE `parent` = 0 "
+													+ "AND `cate` = ? "
+													+ "ORDER BY `no` DESC "
+													+ "LIMIT ?, 10";
+	
+	public static final String SELECT_COUNT_TOTAL = "SELECT COUNT(*) FROM `Article` "
+													+ "WHERE `parent` = 0 AND `cate` = ?";
+													
 }

@@ -4,6 +4,7 @@
 <%
 	request.setCharacterEncoding("UTF-8");
 	String group = request.getParameter("group");
+	String cate  = request.getParameter("cate");
 	
 	pageContext.include("./_aside"+group+".jsp");
 %>
@@ -11,8 +12,10 @@
 <section class="write">
 	<h3>글쓰기</h3>
 	<article>
-		<form action="#" method="post">
-			<input type="hidden" name="writer" readonly value="">
+		<form action="./proc/writeProc.jsp" method="post">
+			<input type="hidden" name="writer" readonly value="<%= sessUser.getUid()%>">
+			<input type="hidden" name="group" readonly value="<%= group %>">
+			<input type="hidden" name="cate" readonly value="<%= cate %>">
 			<table>
 				<tr>
 					<td>제목</td>
