@@ -10,7 +10,7 @@
 	ArticleDAO dao = new ArticleDAO();
 	
 	// 원글 조회
-	ArticleDTO dto = dao.selectAticle(no);
+	ArticleDTO dto = dao.selectArticle(no);
 	
 	// 댓글 조회
 	List<ArticleDTO> comments = dao.selectComments(no);

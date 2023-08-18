@@ -8,7 +8,7 @@
 	String no = request.getParameter("no");
 			
 	ArticleDAO dao = new ArticleDAO();
-	ArticleDTO dto =  dao.selectAticle(no);
+	ArticleDTO dto =  dao.selectArticle(no);
 
 %>
         <main>

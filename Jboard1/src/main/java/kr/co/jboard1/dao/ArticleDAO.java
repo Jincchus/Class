@@ -31,7 +31,7 @@ public class ArticleDAO extends DBHelper{
 		}
 	}
 	
-	public ArticleDTO selectAticle(String no) {
+	public ArticleDTO selectArticle(String no) {
 		
 		ArticleDTO dto = null;
 		
