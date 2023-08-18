@@ -6,6 +6,12 @@
 	String group = request.getParameter("group");
 	String cate  = request.getParameter("cate");
 	
+	// 로그인 여부 확인
+	if(sessUser == null){
+		response.sendRedirect("/Farmstory1/user/login.jsp?success=101&target=write&group="+group+"&cate="+cate);
+		return;
+	}
+	
 	pageContext.include("./_aside"+group+".jsp");
 %>
 
@@ -13,9 +19,9 @@
 	<h3>글쓰기</h3>
 	<article>
 		<form action="./proc/writeProc.jsp" method="post">
-			<input type="hidden" name="writer" readonly value="<%= sessUser.getUid()%>">
 			<input type="hidden" name="group" readonly value="<%= group %>">
 			<input type="hidden" name="cate" readonly value="<%= cate %>">
+			<input type="hidden" name="writer" readonly value="<%= sessUser.getUid()%>">
 			<table>
 				<tr>
 					<td>제목</td>
@@ -31,7 +37,7 @@
 				</tr>
 			</table>
 			<div>
-				<a href="#" class="btnCancel">취소</a> <input
+				<a href="/Farmstory1/board/list.jsp?group=<%=group%>&cate=<%=cate%>" class="btnCancel">취소</a> <input
 					type="submit" class="btnWrite" value="작성완료">
 			</div>
 		</form>

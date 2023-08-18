@@ -1,6 +1,9 @@
 <%@page import="kr.Farmstory1.dto.UserDTO"%>
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("UTF-8");
+	String success = request.getParameter("success");
+
 	UserDTO sessUser = (UserDTO) session.getAttribute("sessUser");
 %>
 <!DOCTYPE html>
@@ -11,6 +14,20 @@
 <link rel="stylesheet" href="/Farmstory1/css/style.css">
 <link rel="stylesheet" href="/Farmstory1/user/css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script>
+	const success = <%= success %>;
+	
+	if(success == 100){
+		alert('로그인에 실패 했습니다. 아이디, 비밀번호를 다시 확인하시기 바랍니다')
+	}else if(success == 101){
+		alert('로그인을 먼저 하셔야 합니다.');
+	}
+	
+    /* $(function(){
+
+        $('#tabs').tabs();
+    }); */
+</script>
 
 </head>
 <body>

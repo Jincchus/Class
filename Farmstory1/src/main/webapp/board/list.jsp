@@ -7,8 +7,8 @@
 	request.setCharacterEncoding("UTF-8");
 
 	String group = request.getParameter("group");
-	String cate = request.getParameter("cate");
-	String pg = request.getParameter("pg");
+	String cate  = request.getParameter("cate");
+	String pg	 = request.getParameter("pg");
 	
 	
 	ArticleDAO dao = new ArticleDAO();
@@ -53,7 +53,7 @@
 	// 페이지 시작번호 계산
 	pageStartNum = total - start ;
 	
-	// 현재 페이지 게시물 조화
+	// 현재 페이지 게시물 조회
 	List<ArticleDTO> articles = dao.selectArticles(cate,start);
 	
 	pageContext.include("./_aside"+group+".jsp");
@@ -73,7 +73,11 @@
 						<% for(ArticleDTO article : articles){ %>
 						<tr>
 							<td><%= pageStartNum-- %></td>
-							<td><a href="./view.jsp?group=<%= group %>&cate=<%=cate%>"><%= article.getTitle() %></a>&nbsp;[<%=article.getComment() %>]</td>
+							<td>
+								<a href="./view.jsp?group=<%= group %>&cate=<%=cate%>&no=<%=article.getNo()%>">
+									<%= article.getTitle() %>
+								</a>&nbsp;[<%=article.getComment() %>]
+							</td>
 							<td><%= article.getNick() %></td>
 							<td><%= article.getRdate()%></td>
 							<td><%= article.getHit()%></td>
