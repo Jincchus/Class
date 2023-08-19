@@ -199,21 +199,66 @@ public class ArticleDAO extends DBHelper {
 		}
 	}
 	
+	// 코멘트 삭제
+	public void deleteComment(String no) {
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.DELETE_COMMENT);
+			psmt.setString(1, no);
+			psmt.executeUpdate();
+			
+			close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 	// 코멘트 수정
-	public void updateComment(ArticleDTO dto) {
+	public void updateComment(String content, String no) {
 		
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.UPDATE_COMMENT);
+			psmt.setString(1, content);
+			psmt.setString(2, no);
+			psmt.executeUpdate();
 			
+			close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	// 댓글 카운트 수정
+	public void updateArticleForComment(String no) {
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.UPDATE_ARTICLE_FOR_COMMENT);
+			psmt.setString(1, no);
+			psmt.executeUpdate();
+
+			close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void deleteArticleForComment(String no) {
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.DELETE_ARTICLE_FOR_COMMENT);
+			psmt.setString(1, no);
+			psmt.executeUpdate();
 			
 			close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public List<ArticleDTO> selectComments(String parent) {
 		
 		List<ArticleDTO> comments = new ArrayList<>();

@@ -55,7 +55,8 @@ public class SQL {
 											  + "`writer` =?, "
 											  + "`regip` =?, "
 											  + "`rdate` = NOW()";
-	public static final String UPDATE_COMMENT = "DELETE FROM `Article` WHERE `no`=? OR `parent`=?";
+	public static final String UPDATE_COMMENT = "UPDATE `Article` SET `content` = ? WHERE `no` =? ";
+	public static final String DELETE_COMMENT = "DELETE FROM `Article` WHERE `no`=?";
 	public static final String SELECT_COMMENTS = "SELECT "
 			+ "a.*, "
 			+ "b.`nick` "
@@ -63,4 +64,8 @@ public class SQL {
 			+ "JOIN `User` AS b "
 			+ "ON a.writer = b.uid "
 			+ "WHERE `parent` = ?";
+	// comment count
+	public static final String UPDATE_ARTICLE_FOR_COMMENT = "UPDATE `Article` SET `comment` = `comment` + 1 WHERE `no` = ?";
+	public static final String DELETE_ARTICLE_FOR_COMMENT = "UPDATE `Article` SET `comment` = `comment` - 1 WHERE `no` = ?";
+
 }

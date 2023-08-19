@@ -19,5 +19,8 @@
 	ArticleDAO dao = new ArticleDAO();
 	dao.insertComment(dto);
 	
+	// 댓글 카운트 수정
+	dao.updateArticleForComment(parent);
+	
 	response.sendRedirect("/Farmstory1/board/view.jsp?group="+group+"&cate="+cate+"&no="+parent);
 %>
