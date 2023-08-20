@@ -3,6 +3,8 @@ package kr.Farmstory1.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.catalina.storeconfig.RealmSF;
+
 import kr.Farmstory1.db.DBHelper;
 import kr.Farmstory1.db.SQL;
 import kr.Farmstory1.dto.ArticleDTO;
@@ -149,7 +151,8 @@ public class ArticleDAO extends DBHelper {
 				ArticleDTO dto = new ArticleDTO();
 				dto.setNo(rs.getInt("no"));
 				dto.setTitle(rs.getString("title"));
-				dto.setRdate(rs.getString("rdate"));
+				dto.setRdate(rs.getString("rdate")); 
+				dto.setCate(rs.getString("cate")); 
 				
 				latests.add(dto);
 			}

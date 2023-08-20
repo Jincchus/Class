@@ -1,8 +1,8 @@
-        /* 초기화 */
+        /* 珥덇린�솕 */
         * {
             margin: 0;
             padding: 0;
-            font: normal 12px '돋움';
+            font: normal 12px '�룍��';
         }
         ul, ol {list-style: none;}
         a {text-decoration: none; color: #111;}
@@ -14,7 +14,7 @@
             margin: 0 auto;
         }
 
-        /* 헤더 */
+        /* �뿤�뜑 */
         header {
             position: relative;
             width: 100%;
@@ -80,7 +80,7 @@
         header > .gnb > li:nth-child(4) > a:hover {background-image: url('../images/head_menu4_ov.png');}
         header > .gnb > li:nth-child(5) > a:hover {background-image: url('../images/head_menu5_ov.png');}
 
-        /* 푸터 */
+        /* �뫖�꽣 */
         footer {
             width: 100%;
             height: 120px;
@@ -100,7 +100,7 @@
             font-weight: bold;
         }
 
-        /* 메인 */
+        /* 硫붿씤 */
         main {
             width: 100%;
             height: auto;
@@ -110,7 +110,7 @@
             width: 100%;
             margin-top: 10px;
         }
-        /* 메인 - slider */
+        /* 硫붿씤 - slider */
         main > .slider {
             position: relative;
             height: 312px;
@@ -147,7 +147,7 @@
 		    background: #fff;
 		}
 		
-		/* 메인 - quick */
+		/* 硫붿씤 - quick */
         main > .quick {
             height: 74px;
             overflow: hidden;
@@ -163,7 +163,7 @@
         main > .quick > a:nth-child(1) {background-image: url('../images/main_banner_sub1_bg.jpg');}
         main > .quick > a:nth-child(2) {background-image: url('../images/main_banner_sub2_bg.jpg');}
 
-		/* 메인 - latest */
+		/* 硫붿씤 - latest */
         main > .latest {
             height: 186px;
             overflow: hidden;
@@ -202,7 +202,7 @@
             color: #6a6a6a;
         }
         
-		/* 메인 - info*/
+		/* 硫붿씤 - info*/
         main > .info {
             height: 154px;
             overflow: hidden;
@@ -245,53 +245,55 @@
             color: #666;
         }
         
-        /* 탭 커스텀 */
-        .ui-widget.ui-widget-content {
-            border: none;
-        }
-        .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
-            border-bottom-right-radius: 0px;
-        }
-        .ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
-            border-bottom-left-radius: 0px;
-        }
-        .ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
-            border-top-right-radius: 0px;
-        }
-        .ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
-            border-top-left-radius: 0px;
-        }
-        .ui-widget-content {
-            border: none;
-            background: #ffffff;
-            color: #222222;
-        }
-        .ui-widget-header {
-            border: none;
-            border-bottom: 1px solid #aaaaaa;
-            background: none;
-            color: #222222;
-            font-weight: bold;
-        }
+        /* �꺆 而ㅼ뒪�� */
+		.ui-widget.ui-widget-content {
+		    border: none;
+		}
+		.ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+		    border-bottom-right-radius: 0px;
+		}
+		.ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+		    border-bottom-left-radius: 0px;
+		}
+		.ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+		    border-top-right-radius: 0px;
+		}
+		.ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+		    border-top-left-radius: 0px;
+		}
+		.ui-widget-content {
+		    border: none;
+		    background: #ffffff;
+		    color: #222222;
+		}
+		.ui-widget-header {
+		    border: none;
+		    border-bottom: 1px solid #aaaaaa;
+		    background: none;
+		    color: #222222;
+		    font-weight: bold;
+		}
+		
+		.ui-tabs .ui-tabs-nav {
+		    margin: 0;
+		    padding: 0;
+		}
+		
+		.ui-tabs .ui-tabs-panel {
+		    padding: 10px;
+		}
+		
+		#tabs .txt > li {    
+		    border-bottom: 1px solid #d1d1d1;
+		    line-height: 26px;
+		}
+		
+		#tabs .txt > li > a {
+		    color: #666;
+		}
 
-        .ui-tabs .ui-tabs-nav {
-            margin: 0;
-            padding: 0;
-        }
 
-        .ui-tabs .ui-tabs-panel {
-            padding: 10px;
-        }
-
-        #tabs .txt > li {
-            border-bottom: 1px solid #d1d1d1;
-            line-height: 26px;
-        }
-        #tabs .txt > li > a {
-            color : #666;
-        }
-
-        /* 서브페이지 공통 */
+        /* �꽌釉뚰럹�씠吏� 怨듯넻 */
         #sub {
             width: 100%;
             height: auto;
@@ -380,7 +382,7 @@
             color: #91ba15;
         }
 
-        /* 팜스토리소개 */
+        /* �뙗�뒪�넗由ъ냼媛� */
         #sub > .introduction > aside > .lnb > li:nth-child(1) > a {background-image: url('../images/sub_cate1_lnb1.png');}
         #sub > .introduction > aside > .lnb > li:nth-child(2) > a {background-image: url('../images/sub_cate1_lnb2.png');}
         #sub > .introduction > aside > .lnb > li:nth-child(1) > a:hover {background-image: url('../images/sub_cate1_lnb1_ov.png');}
@@ -397,7 +399,7 @@
             font-weight: bold;
             color: #91ba15;
         }
-        /* 장보기 */
+        /* �옣蹂닿린 */
         #sub > .market > aside > .lnb > li:nth-child(1) > a {background-image: url('../images/sub_cate2_lnb1.png');}
         #sub > .market > aside > .lnb > li:nth-child(2) > a {background-image: url('../images/sub_cate2_lnb2.png');}
         #sub > .market > aside > .lnb > li:nth-child(1) > a:hover {background-image: url('../images/sub_cate2_lnb1_ov.png');}
@@ -442,7 +444,7 @@
 
         #sub > .market > .view >h3 {
             margin: 10px 0;
-            font-family: '고딕';
+            font-family: '怨좊뵓';
             font-size: 16px;
             font-weight: bold;
         }
@@ -495,7 +497,7 @@
         #sub > .market > .order {}
         #sub > .market > .order >h3 {
             margin: 10px 0;
-            font-family: '고딕';
+            font-family: '怨좊뵓';
             font-size: 16px;
             font-weight: bold;
         }
@@ -578,7 +580,7 @@
             vertical-align: middle;
         }
 
-        /* 농작물이야기 */
+        /* �냽�옉臾쇱씠�빞湲� */
         #sub > .croptalk > aside > .lnb > li:nth-child(1) > a {background-image: url('../images/sub_cate3_lnb1.png');}
         #sub > .croptalk > aside > .lnb > li:nth-child(2) > a {background-image: url('../images/sub_cate3_lnb2.png');}
         #sub > .croptalk > aside > .lnb > li:nth-child(3) > a {background-image: url('../images/sub_cate3_lnb3.png');}
@@ -590,12 +592,12 @@
         #sub > .croptalk > aside > .lnb > li:nth-child(3).on > a {background-image: url('../images/sub_cate3_lnb3_ov.png');}
         
         
-        /* 이벤트 */
+        /* �씠踰ㅽ듃 */
         #sub > .event > aside > .lnb > li:nth-child(1) > a { background-image: url('../images/sub_cate4_lnb1.png');}
         #sub > .event > aside > .lnb > li:nth-child(1) > a:hover { background-image: url('../images/sub_cate4_lnb1_ov.png');}
         #sub > .event > aside > .lnb > li:nth-child(1).on > a {background-image: url('../images/sub_cate4_lnb1_ov.png');}
         
-        /* 커뮤니티 */
+        /* 而ㅻ�ㅻ땲�떚 */
         #sub > .community > aside > .lnb > li:nth-child(1) > a {background-image: url('../images/sub_cate5_lnb1.png');}
         #sub > .community > aside > .lnb > li:nth-child(2) > a {background-image: url('../images/sub_cate5_lnb2.png');}
         #sub > .community > aside > .lnb > li:nth-child(3) > a {background-image: url('../images/sub_cate5_lnb3.png');}
@@ -613,7 +615,7 @@
         #sub > .community > aside > .lnb > li:nth-child(5).on > a {background-image: url('../images/sub_cate5_lnb5_ov.png');}
         
 				
-		/* 글목록 */
+		/* 湲�紐⑸줉 */
 		.list {
 		    position: relative;
 		    width: 720px;
@@ -673,7 +675,7 @@
 		    right: 0;
 		}
 		
-		/* 글보기 */
+		/* 湲�蹂닿린 */
 		.view {
 		    position: relative;
 		    width: 720px;
@@ -781,7 +783,7 @@
 		
 		
 		
-		/* 글수정 */
+		/* 湲��닔�젙 */
 		.modify {
 		    position: relative;
 		    width: 720px;
@@ -835,7 +837,7 @@
 		    text-align: right;
 		}
 		
-		/* 글쓰기 */
+		/* 湲��벐湲� */
 		.write {
 		    position: relative;
 		    width: 720px;
@@ -890,7 +892,7 @@
 		}
 		
         
-/* 버튼 공통 */
+/* 踰꾪듉 怨듯넻 */
 .btnNext   { display: inline-block; padding: 8px; border: 1px solid #bebebe; background: #e9e9e9; color: #111;}
 .btnSubmit { display: inline-block; padding: 7px; border: 1px solid #bebebe; background: #e9e9e9; color: #111;}
 .btnWrite  { display: inline-block; padding: 7px; border: 1px solid #3b3c3f; background: #4b545e; color: #fff;}

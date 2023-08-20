@@ -45,7 +45,7 @@ public class SQL {
 													+ "WHERE `parent` = 0 AND `cate` = ?";
 			
 	// 최신 글
-	public static final String SELECT_LATESTS = "SELECT `no`,`title`,`rdate` FROM `Article` "
+	public static final String SELECT_LATESTS = "SELECT `no`,`title`,`rdate`,`cate` FROM `Article` "
 											+ "WHERE `parent`=0 AND `cate`=? Order BY `no` DESC LIMIT ?";
 	
 	// comment

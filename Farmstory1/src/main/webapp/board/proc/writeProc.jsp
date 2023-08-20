@@ -23,6 +23,4 @@
 	dao.insertArticle(dto);
 	
 	response.sendRedirect("/Farmstory1/board/list.jsp?group=" + group + "&cate=" + cate);
-	
-	
 %>

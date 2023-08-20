@@ -23,6 +23,7 @@
 	List<ArticleDTO> comments = dao.selectComments(no);
 
 	pageContext.include("./_aside"+group+".jsp");
+
 %>
 <script>
 	$(function(){

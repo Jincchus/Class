@@ -11,6 +11,11 @@
 <head>
 <meta charset="UTF-8">
 <title>팜스토리::메인</title>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>    
 <link rel="stylesheet" href="/Farmstory1/css/style.css">
 <link rel="stylesheet" href="/Farmstory1/user/css/style.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -23,10 +28,16 @@
 		alert('로그인을 먼저 하셔야 합니다.');
 	}
 	
-    /* $(function(){
+    $(function(){
+        $('.slider > ul').bxSlider({
+            slideWidth: 980,
+            pager: false,
+            controls: false,
+            auto: true
+        });
 
         $('#tabs').tabs();
-    }); */
+    });
 </script>
 
 </head>
