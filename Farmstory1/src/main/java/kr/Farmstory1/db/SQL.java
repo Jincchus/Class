@@ -67,5 +67,20 @@ public class SQL {
 	// comment count
 	public static final String UPDATE_ARTICLE_FOR_COMMENT = "UPDATE `Article` SET `comment` = `comment` + 1 WHERE `no` = ?";
 	public static final String DELETE_ARTICLE_FOR_COMMENT = "UPDATE `Article` SET `comment` = `comment` - 1 WHERE `no` = ?";
+	
+
+	// Product
+	public static final String INSERT_PRODUCT = "INSERT INTO `Product` SET "
+												+ "`type`  =?," 
+												+ "`pName` =?," 
+												+ "`price` =?," 
+												+ "`delivery` =?," 
+												+ "`stock`  =?," 
+												+ "`thumb1` =?," 
+												+ "`thumb2` =?," 
+												+ "`thumb3` =?," 
+												+ "`seller` =?," 
+												+ "`etc` =?," 
+												+ "`rdate` =NOW()"; 
 
 }
