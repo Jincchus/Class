@@ -87,9 +87,7 @@ CREATE TABLE `Order` (
 	FOREIGN KEY(`orderUser`) REFERENCES `User` (`uid`)
 );
 
-# 게시물 채우기 
-INSERT INTO `Article` (`cate`,`title`,`content`,`writer`,`regip`,`rdate`)
-SELECT `cate`, `title`,`content`, `writer`, `regip`, `rdate` FROM 
+
 
 # 최신글
 SELECT `no`,`title`,`rdate` FROM `Article` WHERE `parent`= 0 `cate`=grow Order BY `no` DESC LIMIT 5 ;
@@ -97,3 +95,7 @@ SELECT `no`,`title`,`rdate` FROM `Article` WHERE `parent`= 0 `cate`=grow Order B
 #Product 테이블 cate -> type으로 변경
 ALTER TABLE `Product` CHANGE `cate` `type` TINYINT;
 DELETE FROM `Product`;
+
+# 상품 채우기 
+INSERT INTO `Product` (`type`,`pName`,`price`,`delivery`,`stock`,`thumb1`,`thumb2`,`thumb3`,`seller`,`rdate`)
+SELECT `type`,`pName`,`price`,`delivery`,`stock`,`thumb1`,`thumb2`,`thumb3`,`seller`,`rdate` FROM `Product`;
