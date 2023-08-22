@@ -401,11 +401,11 @@
         }
         /* �옣蹂닿린 */
         #sub > .market > aside > .lnb > li:nth-child(1) > a {background-image: url('../images/sub_cate2_lnb1.png');}
-        #sub > .market > aside > .lnb > li:nth-child(2) > a {background-image: url('../images/sub_cate2_lnb2.png');}
+       /* #sub > .market > aside > .lnb > li:nth-child(2) > a {background-image: url('../images/sub_cate2_lnb2.png');}*/
         #sub > .market > aside > .lnb > li:nth-child(1) > a:hover {background-image: url('../images/sub_cate2_lnb1_ov.png');}
-        #sub > .market > aside > .lnb > li:nth-child(2) > a:hover {background-image: url('../images/sub_cate2_lnb2_ov.png');}
+       /*#sub > .market > aside > .lnb > li:nth-child(2) > a:hover {background-image: url('../images/sub_cate2_lnb2_ov.png');}*/
         #sub > .market > aside > .lnb > li:nth-child(1).on > a {background-image: url('../images/sub_cate2_lnb1_ov.png');}
-        #sub > .market > aside > .lnb > li:nth-child(2).on > a {background-image: url('../images/sub_cate2_lnb2_ov.png');}
+       /*#sub > .market > aside > .lnb > li:nth-child(2).on > a {background-image: url('../images/sub_cate2_lnb2_ov.png');}*/
         
         #sub > .market > .list > .sort > a {color: #999;}
         #sub > .market > .list > .sort > a > .on {color: #111;}
@@ -432,6 +432,12 @@
             color: #111;
             font-weight: bold;
         }
+        
+        #sub > .market > .list > table .thumb {
+			width: 120px;
+			height: 120px;
+		}
+
         #sub > .market > .list > .paging {
             margin: 20px 0;
             text-align: center;
