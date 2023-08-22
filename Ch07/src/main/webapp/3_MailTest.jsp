@@ -15,24 +15,19 @@
 		<form action="./proc/sendEmail.jsp" method="post">
 			<table border="1">
 				<tr>
-					<td>보내는 사람
-						<input type="text" name="sender">
-					</td>
+					<td>보내는 사람</td>
+					<td><input type="text" name="sender"></td>
 				</tr>
 				<tr>
-					<td>받는 사람
-						<input type="text" name="receiver">
-					</td>
+					<td>받는 사람</td>
+					<td><input type="text" name="receiver"></td>
 				</tr>
 				<tr>
-					<td>제목
-						<input type="text" name="title">
-					</td>
+					<td>제목</td>
+					<td><input type="text" name="title"></td>
 				</tr>
 				<tr>
 					<td>내용</td>
-				</tr>
-				<tr>
 					<td>
 						<textarea name="content" rows="20" cols="100"></textarea>
 					</td>
