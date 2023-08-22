@@ -92,9 +92,9 @@
 						<td>
 							<%
 								switch(product.getType()){
-								case 1 : out.print("과일"); break;
-								case 2 : out.print("야채"); break;
-								case 3 : out.print("곡물"); break;
+									case 1 : out.print("과일"); break;
+									case 2 : out.print("야채"); break;
+									case 3 : out.print("곡물"); break;
 								}
 							%>
 						</td>
