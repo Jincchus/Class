@@ -82,9 +82,26 @@ public class SQL {
 												+ "`seller` =?," 
 												+ "`etc` =?," 
 												+ "`rdate` =NOW()"; 
+	public static final String SELECT_PRODUCT = "SELECT * FROM `Product` WHERE `pNo` =?"; 
 	public static final String SELECT_PRODUCTS_ALL = "SELECT * FROM `Product` WHERE `stock` > 0 LIMIT ?, 10";
 	public static final String SELECT_PRODUCTS_TYPE = "SELECT * FROM `Product` WHERE `stock` > 0 AND `type` = ? LIMIT ?, 10";
 	public static final String SELECT_COUNT_PRODUCTS_ALL = "SELECT COUNT(*) FROM `Product` WHERE `stock` > 0";
 	public static final String SELECT_COUNT_PRODUCTS_TYPE = "SELECT COUNT(*) FROM `Product` WHERE `stock` > 0 AND `type`= ? ";
+	
+	// Order
+	public static final String INSERT_ORDER = "INSERT INTO `Order` SET "
+											+ "`orderProduct` = ?, "
+											+ "`orderCount` = ?, "
+											+ "`orderDelivery` = ?, "
+											+ "`orderPrice` = ?, "
+											+ "`orderTotal` = ?, "
+											+ "`receiver` = ?, "
+											+ "`hp` = ?, "
+											+ "`zip` = ?, "
+											+ "`addr1` = ?, "
+											+ "`addr2` = ?, "
+											+ "`orderEtc` = ?, "
+											+ "`orderUser` = ?, "
+											+ "`orderDate` = NOW()";
 
 }

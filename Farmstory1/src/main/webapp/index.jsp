@@ -109,30 +109,30 @@
 				예 금 주 (주)팜스토리
 			</p>
 		</div>
-		<div>
-			<div id="tabs">
-				<ul>
-					<li><a href="#tabs-1">공지사항</a></li>
-					<li><a href="#tabs-2">1:1 고객문의</a></li>
-					<li><a href="#tabs-3">자주묻는 질문</a></li>
-				</ul>
-				<div id="tabs-1">
-					<ul class="txt">
-					<% for(ArticleDTO latest : tabLatestNotice) { %>
+        <div>
+            <div id="tabs">
+                <ul>
+                    <li><a href="#tabs-1">공지사항</a></li>
+                    <li><a href="#tabs-2">1:1 고객문의</a></li>
+                    <li><a href="#tabs-3">자주묻는 질문</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <ul class="txt">
+                    	<% for(ArticleDTO latest :tabLatestNotice) { %>
 						<li><a href="/Farmstory1/board/view.jsp?group=Community&cate=<%= latest.getCate() %>&no=<%= latest.getNo() %>">· <%=latest.getTitle() %></a></li>
 					<% } %>
 					</ul>
 				</div>
-				<div id="tabs-2">
-					<ul class="txt">
-					<% for(ArticleDTO latest : tabLatestQna) { %>
+                <div id="tabs-2">
+                    <ul class="txt">
+                    	<% for(ArticleDTO latest : tabLatestQna) { %>
 						<li><a href="/Farmstory1/board/view.jsp?group=Community&cate=<%= latest.getCate() %>&no=<%= latest.getNo() %>">· <%=latest.getTitle() %></a></li>
 					<% } %>
 					</ul>
 				</div>
-				<div id="tabs-3">
-					<ul class="txt">
-					<% for(ArticleDTO latest : tabLatestFaq) { %>
+                <div id="tabs-3">
+                    <ul class="txt">
+                    	<% for(ArticleDTO latest : tabLatestFaq) { %>
 						<li><a href="/Farmstory1/board/view.jsp?group=Community&cate=<%= latest.getCate() %>&no=<%= latest.getNo() %>">· <%=latest.getTitle() %></a></li>
 					<% } %>
 					</ul>
