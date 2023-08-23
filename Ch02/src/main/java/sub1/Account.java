@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.jsp.JspWriter;
 
+
 public class Account {
 	
 	private String bank;
