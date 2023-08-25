@@ -34,8 +34,8 @@
     	type="javax.sql.DataSource"
     	driverClassName="com.mysql.cj.jdbc.Driver"
     	url = "jdbc:mysql://3.39.234.171:3306/userdb"
-    	username="root"
-    	password="1234"
+    	username="userdb1"
+    	password="Qwe123!@#"
     	maxTotal="13"
     	maxIdle="13"
     	maxWaitMillis="3000"
@@ -67,5 +67,6 @@
     	maxIdle="13"
     	maxWaitMillis="3000"
     />
+
     
 </Context>
