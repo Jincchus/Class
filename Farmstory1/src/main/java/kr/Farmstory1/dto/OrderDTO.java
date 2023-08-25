@@ -17,6 +17,24 @@ public class OrderDTO {
 	private String orderEtc;
 	private String orderUser;
 	private String orderDate;
+	
+	// 추가 필드
+	private String pName;
+	private String thumb1;
+	
+	public String getpName() {
+		return pName;
+	}
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
+	public String getThumb1() {
+		return thumb1;
+	}
+	public void setThumb1(String thumb1) {
+		this.thumb1 = thumb1;
+	}
+	public OrderDTO() {}
 	public int getOrderNo() {
 		return orderNo;
 	}

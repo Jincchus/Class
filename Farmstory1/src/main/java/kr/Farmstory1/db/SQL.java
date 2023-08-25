@@ -64,6 +64,7 @@ public class SQL {
 			+ "JOIN `User` AS b "
 			+ "ON a.writer = b.uid "
 			+ "WHERE `parent` = ?";
+	
 	// comment count
 	public static final String UPDATE_ARTICLE_FOR_COMMENT = "UPDATE `Article` SET `comment` = `comment` + 1 WHERE `no` = ?";
 	public static final String DELETE_ARTICLE_FOR_COMMENT = "UPDATE `Article` SET `comment` = `comment` - 1 WHERE `no` = ?";
@@ -103,5 +104,15 @@ public class SQL {
 											+ "`orderEtc` = ?, "
 											+ "`orderUser` = ?, "
 											+ "`orderDate` = NOW()";
+	public static final String DELETE_ORDER = "DELETE FROM `Order` WHERE `orderNo`=?";
+	public static final String SELECT_ORDERS = "SELECT "
+											+ "a.*,"
+											+ "b.`pName`,"
+											+ "b.`thumb1` "
+											+ "FROM `Order` AS a "
+											+ "JOIN `Product` AS b "
+											+ "ON a.orderProduct = b.pNo "
+											+ "LIMIT ?, 10";
+	public static final String SELECT_COUNT_ORDERS = "SELECT COUNT(*) FROM `Order`" ;
 
 }
