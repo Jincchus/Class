@@ -74,7 +74,7 @@ public class User2DAO {
 	}
 	
 	public List<User2DTO> selectUser2s() {
-		List<User2DTO> users = new ArrayList<User2DTO>();
+		List<User2DTO> users = new ArrayList<>();
 		try {
 			logger.info("User2DAO selectUser2...");
 			Class.forName("com.mysql.cj.jdbc.Driver");
