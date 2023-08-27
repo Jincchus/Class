@@ -1,5 +1,6 @@
 package dao;
 
+import java.net.ConnectException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,10 +15,11 @@ public class User3DAO extends DBHelper{
 	private Logger logger = LoggerFactory.getLogger(getClass());
 	
 	public void insertUser3(User3DTO dto) {
-		logger.info("User3DAO insertUser3...1");
 		try {
+			logger.info("User3DAO insertUser3...1");
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.INSERT_USER3);
+			
 			psmt.setString(1, dto.getUid());
 			psmt.setString(2, dto.getName());
 			psmt.setString(3, dto.getHp());
@@ -33,9 +35,9 @@ public class User3DAO extends DBHelper{
 	}
 	
 	public User3DTO selectUser3(String uid) {
-		logger.info("User3DAO selectUser3...1");
 		User3DTO dto = new User3DTO();
 		try {
+			logger.info("User3DAO selectUser3...1");
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.SELECT_USER3);
 			psmt.setString(1, uid);
@@ -58,9 +60,9 @@ public class User3DAO extends DBHelper{
 	}
 	
 	public List<User3DTO> selectUser3s() {
-		logger.info("User3DAO selectUser3s...1");
 		List<User3DTO> user3s = new ArrayList<>();
 		try {
+			logger.info("User3DAO selectUser3s...1");
 			conn = getConnection();
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(SQL.SELECT_USER3S);
@@ -81,28 +83,40 @@ public class User3DAO extends DBHelper{
 		} catch (Exception e) {
 			logger.error("User3DAO selectUser3s error : " + e.getMessage());
 		}
-		return null;
+		return user3s;
 	}
 	
 	public void updateUser3(User3DTO dto) {
-		logger.info("User3DAO updateUser3...1");
-		conn = getConnection();
-		psmt = conn.prepareStatement(SQL.UPDATE_USER3);
-		psmt.executeUpdate();
+		
 		
 		try {
+			logger.info("User3DAO updateUser3...1");
 			
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.UPDATE_USER3);
+			psmt.setString(1, dto.getName());
+			psmt.setString(2, dto.getHp());
+			psmt.setInt(3, dto.getAge());
+			psmt.setString(4, dto.getUid());
+			psmt.executeUpdate();
+			
+			close();
 		} catch (Exception e) {
 			logger.error("User3DAO updateUser3 error : " + e.getMessage());
 		}
 	}
 	
 	public void deleteUser3(String uid) {
-		logger.info("User3DAO deleteUser3...1");
 		try {
+			logger.info("User3DAO deleteUser3...1");
+			
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.DELETE_USER3);
+			psmt.setString(1, uid);
+			psmt.executeUpdate();
 			
+			close();
+			logger.info("User3DAO deleteUser3...2");
 		} catch (Exception e) {
 			logger.error("User3DAO deleteUser3 error : " + e.getMessage());
 		}

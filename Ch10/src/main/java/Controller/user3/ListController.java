@@ -1,21 +1,23 @@
 package Controller.user3;
 
 import java.io.IOException;
+import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import dto.User3DTO;
+import service.User3Service;
 
 @WebServlet("/user3/list.do")
 public class ListController extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
-	private Logger logger = LoggerFactory.getLogger(getClass());
+	private User3Service service = new User3Service();
 	
 	@Override
 	public void init() throws ServletException {
@@ -24,6 +26,12 @@ public class ListController extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		List<User3DTO> user3s = service.selectUser3s();
+		req.setAttribute("user3s", user3s);
+		
+		RequestDispatcher dispatcher = req.getRequestDispatcher("/user3/list.jsp");
+		dispatcher.forward(req, resp);
 		
 	}
 	
