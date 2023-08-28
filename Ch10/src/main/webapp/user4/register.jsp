@@ -11,6 +11,7 @@
 		<a href="/Ch10/user4/list.do">User4 목록</a>
 		
 		<form action="/Ch10/user4/register.do" method="post">
+		<input type="hidden" name="seq">
 			<table border="1">
 				<tr>
 					<td>이름</td>

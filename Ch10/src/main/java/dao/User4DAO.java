@@ -32,10 +32,12 @@ public class User4DAO extends DBHelper{
 			logger.error("User4DAO insertUser4s error : " + e.getMessage());
 		}
 	}
+	
 	public User4DTO selectUser4(String seq) {
 
 		return null;
 	}
+	
 	public List<User4DTO> selectUser4s() {
 		List<User4DTO> user4s = new ArrayList<>();
 		try {
@@ -62,7 +64,9 @@ public class User4DAO extends DBHelper{
 		}
 		return user4s;
 	}
+	
 	public void updateUser4(User4DTO dto) {}
+	
 	public void deleteUser4(String seq) {}
 
 }
