@@ -38,14 +38,12 @@ public class RegisterController extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		logger.info("RegisterController doPost()...1");
 		
-		String seq = req.getParameter("seq");
 		String name = req.getParameter("name");
 		String gender = req.getParameter("gender");
 		String age = req.getParameter("age");
 		String addr = req.getParameter("addr");
 		
 		User4DTO dto = new User4DTO();
-		dto.setSeq(seq);
 		dto.setName(name);
 		dto.setGender(gender);
 		dto.setAge(age);

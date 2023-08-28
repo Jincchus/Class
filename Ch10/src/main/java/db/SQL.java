@@ -15,11 +15,11 @@ public class SQL {
 	
 	// user4
 	public static final String INSERT_USER4 = "INSERT INTO `user4` SET "
-											+ "`seq` =?, "
 											+ "`name` =?, "
 											+ "`gender` =?, "
 											+ "`age` =?, "
 											+ "`addr` =? ";
+	public static final String SELECT_USER4 = "SELECT * FROM `user4` WHERE `seq` =?";
 	public static final String SELECT_USER4S = "SELECT * FROM `user4`";
 	
 	// user5

@@ -18,11 +18,10 @@ public class User4DAO extends DBHelper{
 			logger.info("User4DAO insertUser4...1");
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.INSERT_USER4);
-			psmt.setInt(1, dto.getSeq());
-			psmt.setString(2, dto.getName());
-			psmt.setInt(3, dto.getGender());
-			psmt.setInt(4, dto.getAge());
-			psmt.setString(5, dto.getAddr());
+			psmt.setString(1, dto.getName());
+			psmt.setInt(2, dto.getGender());
+			psmt.setInt(3, dto.getAge());
+			psmt.setString(4, dto.getAddr());
 			psmt.executeUpdate();
 			
 			close();
@@ -34,8 +33,29 @@ public class User4DAO extends DBHelper{
 	}
 	
 	public User4DTO selectUser4(String seq) {
+		User4DTO dto = new User4DTO();
+		try {
+			logger.info("User4DAO selectUser4...1");
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.SELECT_USER4);
+			psmt.setString(1, seq);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				dto.setSeq(rs.getInt(1));
+				dto.setName(rs.getString(2));
+				dto.setGender(rs.getInt(3));
+				dto.setAge(rs.getInt(4));
+				dto.setAddr(rs.getString(5));
+			}
+			close();
+			logger.info("User4DAO selectUser4...2");
+			
+		} catch (Exception e) {
+			logger.error("selectUser4 error : " + e.getMessage());
+		}
 
-		return null;
+		return dto;
 	}
 	
 	public List<User4DTO> selectUser4s() {

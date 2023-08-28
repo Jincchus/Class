@@ -28,8 +28,8 @@
 				<td>${user4.getAge()}</td>
 				<td>${user4.getAddr()}</td>
 				<td>
-					<a href="/Ch10/user4/modify.do?uid=${user4.getSeq() }">수정</a>
-					<a href="/Ch10/user4/delete.do?uid=${user4.getSeq() }">삭제</a>
+					<a href="/Ch10/user4/modify.do?seq=${user4.getSeq() }">수정</a>
+					<a href="/Ch10/user4/delete.do?seq=${user4.getSeq() }">삭제</a>
 				</td>
 			</tr>
 			</c:forEach>
