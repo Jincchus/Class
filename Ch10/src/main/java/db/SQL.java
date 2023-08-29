@@ -21,6 +21,7 @@ public class SQL {
 											+ "`addr` =? ";
 	public static final String SELECT_USER4 = "SELECT * FROM `user4` WHERE `seq` =?";
 	public static final String SELECT_USER4S = "SELECT * FROM `user4`";
+	public static final String DELETE_USER4 = "DELETE FROM `user4` WHERE `seq` =?";
 	
 	// user5
 	

@@ -19,8 +19,7 @@
 				<tr>
 					<td>성별</td>
 					<td>
-						<input type="radio" name="gender" value="1">남
-						<input type="radio" name="gender" value="2">여
+						<input type="text" name="gender" value="${user4.gender}">
 					</td>
 				</tr>
 				<tr>

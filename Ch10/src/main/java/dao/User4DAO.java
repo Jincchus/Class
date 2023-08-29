@@ -87,6 +87,17 @@ public class User4DAO extends DBHelper{
 	
 	public void updateUser4(User4DTO dto) {}
 	
-	public void deleteUser4(String seq) {}
+	public void deleteUser4(String seq) {
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.DELETE_USER4);
+			psmt.setString(1, seq);
+			psmt.executeUpdate();
+			
+			close();
+		} catch (Exception e) {
+			logger.error("User4 deleteUser4 error : "+ e.getMessage());
+		}
+	}
 
 }
