@@ -150,6 +150,28 @@ public class UserDAO extends DBHelper{
 		
 		return result;
 	}
+	public int selectCountUidAndEmail(String uid, String email) {
+		
+		int result = 0;
+		
+		try {
+			conn=getConnection();
+			psmt=conn.prepareStatement(SQL.SELECT_COUNT_UID_EMAIL);
+			psmt.setString(1, uid);
+			psmt.setString(2, email);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getInt(1);
+			}
+			close();
+			
+		} catch (Exception e) {
+			logger.error("selectCountNameAndEmail() error : " + e.getMessage());
+		}
+		
+		return result;
+	}
 		
 	public UserDTO selectUser(String uid, String pass) {
 		UserDTO dto = null;
@@ -185,16 +207,18 @@ public class UserDAO extends DBHelper{
 		
 		return dto;
 	}
-	
+
 	public UserDTO selectUserByNameAndEmail(String name, String email) {
+		
 		UserDTO dto = null;
+		
 		try {
 			conn = getConnection();
-			psmt = conn.prepareStatement(SQL.SELECT_USER);
+			psmt = conn.prepareStatement(SQL.SELECT_USER_BY_NAME_AND_EMAIL);
 			psmt.setString(1, name);
 			psmt.setString(2, email);
-			rs = psmt.executeQuery();
 			
+			rs = psmt.executeQuery();
 			if(rs.next()) {
 				dto = new UserDTO();
 				dto.setUid(rs.getString(1));
@@ -210,12 +234,11 @@ public class UserDAO extends DBHelper{
 				dto.setRegip(rs.getString(11));
 				dto.setRegDate(rs.getString(12));
 				dto.setLeaveData(rs.getString(13));
-				
-			}
-			
+			}			
 			close();
-		} catch (Exception e) {
-			logger.error("UserDAO selectUser() error : " + e.getMessage());
+			
+		}catch (Exception e) {
+			logger.error("selectUserByNameAndEmail() error : " + e.getMessage());
 		}
 		
 		return dto;
@@ -226,11 +249,67 @@ public class UserDAO extends DBHelper{
 	}
 	
 	public void updateUser(UserDTO dto) {
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.UPDATE_USER);
+			psmt.setString(1, dto.getName());
+			psmt.setString(2, dto.getNick());
+			psmt.setString(3, dto.getEmail());
+			psmt.setString(4, dto.getHp());
+			psmt.setString(5, dto.getZip());
+			psmt.setString(6, dto.getAddr1());
+			psmt.setString(7, dto.getAddr2());
+			psmt.setString(8, dto.getUid());
+			psmt.executeUpdate();
+			close();
+			
+		} catch (Exception e) {
+			logger.error("updateUser error : "+e.getMessage());
+		}
 		
 	}
 	
-	public void deleteUser(String uid) {
+	public int updateUserPass(String uid, String pass) {
+		int result = 0;
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.UPDATE_USER_PASS);
+			psmt.setString(1, pass);
+			psmt.setString(2, uid);
+			result = psmt.executeUpdate();
+			
+			close();
+			
+		} catch (Exception e) {
+			logger.error("updateUserPass error : "+e.getMessage());
+		}
+		return result;
+	}
+	
+	public int updateUserForWithdraw(String uid) {
 		
+		int result = 0;
+		
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.UPDATE_USER_FOR_WITHDRAW);
+			psmt.setString(1, uid);
+			result = psmt.executeUpdate();
+			close();
+		} catch (Exception e) {
+			logger.error("deleteUser() error : " + e.getMessage());
+		}
+		
+		return result;
+	}
+	public void deleteUser(String uid) {
+		try {
+			conn = getConnection();
+			//psmt = conn.prepareStatement(SQL.DELETE_USER);
+			
+		} catch (Exception e) {
+			logger.error("deleteUser() error : " + e.getMessage());
+		}
 	}
 	
 }
