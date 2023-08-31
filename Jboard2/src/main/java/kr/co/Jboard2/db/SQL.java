@@ -57,6 +57,7 @@ public class SQL {
 											  + "`writer` =?, "
 											  + "`regip` =?, "
 											  + "`rdate` = NOW()";
+	public static final String SELECT_MAX_NO = "SELECT MAX(`no`) FROM `Article`";
 	public static final String SELECT_ARTICLE = "SELECT * FROM `Article` WHERE `no` = ?";
 	public static final String SELECT_ARTICLES = "SELECT * FROM `Article`";
 	public static final String SELECT_ARTICLES_JOIN = "SELECT "
@@ -71,6 +72,13 @@ public class SQL {
 	public static final String SELECT_COUNT_TOTAL = "SELECT COUNT(*) FROM `Article` WHERE `parent` = 0"; 
 	public static final String UPDATE_ARTICLE = "UPDATE `Article` SET `title`=?, `Content`=? WHERE `no`=?";
 	public static final String DELETE_ARTICLE = "DELETE FROM `Article` WHERE `no` = ? OR `parent`=?";
+	
+	// File
+	public static final String INSERT_FILE = "INSERT INTO `File` SET "
+											+ "`ano`=?,"
+											+ "`ofile`=?,"
+											+ "`sfile`=?,"
+											+ "`rdate`=NOW()";
 	
 	// Comment
 	public static final String INSERT_COMMENT = "INSERT INTO `Article` set "
