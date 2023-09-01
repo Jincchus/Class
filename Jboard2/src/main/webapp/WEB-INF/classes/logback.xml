@@ -53,7 +53,7 @@
   
 	
   
-	<root level="info">					<!-- 레벨 / 배포시에는 error, 개발시 info로 조절 -->
+	<root level="debug">					<!-- 레벨 / 배포시에는 error, 개발시 info로 조절 -->
 		<appender-ref ref="STDOUT" />	--> <!-- 콘솔 출력, 배포시 주석처리 -->
 		<!-- <appender-ref ref="ROLLING_DAILY" /> -->		<!-- 파일 출력 -->
 	</root>
