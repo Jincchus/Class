@@ -5,7 +5,7 @@
 	$(function(){
 		
 		// 댓글 삭제(동적 생성 이벤트 구현)
-		$(document).on( 'click', '.remove',function(e){
+		$(document).on( 'click', '.remove',function(e)
 			e.preventDefault();
 			
 			//alert('클릭!');
@@ -59,14 +59,14 @@
 					if(data.no > 0){
 						alert('댓글이 등록되었습니다.');
 						
-						$('#fromComment > textarea[name=content]').val(''); // 댓글 등록 후 textarea 초기화
+						$('#formComment > textarea[name=content]').val(''); // 댓글 등록 후 textarea 초기화
 						
 						// 동적 화면 생성
 						const dt    = new Date();
 						const year  = dt.getFullYear().toString().substr(2,4);
 						const month = (dt.getMonth() + 1).toString().padStart(2, '0'); 
                         const date  = dt.getDate().toString().padStart(2, '0');
-						const now   =year+"-"+month+"-"+date;
+						const now   = year+"-"+month+"-"+date;
 						
 						const article = `<article>
 											<span class='nick'> ${sessUser.nick} </span>
