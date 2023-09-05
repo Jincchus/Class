@@ -4,11 +4,11 @@
 	const success = ${success};
 	if(success == 100){
 		alert('아이디와 비밀번호를 다시 확인하십시오.');
-	}esls if(success =200){
+	}else if(succcess =200){
 		alert('정상적으로 로그아웃 되었습니다.');
-	}esle if(sucess = 300){
+	}else if(success = 300){
 		alert('비밀번호가 성공적으로 변경되었습니다. 다시 로그인 하시기 바랍니다.')
-	}esle if(sucess = 400){
+	}else if(success = 400){
 		alert('회원정보가 성공적으로 변경되었습니다. 다시 로그인 하시기 바랍니다.')
 	}
 </script>

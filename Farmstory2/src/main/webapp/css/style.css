@@ -6,6 +6,7 @@
 }
 ul, ol {list-style: none;}
 a {text-decoration: none; color: #111;}
+textarea {outline: none;}
 
 #container {
     width: 980px;

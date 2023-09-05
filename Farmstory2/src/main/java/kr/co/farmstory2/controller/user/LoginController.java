@@ -25,6 +25,10 @@ public class LoginController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String success = req.getParameter("success");
+		req.setAttribute("success", success);
+		
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/user/login.jsp");
 		dispatcher.forward(req, resp);
 	}
@@ -33,8 +37,12 @@ public class LoginController extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String uid = req.getParameter("uid");
 		String pass = req.getParameter("pass");
+		logger.debug("uid : "+uid);
+		logger.debug("pass : "+pass);
+		
 		
 		UserDTO user = service.selectUser(uid, pass);
+		logger.debug("user : "+user);
 		
 		if(user != null) {
 			// 현재 세션 구하기
@@ -45,6 +53,8 @@ public class LoginController extends HttpServlet{
 			
 			// 리다이렉트
 			resp.sendRedirect("/Farmstory2");
+			
+			logger.debug("controller dto : " + user);
 		}else {
 			// 리다이렋트
 			resp.sendRedirect("/Farmstory2/user/login.do?success=100");

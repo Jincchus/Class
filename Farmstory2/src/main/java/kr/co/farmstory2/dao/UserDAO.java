@@ -96,13 +96,14 @@ public class UserDAO extends DBHelper{
 	}
 
 	public UserDTO selectUser(String uid, String pass) {
-		UserDTO dto = new UserDTO();
+		UserDTO dto = null;
 		try {
 			conn = getConnection();
 			psmt = conn.prepareStatement(SQL.SELECT_USER);
 			psmt.setString(1, uid);
 			psmt.setString(2, pass);
 			rs = psmt.executeQuery();
+			
 			
 			if(rs.next()) {
 				dto = new UserDTO();
@@ -120,6 +121,7 @@ public class UserDAO extends DBHelper{
 				dto.setRegDate(rs.getString(12));
 				dto.setLeaveData(rs.getString(13));
 			}
+			logger.debug(""+dto);
 			
 			close();
 		} catch (Exception e) {

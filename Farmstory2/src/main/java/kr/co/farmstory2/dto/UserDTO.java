@@ -92,6 +92,14 @@ public class UserDTO {
 	public void setLeaveData(String leaveData) {
 		this.leaveData = leaveData;
 	}
+	@Override
+	public String toString() {
+		return "UserDTO [uid=" + uid + ", pass=" + pass + ", name=" + name + ", nick=" + nick + ", email=" + email
+				+ ", hp=" + hp + ", role=" + role + ", zip=" + zip + ", addr1=" + addr1 + ", addr2=" + addr2
+				+ ", regip=" + regip + ", regDate=" + regDate + ", leaveData=" + leaveData + "]";
+	}
+	
+	
 	
 	
 }

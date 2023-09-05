@@ -6,7 +6,8 @@
 			<section class="write">
 			    <h3>글쓰기</h3>
 			    <article>
-			        <form action="#" method="post">
+			        <form action="${ctxPath}/board/write.do" method="post" enctype="multipart/form-data">
+			        	<input type="hidden" name="writer" value="${sessUser.uid}">
 			            <table>
 			                <tr>
 			                    <td>제목</td>

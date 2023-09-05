@@ -17,6 +17,24 @@ public class ArticleDTO {
 	private String writer;
 	private String regip;
 	private String rdate;
+	
+	// 추가 필드
+	private String nick;
+	private FileDTO fileDto;
+	
+	public String getNick() {
+		return nick;
+	}
+	public void setNick(String nick) {
+		this.nick = nick;
+	}
+	public FileDTO getFileDto() {
+		return fileDto;
+	}
+	public void setFileDto(FileDTO fileDto) {
+		this.fileDto = fileDto;
+	}
+	
 	public int getNo() {
 		return no;
 	}
@@ -28,6 +46,9 @@ public class ArticleDTO {
 	}
 	public void setParent(int parent) {
 		this.parent = parent;
+	}
+	public void setParent(String parent) {
+		this.parent = Integer.parseInt(parent);
 	}
 	public int getComment() {
 		return comment;
@@ -59,6 +80,13 @@ public class ArticleDTO {
 	public void setFile(int file) {
 		this.file = file;
 	}
+	public void setFile(String oriName) {
+		if(oriName != null) {
+			this.file = 1;
+		} else {
+			this.file = 0;
+		}
+	}
 	public int getHit() {
 		return hit;
 	}
@@ -82,6 +110,12 @@ public class ArticleDTO {
 	}
 	public void setRdate(String rdate) {
 		this.rdate = rdate;
+	}
+	@Override
+	public String toString() {
+		return "ArticleDTO [no=" + no + ", parent=" + parent + ", comment=" + comment + ", cate=" + cate + ", title="
+				+ title + ", content=" + content + ", file=" + file + ", hit=" + hit + ", writer=" + writer + ", regip="
+				+ regip + ", rdate=" + rdate + ", nick=" + nick + "]";
 	}
 	
 	

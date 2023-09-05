@@ -10,15 +10,15 @@ import kr.co.farmstory2.dto.OrderDTO;
 
 public class OrderDAO extends DBHelper{
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
-	public void insertUser(OrderDTO dto) {}
-	public OrderDTO selectUser(int orderNo) {
+	public void insertOrder(OrderDTO dto) {}
+	public OrderDTO selectOrder(int orderNo) {
 		return null;
 	}
-	public List<OrderDTO> selectUsers() {
+	public List<OrderDTO> selectOrders() {
 		return null;
 	}
-	public void updateUser(OrderDTO dto) {}
-	public void deleteUser(int orderNo) {}
+	public void updateOrder(OrderDTO dto) {}
+	public void deleteOrder(int orderNo) {}
 	
 
 }

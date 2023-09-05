@@ -14,10 +14,10 @@ public class ProductDAO extends DBHelper{
 	public ProductDTO selectProduct(int pNo) {
 		return null;
 	}
-	public List<ProductDTO> selectUsers() {
+	public List<ProductDTO> selectProducts() {
 		return null;
 	}
-	public void updateUser(ProductDTO dto) {}
-	public void deleteUser(int pNo) {}
+	public void updateProduct(ProductDTO dto) {}
+	public void deleteProduct(int pNo) {}
 	
 }

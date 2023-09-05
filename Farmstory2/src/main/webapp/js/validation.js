@@ -23,7 +23,7 @@ $(function(){
 	
 	// 아이디 검사
 	$('input[name=uid]').keydown(function(){
-		$('.uidResult').text('');
+		$('.resultId').text('');
 		isUidOk = false;
 	});
 	
@@ -36,15 +36,15 @@ $(function(){
 		if(pass1 == pass2){
 			
 			if(pass2.match(rePass)){
-				$('.passResult').css('color','green').text('사용 가능한 비밀번호입니다.');
+				$('.resultPass').css('color','green').text('사용 가능한 비밀번호입니다.');
 				isPassOk = true;
 			}else{
-				$('.passResult').css('color','red').text('사용할 수 없는 비밀번호입니다.');
+				$('.resultPass').css('color','red').text('사용할 수 없는 비밀번호입니다.');
 				isPassOk = false;
 			}
 			
 		}else{
-			$('.passResult').css('color','red').text('비밀번호가 일치하지 않습니다.');
+			$('.resultPass').css('color','red').text('비밀번호가 일치하지 않습니다.');
 			isPassOk = false;
 		}
 	});
@@ -54,17 +54,17 @@ $(function(){
 		const name = $(this).val();
 		
 		if(name.match(reName)){
-			$('.nameResult').text('');
+			$('.resultName').text('');
 			isNameOk = true;
 		}else{
-			$('.nameResult').css('color','red').text('유효하지 않은 이름입니다.');
+			$('.resultName').css('color','red').text('유효하지 않은 이름입니다.');
 			isNameOk = false;
 		}
 	});
 	
 	// 별명 검사
 	$('input[name=nick]').keydown(function(){
-		$('.nickResult').text('');
+		$('.resultNick').text('');
 		isNickOk = false;
 	});
 	
