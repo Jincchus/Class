@@ -3,6 +3,7 @@ package kr.co.farmstory2.controller.board;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,20 +36,21 @@ public class DeleteController extends HttpServlet{
 		FileDTO dto = new FileDTO();
 		
 		// 파일 삭제 (DB)
-		int result = fService.deleteFile(no);
+		List<String> newNames = fService.deleteFile(no);
 		
 		// 글 + 댓글 삭제
 		aService.deleteArticle(no);
 		
 		// 파일 삭제(Directory)
-		if(result > 0) {
-			String path = aService.getFilePath(req);
-			File file = new File(path+"/"+dto.getNewName());
-			if(file.exists()) {
-				file.delete();
-			}
+		if(!newNames.isEmpty()) {
+			String path = aService.getFilePath(req, "/upload");
 			
-			logger.debug(""+file);
+			for(String newName : newNames) {
+				File file = new File(path+"/"+newName);
+				if(file.exists()) {
+					file.delete();
+				}
+			}
 		}
 		
 		

@@ -50,11 +50,14 @@ public enum ArticleService {
 	}
 	
 	/* 댓글 */
-	public int insertComment(ArticleDTO dto) {
+	public ArticleDTO insertComment(ArticleDTO dto) {
 		return dao.insertComment(dto);
 	}
 	public List<ArticleDTO> selectComments(String parent) {
 		return dao.selectComments(parent);
+	}
+	public int updateComment(String no, String content) {
+		return dao.updateComment(no, content);
 	}
 	public int deleteComment(String no) {
 		return dao.deleteComment(no);
@@ -62,15 +65,14 @@ public enum ArticleService {
 	
 	/* 파일 */
 	// 파일 업로드 경로
-	public String getFilePath(HttpServletRequest req) {
+	public String getFilePath(HttpServletRequest req, String dir) {
 		ServletContext ctx = req.getServletContext();
-		String path = ctx.getRealPath("/upload");
+		String path = ctx.getRealPath(dir);
 		
 		return path;
 	}
 	// 파일명 수정
-	public String renameToFile(HttpServletRequest req, String oriName) {
-		String path = getFilePath(req);
+	public String renameToFile(HttpServletRequest req, String path ,String oriName) {
 		
 		int i = oriName.lastIndexOf(".");
 		String ext = oriName.substring(i);
@@ -87,10 +89,7 @@ public enum ArticleService {
 		return newName;
 	}
 	// 파일 업로드
-	public MultipartRequest uploadFile(HttpServletRequest req) {
-		// 파일 경로 구하기
-		String path = getFilePath(req);
-		
+	public MultipartRequest uploadFile(HttpServletRequest req, String path) {
 		// 최대 업로드 파일 크기
 		int maxSize = 1024 * 1024 * 10 ;
 		
@@ -114,7 +113,7 @@ public enum ArticleService {
 		resp.setHeader("Cache-Control", "private");
 		
 		// response 파일 스트림 작업
-		String path = getFilePath(req);
+		String path = getFilePath(req,"/upload");
 		logger.debug("path" + path);
 		File file = new File(path+"/"+dto.getNewName());
 		

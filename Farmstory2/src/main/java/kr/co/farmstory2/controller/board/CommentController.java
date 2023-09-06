@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 import kr.co.farmstory2.dto.ArticleDTO;
@@ -25,16 +26,23 @@ public class CommentController extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String kind = req.getParameter("kind");
-		String no = req.getParameter("no");
+		String type    = req.getParameter("type");
+		String no      = req.getParameter("no");
+		String content = req.getParameter("content");
+		
+		logger.debug("type : " + type);
+		logger.debug("no : " + no);
 		
 		int result = 0;
-		
-		switch(kind) {
-			case "DELETE" :
+		switch(type) {
+			case "REMOVE":
 				result = service.deleteComment(no);
 				break;
+			case "MODIFY":
+				result = service.updateComment(no, content);
+				break;
 		}
+		
 		
 		// JSON 출력
 		JsonObject json = new JsonObject();
@@ -60,11 +68,12 @@ public class CommentController extends HttpServlet{
 		dto.setRegip(regip);
 		
 		// 댓글 입력
-		int no = service.insertComment(dto);
+		ArticleDTO comment = service.insertComment(dto);
 		
 		// Json 출력(AJAX 요청)
-		JsonObject json = new JsonObject();
-		json.addProperty("no", no);
-		resp.getWriter().print(json);
+		resp.setContentType("application/json;charset=UTF-8"); // <-- 이거해야 클라이언트로 전송되는 JSON 한글 안깨짐
+		Gson gson = new Gson();
+		String strJson =  gson.toJson(comment);
+		resp.getWriter().print(strJson);
 	}
 }

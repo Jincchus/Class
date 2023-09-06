@@ -32,6 +32,10 @@ public class SQL {
 												+ "`regip` = ?, "
 												+ "`rdate` = NOW()";
 	public static final String SELECT_MAX_NO = "SELECT MAX(`no`) FROM `Article`";
+
+	public final static String SELECT_LATESTS = "SELECT `no`, `title`, `rdate` FROM `Article` "
+												+ "WHERE `parent`=0 AND `cate`=? "
+												+ "Order BY `no` DESC LIMIT ?";
 	public static final String SELECT_ARTICLE = "SELECT * FROM `Article` AS a "
 												+ "LEFT JOIN `File` AS b "
 												+ "ON a.`no` = b.`ano` "
@@ -62,6 +66,14 @@ public class SQL {
 												+ "JOIN `User` AS b "
 												+ "ON a.writer = b.uid "
 												+ "WHERE `parent` = ?";
+	public final static String SELECT_COMMENT_LATEST = "SELECT "
+													+ "a.*, "
+													+ "b.`nick` "
+													+ "FROM `Article` AS a "
+													+ "JOIN `User` AS b ON a.writer = b.uid "
+													+ "WHERE `parent`!=0 "
+													+ "ORDER BY `no` DESC LIMIT 1"; 
+	public final static String UPDATE_COMMENT = "UPDATE `Article` SET `content`=? WHERE `no`=?";
 	public static final String DELETE_COMMENT = "DELETE FROM `Article` WHERE `no` = ?";
 	
 	// File
@@ -71,5 +83,6 @@ public class SQL {
 											+ "`newName` =?, " 
 											+ "`rdate` =NOW() "; 
 	public static final String SELECT_FILE = "SELECT * FROM `File` WHERE `fno` = ?";
+	public static final String SELECT_FILE_NEWNAMES = "SELECT `newName` FROM `File` WHERE `ano` = ? ";
 	public static final String DELETE_FILE = "DELETE FROM `File` WHERE `ano` = ?";
 }

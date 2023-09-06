@@ -27,14 +27,12 @@ public class WriteController extends HttpServlet{
 	private ArticleService aService = ArticleService.INSTANCE;
 	private FileService fService = FileService.INSTANCE;
 	
-	String group = null;
-	String cate = null;
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		group = req.getParameter("group");
-		cate = req.getParameter("cate");
+		String group = req.getParameter("group");
+		String cate = req.getParameter("cate");
 		
 		logger.debug("group : " + group);
 		logger.debug("cate : " + cate);
@@ -49,14 +47,17 @@ public class WriteController extends HttpServlet{
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		MultipartRequest mr = aService.uploadFile(req);
+		String path = aService.getFilePath(req, "/upload");
+		MultipartRequest mr = aService.uploadFile(req, path);
 		
 		logger.debug("mr : " + mr);
 		
 		// 폼 데이터 수신
-		String title = mr.getParameter("title");
+		String group   = mr.getParameter("group");
+		String cate   = mr.getParameter("cate");
+		String title   = mr.getParameter("title");
 		String content = mr.getParameter("content");
-		String writer = mr.getParameter("writer");
+		String writer  = mr.getParameter("writer");
 		String oriName = mr.getOriginalFileName("file");
 		String regip = req.getRemoteAddr();
 		
@@ -75,7 +76,7 @@ public class WriteController extends HttpServlet{
 		
 		// 파일명 수정 및 파일 Insert
 		if(oriName != null) {
-			String newName = aService.renameToFile(req, oriName);
+			String newName = aService.renameToFile(req, path ,oriName);
 			
 			// 파일 테이블 Insert
 			FileDTO fileDto = new FileDTO();
