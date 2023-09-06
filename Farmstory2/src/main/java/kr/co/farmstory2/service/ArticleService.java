@@ -42,8 +42,12 @@ public enum ArticleService {
 		return dao.selectArticles(cate, start);
 	}
 	
-	public void updateArticle(ArticleDTO dto) {}
-	public void deleteArticle(int no) {}
+	public void updateArticle(ArticleDTO dto) {
+		dao.updateArticle(dto);
+	}
+	public void deleteArticle(String no) {
+		dao.deleteArticle(no);
+	}
 	
 	/* 댓글 */
 	public int insertComment(ArticleDTO dto) {

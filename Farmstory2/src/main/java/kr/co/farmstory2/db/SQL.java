@@ -45,6 +45,8 @@ public class SQL {
 													+ "ORDER BY `no` DESC "
 													+ "LIMIT ?, 10";
 	public static final String SELECT_COUNT_TOTAL = "SELECT COUNT(*) FROM `Article` WHERE `parent` = 0 AND `cate` = ?";
+	public static final String UPDATE_ARTICLE = "UPDATE `Article` SET `title` =?, `content` =? WHERE `no` =?";
+	public static final String DELETE_ARTICLE = "DELETE FROM `Article` WHERE `no` =? OR `parent` =?";
 	
 	// Comment
 	public static final String INSERT_COMMENT = "INSERT INTO `Article` set "
@@ -69,4 +71,5 @@ public class SQL {
 											+ "`newName` =?, " 
 											+ "`rdate` =NOW() "; 
 	public static final String SELECT_FILE = "SELECT * FROM `File` WHERE `fno` = ?";
+	public static final String DELETE_FILE = "DELETE FROM `File` WHERE `ano` = ?";
 }

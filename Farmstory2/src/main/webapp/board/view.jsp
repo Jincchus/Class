@@ -106,8 +106,8 @@
 			        </tr>
 			    </table>
 			    <div>
-			        <a href="#" class="btnDelete">삭제</a>
-			        <a href="#" class="btnModify">수정</a>
+			        <a href="./delete.do?group=${group}&cate=${cate}&no=${article.no}" class="btnDelete">삭제</a>
+			        <a href="./modify.do?group=${group}&cate=${cate}&no=${article.no}" class="btnModify">수정</a>
 			        <a href="#" class="btnList">목록</a>
 			    </div>
 			    
@@ -125,7 +125,7 @@
 						<div>
 							<a href="#" class="del" data-no="${comment.no }">삭제</a>
 							<a href="./list.do?group=${group}&cate=${cate}" class="can">취소</a>
-							<a href="./modify.do?group=${group}&cate=${cate}" class="mod">수정</a>
+							<a href="./modify.do?group=${group}&cate=${cate}&no=${comment.no}" class="mod">수정</a>
 						</div>                
 			        </article>
 			        </c:forEach>

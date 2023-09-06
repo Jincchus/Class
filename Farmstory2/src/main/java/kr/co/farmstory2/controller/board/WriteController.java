@@ -60,13 +60,9 @@ public class WriteController extends HttpServlet{
 		String oriName = mr.getOriginalFileName("file");
 		String regip = req.getRemoteAddr();
 		
-		logger.debug("title : " + title);
-		logger.debug("content : " + content);
-		logger.debug("writer : " + writer);
-		logger.debug("oriName : " + oriName);
-		logger.debug("regip : " + regip);
-		
 		ArticleDTO dto = new ArticleDTO();
+
+		logger.debug(dto.toString());
 		
 		dto.setCate(cate);
 		dto.setTitle(title);

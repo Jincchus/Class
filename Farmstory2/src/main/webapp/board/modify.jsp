@@ -8,12 +8,12 @@
 			            <table>
 			                <tr>
 			                    <td>제목</td>
-			                    <td><input type="text" name="title" value="제목" placeholder="제목을 입력하세요."/></td>
+			                    <td><input type="text" name="title" placeholder="${article.title }"/></td>
 			                </tr>
 			                <tr>
 			                    <td>내용</td>
 			                    <td>
-			                        <textarea name="content">내용</textarea>
+			                        <textarea name="content">${article.content }</textarea>
 			                    </td>
 			                </tr>
 			                <tr>
