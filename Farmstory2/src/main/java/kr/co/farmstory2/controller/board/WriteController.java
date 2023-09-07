@@ -72,6 +72,7 @@ public class WriteController extends HttpServlet{
 		dto.setFile(oriName);
 		dto.setRegip(regip);
 
+		logger.debug(dto.toString());
 		int no = aService.insertArticle(dto);
 		
 		// 파일명 수정 및 파일 Insert
@@ -89,6 +90,7 @@ public class WriteController extends HttpServlet{
 			fService.insertFile(fileDto);
 		}
 		
+		logger.debug("group : " + group+", cate : " +cate);
 		resp.sendRedirect("/Farmstory2/board/list.do?group=" + group + "&cate=" + cate);
 		
 	}

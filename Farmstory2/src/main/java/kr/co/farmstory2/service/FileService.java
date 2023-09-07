@@ -22,7 +22,9 @@ public enum FileService {
 	public List<FileDTO> selectFiles() {
 		return null;
 	}
-	public void updateFile(FileDTO dto) {}
+	public void updateFile(FileDTO dto) {
+		dao.updateFile(dto);
+	}
 	public List<String> deleteFile(String ano) {
 		return dao.deleteFile(ano);
 	}

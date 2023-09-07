@@ -8,6 +8,8 @@
 			    <article>
 			        <form action="${ctxPath}/board/write.do" method="post" enctype="multipart/form-data">
 			        	<input type="hidden" name="writer" value="${sessUser.uid}">
+			        	<input type="hidden" name="group" value="${group}">
+			        	<input type="hidden" name="cate" value="${cate}">
 			            <table>
 			                <tr>
 			                    <td>제목</td>

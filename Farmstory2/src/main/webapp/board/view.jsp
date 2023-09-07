@@ -4,7 +4,7 @@
 <script>
 window.onload = function(){
 	
-	const commentURL = "/Farmstory2/board/comment.do";	
+	const commentURL = "/Farmstory2/comment.do";	
 	const formComment = document.getElementById('formComment');
 	const commentList = document.getElementsByClassName('commentList')[0];
 	
@@ -240,8 +240,8 @@ window.onload = function(){
 			    <section class="commentForm">
 			        <h3>댓글쓰기</h3>
 			        <form id="formComment" action="#" method="post">
-			        <input type="text" name="parent" value="${no }">
-			        <input type="text" name="writer" value="${sessUser.uid}">
+			        <input type="hidden" name="parent" value="${no }">
+			        <input type="hidden" name="writer" value="${sessUser.uid}">
 			            <textarea name="content"></textarea>
 			            <div>
 			                <a href="#" class="btnCancel">취소</a>

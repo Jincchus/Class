@@ -84,5 +84,33 @@ public class SQL {
 											+ "`rdate` =NOW() "; 
 	public static final String SELECT_FILE = "SELECT * FROM `File` WHERE `fno` = ?";
 	public static final String SELECT_FILE_NEWNAMES = "SELECT `newName` FROM `File` WHERE `ano` = ? ";
+	public static final String UPDATE_FILE = "UPDATE `File` set " 
+											+"`oriName` =?, "
+											+"`newName` =?, "
+											+"`rdate` =NOW() "
+											+"WHERE `fno` =? ";
 	public static final String DELETE_FILE = "DELETE FROM `File` WHERE `ano` = ?";
+	
+	// Admin / Product
+	public static final String INSERT_PRODUCT = "INSERT INTO `Product` SET "
+												+ "`type` = ?, "
+												+ "`pName` = ?, "
+												+ "`price` = ?, "
+												+ "`delivery` = ?, "
+												+ "`stock` = ?, "
+												+ "`sold` = ?, "
+												+ "`thumb1` = ?, "
+												+ "`thumb2` = ?, "
+												+ "`thumb3` = ?, "
+												+ "`seller` = ?, "
+												+ "`etc` = ?, "
+												+ "`rdate` = NOW() ";
+	public static final String SELECT_PRODUCTS = "SELECT * FROM `Product`";
+	public final static String SELECT_PRODUCTS_ALL = "SELECT * FROM `Product` WHERE `stock` > 0 LIMIT ?, 10";
+	public final static String SELECT_PRODUCTS_TYPE = "SELECT * FROM `Product` WHERE `stock` > 0 AND `type`=? LIMIT ?, 10";
+	public final static String SELECT_COUNT_PRODUCTS_ALL = "SELECT COUNT(*) FROM `Product` WHERE `stock` > 0";
+	public final static String SELECT_COUNT_PRODUCTS_TYPE = "SELECT COUNT(*) FROM `Product` WHERE `stock` > 0 AND `type`=?";
+	
+
+	
 }
