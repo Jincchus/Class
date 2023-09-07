@@ -39,7 +39,7 @@ public class ModifyController extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
 		String no = req.getParameter("no");
-		String title = req.getParameter("uid");
+		String title = req.getParameter("title");
 		String file = req.getParameter("");
 		String content = req.getParameter("content");
 		
