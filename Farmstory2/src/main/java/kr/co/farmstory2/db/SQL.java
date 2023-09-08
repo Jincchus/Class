@@ -66,14 +66,14 @@ public class SQL {
 												+ "JOIN `User` AS b "
 												+ "ON a.writer = b.uid "
 												+ "WHERE `parent` = ?";
-	public final static String SELECT_COMMENT_LATEST = "SELECT "
+	public static final String SELECT_COMMENT_LATEST = "SELECT "
 													+ "a.*, "
 													+ "b.`nick` "
 													+ "FROM `Article` AS a "
 													+ "JOIN `User` AS b ON a.writer = b.uid "
 													+ "WHERE `parent`!=0 "
 													+ "ORDER BY `no` DESC LIMIT 1"; 
-	public final static String UPDATE_COMMENT = "UPDATE `Article` SET `content`=? WHERE `no`=?";
+	public static final String UPDATE_COMMENT = "UPDATE `Article` SET `content`=? WHERE `no`=?";
 	public static final String DELETE_COMMENT = "DELETE FROM `Article` WHERE `no` = ?";
 	
 	// File
@@ -105,12 +105,28 @@ public class SQL {
 												+ "`seller` = ?, "
 												+ "`etc` = ?, "
 												+ "`rdate` = NOW() ";
+	public static final String SELECT_PRODUCT = "SELECT * FROM `Product` WHERE `pNo` =?";
 	public static final String SELECT_PRODUCTS = "SELECT * FROM `Product`";
-	public final static String SELECT_PRODUCTS_ALL = "SELECT * FROM `Product` WHERE `stock` > 0 LIMIT ?, 10";
-	public final static String SELECT_PRODUCTS_TYPE = "SELECT * FROM `Product` WHERE `stock` > 0 AND `type`=? LIMIT ?, 10";
-	public final static String SELECT_COUNT_PRODUCTS_ALL = "SELECT COUNT(*) FROM `Product` WHERE `stock` > 0";
-	public final static String SELECT_COUNT_PRODUCTS_TYPE = "SELECT COUNT(*) FROM `Product` WHERE `stock` > 0 AND `type`=?";
+	public static final String SELECT_PRODUCTS_ALL = "SELECT * FROM `Product` WHERE `stock` > 0 LIMIT ?, 10";
+	public static final String SELECT_PRODUCTS_TYPE = "SELECT * FROM `Product` WHERE `stock` > 0 AND `type`=? ORDER BY `no` DESC LIMIT ?, 10";
+	public static final String SELECT_COUNT_PRODUCTS_ALL = "SELECT COUNT(*) FROM `Product` WHERE `stock` > 0";
+	public static final String SELECT_COUNT_PRODUCTS_TYPE = "SELECT COUNT(*) FROM `Product` WHERE `stock` > 0 AND `type`=?";
 	
+	// Order
+	public static final String INSERT_ORDER = "INSERT INTO `Order` SET "
+											+ "`orderProduct`=?, "
+											+ "`orderCount`=?, "
+											+ "`orderDelivery`=?, "
+											+ "`orderPrice`=?, "
+											+ "`orderTotal`=?, "
+											+ "`receiver`=?, "
+											+ "`hp`=?, "
+											+ "`zip`=?, "
+											+ "`addr1`=?, "
+											+ "`addr2`=?, "
+											+ "`orderEtc`=?, "
+											+ "`orderUser`=?, "
+											+ "`orderDate`=NOW()";
 
 	
 }

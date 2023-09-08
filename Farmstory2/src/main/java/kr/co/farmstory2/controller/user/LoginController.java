@@ -45,12 +45,14 @@ public class LoginController extends HttpServlet{
 		logger.debug("user : "+user);
 		
 		if(user != null) {
+			
 			// 현재 세션 구하기
 			HttpSession session = req.getSession();
 
 			// 사용자 세션 설정
 			session.setAttribute("sessUser", user);
 			
+			logger.info("user info : " + user.toString());
 			// 리다이렉트
 			resp.sendRedirect("/Farmstory2");
 			

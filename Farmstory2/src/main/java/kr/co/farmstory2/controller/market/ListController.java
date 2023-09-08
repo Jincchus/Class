@@ -57,7 +57,7 @@ public class ListController extends HttpServlet{
 		// 시작 인덱스
 		int start = aService.getStartNum(currentPage);
 		
-		List<ProductDTO> products =  pService.selectProducts();
+		List<ProductDTO> products =  pService.selectProducts(type, start);
 		logger.debug(products.toString());
 
 		req.setAttribute("type", type);

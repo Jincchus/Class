@@ -121,6 +121,35 @@ public class ArticleDAO extends DBHelper{
 		
 		return articles;
 	}
+	
+	// index
+	public List<ArticleDTO> selectLatest(String cate, int size){
+		List<ArticleDTO> latests = new ArrayList<>();
+		try {
+			conn = getConnection();
+			psmt = conn.prepareStatement(SQL.SELECT_LATESTS);
+			psmt.setString(1, cate);
+			psmt.setInt(2, size);
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				ArticleDTO dto = new ArticleDTO();
+				dto.setNo(rs.getInt("no"));
+				dto.setTitle(rs.getString("title"));
+				dto.setRdate(rs.getString("rdate"));
+				dto.setCate(rs.getString("cate"));
+				
+				latests.add(dto);
+			}
+			
+			close();
+			
+		} catch (Exception e) {
+			logger.error("selectLatest() error : " + e.getMessage());
+		}
+		return latests;
+	}
+	
 	// 댓글
 	public ArticleDTO insertComment(ArticleDTO dto) {
 		try {

@@ -5,8 +5,10 @@
 			<section class="modify">
 			    <h3>글수정</h3>
 			    <article>
-			        <form action="${ctxPath }/admin/productRegister.do" method="post" enctype="multipart/form-data">
-			        
+			        <form action="${ctxPath }/board/modify.do" method="post" enctype="multipart/form-data">
+			        <input type="hidden" name="no" value="${article.no }">
+			        <input type="hidden" name="group" value="${group}">
+			        <input type="hidden" name="cate" value="${cate }">
 			            <table>
 			                <tr>
 			                    <td>제목</td>
@@ -24,9 +26,9 @@
 			                    <td>
 			                    	<c:if test="${article.file > 0}">
 			                    		<input type="text" name="oriName" value="${article.fileDto.oriName }"/>
-			                    		<input type="text" name="oriFno" value="${article.fileDto.fno}">
+			                    		<input type="hidden" name="oriFno" value="${article.fileDto.fno}">
 			                   		</c:if>
-			                    	<input type="file" name="file">
+			                    	<input type="file" name="file" />
 			                    </td>
 			                </tr>
 			            </table>

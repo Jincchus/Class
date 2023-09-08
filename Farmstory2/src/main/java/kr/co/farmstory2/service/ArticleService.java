@@ -49,6 +49,11 @@ public enum ArticleService {
 		dao.deleteArticle(no);
 	}
 	
+	/* index */
+	public List<ArticleDTO> selectLatests(String cate, int size) {
+		return dao.selectLatest(cate, size);
+	}
+	
 	/* 댓글 */
 	public ArticleDTO insertComment(ArticleDTO dto) {
 		return dao.insertComment(dto);

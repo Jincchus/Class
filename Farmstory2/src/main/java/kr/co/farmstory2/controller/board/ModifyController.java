@@ -59,6 +59,7 @@ public class ModifyController extends HttpServlet{
 		String group   = mr.getParameter("group");
 		String cate	   = mr.getParameter("cate");
 		String no	   = mr.getParameter("no");
+		logger.debug("no : " +no);
 		String title   = mr.getParameter("title");
 		String content = mr.getParameter("content");
 		String modName = mr.getOriginalFileName("file"); // 수정할 파일명
@@ -75,12 +76,14 @@ public class ModifyController extends HttpServlet{
 		}
 
 		ArticleDTO dto = new ArticleDTO();
+		logger.debug("dto1 : " +dto.toString());
+		
 		dto.setNo(no);
 		dto.setTitle(title);
 		dto.setContent(content);
 		dto.setFile(file);
 		
-		logger.debug("dto : " +dto);
+		logger.debug("dto2 : " +dto.toString());
 		
 		aService.updateArticle(dto);
 		
@@ -95,8 +98,8 @@ public class ModifyController extends HttpServlet{
 			
 			logger.debug("ff : "+fileDto.toString());
 			if(oriName==null) { // 새로운 파일 첨부시 원래 파일이 없음 그러므로 File insert처리
-				fileDto.setAno(no); // insert하기 위해 article 번호 지정
 				fService.insertFile(fileDto);
+				fileDto.setAno(no); // insert하기 위해 article 번호 지정
 			}else { // 새로운 파일 첨부시 원래 파일이 있어서 update처리
 				fileDto.setFno(fno);
 				fService.updateFile(fileDto);

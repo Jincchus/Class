@@ -17,7 +17,6 @@ import com.google.gson.JsonObject;
 
 import kr.co.farmstory2.service.UserService;
 /*
-
 @WebServlet("/user/authEmail.do")
 public class AuthEmailController extends HttpServlet{
 

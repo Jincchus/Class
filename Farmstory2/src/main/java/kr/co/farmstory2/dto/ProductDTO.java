@@ -3,6 +3,8 @@ package kr.co.farmstory2.dto;
 import java.io.File;
 import java.util.UUID;
 
+import kr.co.farmstory2.etc.Utils;
+
 public class ProductDTO {
 	private int pNo;
 	private int type;
@@ -18,6 +20,15 @@ public class ProductDTO {
 	private String etc;
 	private String rdate;
 	private String path;
+	
+	// 추가 필드
+	private String priceWithComma;
+	public String getPriceWithComma() {
+		return priceWithComma;
+	}
+	public void setPriceWithComma(String priceWithComma) {
+		this.priceWithComma = Utils.comma(priceWithComma);
+	}
 	
 	public ProductDTO() {}
 	public ProductDTO(String path) {
@@ -138,5 +149,20 @@ public class ProductDTO {
 		
 		return sName;
 	}
+	@Override
+	public String toString() {
+		return "ProductDTO [pNo=" + pNo + ", type=" + type + ", pName=" + pName + ", price=" + price + ", delivery="
+				+ delivery + ", stock=" + stock + ", sold=" + sold + ", thumb1=" + thumb1 + ", thumb2=" + thumb2
+				+ ", thumb3=" + thumb3 + ", seller=" + seller + ", etc=" + etc + ", rdate=" + rdate + ", path=" + path
+				+ ", priceWithComma=" + priceWithComma + ", getPriceWithComma()=" + getPriceWithComma() + ", getpNo()="
+				+ getpNo() + ", getType()=" + getType() + ", getpName()=" + getpName() + ", getPrice()=" + getPrice()
+				+ ", getDelivery()=" + getDelivery() + ", getStock()=" + getStock() + ", getSold()=" + getSold()
+				+ ", getThumb1()=" + getThumb1() + ", getThumb2()=" + getThumb2() + ", getThumb3()=" + getThumb3()
+				+ ", getSeller()=" + getSeller() + ", getEtc()=" + getEtc() + ", getRdate()=" + getRdate()
+				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
+				+ "]";
+	}
+	
+	
 	
 }

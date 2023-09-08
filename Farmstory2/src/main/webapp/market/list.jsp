@@ -2,18 +2,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ include file="../_header.jsp" %>
         <div id="sub">
-            <div><img src="../images/sub_top_tit2.png" alt="MARKET"></div>
+            <div><img src="${ctxPath}/images/sub_top_tit2.png" alt="MARKET"></div>
             <section class="market">
                 <aside>
-                    <img src="../images/sub_aside_cate2_tit.png" alt="장보기"/>
+                    <img src="${ctxPath}/images/sub_aside_cate2_tit.png" alt="장보기"/>
 
                     <ul class="lnb">
-                        <li class="on"><a href="./market.html">장보기</a></li>
+                        <li class="on"><a href="${ctxPath}/market.html">장보기</a></li>
                     </ul>
                 </aside>
                 <article class="list">
                     <nav>
-                        <img src="../images/sub_nav_tit_cate2_tit1.png" alt="장보기"/>
+                        <img src="${ctxPath}/images/sub_nav_tit_cate2_tit1.png" alt="장보기"/>
                         <p>
                             HOME > 장보기 > <em>장보기</em>
                         </p>
@@ -21,35 +21,41 @@
 
                     <!-- 내용 시작 -->
                     <p class="sort">
-                        <a href="#" class="on">전체(10) |</a>
-                        <a href="#">과일 |</a>
-                        <a href="#">야채 |</a>
-                        <a href="#">곡류</a>
+                        <a href="./list.do?type=0" class="${tpye==0 ? 'on' : 'off' }">전체<c:if test="${type==0}">(${total})</c:if>&nbsp;|</a>
+                        <a href="./list.do?type=1" class="${tpye==1 ? 'on' : 'off' }">과일<c:if test="${type==1}">(${total})</c:if>&nbsp;|</a>
+                        <a href="./list.do?type=2" class="${tpye==2 ? 'on' : 'off' }">야채<c:if test="${type==2}">(${total})</c:if>&nbsp;|</a>
+                        <a href="./list.do?type=3" class="${tpye==3 ? 'on' : 'off' }">곡류<c:if test="${type==3}">(${total})</c:if>&nbsp;</a>
                     </p>
                     <table border="0">
-                    	<c:forEach var="product" items="${requestScope.products }">
+                    	<c:forEach var="product" items="${products }">
 	                        <tr>
 	                            <td>
-	                                <a href="./view.do?pNo=${product.getpNo()}"><img src="${ctxPath}/rhumb/${product.getThumb1()}" alt="사과 500g"></a>
+	                                <a href="./view.do?pNo=${product.pNo}"><img src="${ctxPath}/thumb/${product.thumb1}" class="thumb" alt="${product.pName }"></a>
 	                            </td>
-	                            <td>과일</td>
-	                            <td><a href="./view.do?pNo=${product.getpNo() }">${product.getpName()}</a></td>
-	                            <td><strong>4,000</strong>원</td>
+	                            <td>
+	                            	<c:choose>
+	                            		<c:when test="${product.type==1 }">과일</c:when>
+	                            		<c:when test="${product.type==2 }">야채</c:when>
+	                            		<c:when test="${product.type==3 }">곡물</c:when>
+	                            	</c:choose>
+	                            </td>
+	                            <td><a href="./view.do?pNo=${product.pNo }">${product.pName}</a></td>
+	                            <td><strong>${product.priceWithComma }</strong>원</td>
 	                        </tr>
                         </c:forEach>
                     </table>
 
-            <div class="paging">
-	        	<c:if test="${pageGroupStart > 1}">
-	            	<a href="${ctxPath}/market/list.do?type=${type}&pg=${pageGroupStart - 1}" class="prev">이전</a>
-	            </c:if>
-	            <c:forEach var="i" begin="${pageGroupStart}" end="${pageGroupEnd}">
-	            	<a href="${ctxPath}/market/list.do?type=${type}&pg=${i}&" class="num ${currentPage == i?'current':'off'}">${i}</a>
-	            </c:forEach>
-	            <c:if test="${pageGroupEnd < lastPageNum}">
-	            	<a href="${ctxPath}/market/list.do?type=${type}&pg=${pageGroupEnd + 1}" class="next">다음</a>
-	            </c:if>
-	        </div>
+		            <div class="paging">
+			        	<c:if test="${pageGroupStart > 1}">
+			            	<a href="${ctxPath}/market/list.do?type=${type}&pg=${pageGroupStart - 1}" class="prev">이전</a>
+			            </c:if>
+			            <c:forEach var="i" begin="${pageGroupStart}" end="${pageGroupEnd}">
+			            	<a href="${ctxPath}/market/list.do?type=${type}&pg=${i}&" class="num ${currentPage == i?'current':'off'}">${i}</a>
+			            </c:forEach>
+			            <c:if test="${pageGroupEnd < lastPageNum}">
+			            	<a href="${ctxPath}/market/list.do?type=${type}&pg=${pageGroupEnd + 1}" class="next">다음</a>
+			            </c:if>
+			        </div>
 
                     <!-- 내용 끝 -->
 

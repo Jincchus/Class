@@ -3,10 +3,10 @@
 	<property name="NAME" value="Farmstory2" />
 	
 	<!-- 경로 설정 -->
-	<!-- 개발용 / 배포시 주석 처리-->
-	<property name="LOG_DIR" value="/logs/" />
-	<!-- 배포용 -->
-	 <!-- <property name="LOG_DIR" value="/home/tomcat/logs" /> --> 
+	<!-- 개발용 / 배포시 주석 처리 -->
+	<!-- <property name="LOG_DIR" value="/logs/" /> -->
+	<!-- 배포용 / 개발시 주석 처리 -->
+	<property name="LOG_DIR" value="/home/jsp/logs" /> 
 	
 	
 	<!-- 콘솔출력  -->
@@ -53,8 +53,8 @@
   
 	
   
-	<root level="debug">					<!-- 레벨 / 배포시에는 error, 개발시 info로 조절 -->
-		<appender-ref ref="STDOUT" />	--> <!-- 콘솔 출력, 배포시 주석처리 -->
-		<!-- <appender-ref ref="ROLLING_DAILY" /> -->		<!-- 파일 출력 -->
+	<root level="debug">					<!-- 레벨 / 배포시에는 error, 개발시 debug로 조절 -->
+		<appender-ref ref="STDOUT" />	<!-- 콘솔 출력, 배포시 주석처리 -->
+		<appender-ref ref="ROLLING_DAILY" />	<!-- 파일 출력, 개발시 주석처리 -->
 	</root>
 </configuration>
