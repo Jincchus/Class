@@ -200,6 +200,15 @@ public class ProductDTO {
 		this.etc5 = etc5;
 	}
 
-	
+	@Override
+	public String toString() {
+		return "ProductDTO [prodNo=" + prodNo + ", prodCate1=" + prodCate1 + ", prodCate2=" + prodCate2 + ", prodName="
+				+ prodName + ", descript=" + descript + ", seller=" + seller + ", price=" + price + ", discount="
+				+ discount + ", point=" + point + ", stock=" + stock + ", sold=" + sold + ", delivery=" + delivery
+				+ ", hit=" + hit + ", score=" + score + ", review=" + review + ", thumb1=" + thumb1 + ", thumb2="
+				+ thumb2 + ", detail=" + detail + ", receipt=" + receipt + ", bizType=" + bizType + ", origin=" + origin
+				+ ", ip=" + ip + ", rdate=" + rdate + ", etc1=" + etc1 + ", etc2=" + etc2 + ", etc3=" + etc3 + ", etc4="
+				+ etc4 + ", etc5=" + etc5 + "]";
+	}
 	
 }

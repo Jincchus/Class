@@ -1,4 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<!-- 개발/배포에서 ContextPath 포함 여부에 따른 동적처리 -->
+<c:set var="ctxPath" value="${pageContext.request.contextPath}"></c:set>
+
 <!DOCTYPE html>
 <html lang="UTF-8">
 <head>
@@ -147,7 +152,7 @@
                     <li>
                         <a href="#">
                             <i class="fas fa-home" aria-hidden="true"></i>
-                            홈·문구·취미s
+                            홈·문구·취미
                         </a>
                         <ol>
                             <li>
@@ -177,29 +182,33 @@
                 <!-- 상품 전체 정보 내용 -->
                 <article class="info">
                     <div class="image">
-                        <img src="http://via.placeholder.com/460x460" alt="상품이미지">
+                        <img src="${ctxPath }/thumb/${product.thumb2}" alt="${product.prodName }">
                     </div>
                     <div class="summary">
                         <nav>
-                            <h1>(주)판매자명</h1>
-                            <h2>상품번호&nbsp;:&nbsp;<span>10010118412</span></h2>
+                            <h1>${product.seller }</h1>
+                            <h2>상품번호&nbsp;:&nbsp;<span>${product.prodNo }</span></h2>
                         </nav>
                         <nav>
-                            <h3>상품명</h3>
-                            <p>상품설명 출력</p>
+                            <h3>${product.prodName }</h3>
+                            <p>${product.descript }</p>
+                            <!-- star 갯수 확인 -->
                             <h5 class="rating star4">
+                            		<!-- 상품리뷰 db join 해야 할 듯 확인하기  -->
                                 <a href="#">상품평보기</a>
                             </h5>
                         </nav>
                         <nav>
+                        <!-- price 가격이 org_price인지 dis_price인지, 할인율이랑 합쳐서 계산 어떻게하는지 확인 -->
                             <div class="org_price">
-                                <del>30,000</del>
-                                <span>10%</span>
+                                <del>${product.price }</del>
+                                <span>${product.discount }</span>
                             </div>
                             <div class="dis_price"><ins>27,000</ins></div>
                         </nav>
                         <nav>
                             <span class="delivery">무료배송</span>
+                            <!-- 확인해보기 // 23.09.14 여기까지 작업!!!! -->
                             <span class="arrival">모레(금) 7/8 도착예정</span>
                             <span class="desc">본 상품은 국내배송만 가능합니다.</span>
                         </nav>

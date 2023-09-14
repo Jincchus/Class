@@ -19,11 +19,11 @@ public enum ProductService {
 	public void insertProduct(ProductDTO dto) {
 		dao.insertProduct(dto);
 	}
-	public ProductDTO selectProduct(int prodNo) {
+	public ProductDTO selectProduct(String prodNo) {
 		return dao.selectProduct(prodNo);
 	}
-	public List<ProductDTO> selectProducts(int prodNo) {
-		return dao.selectProducts(prodNo);
+	public List<ProductDTO> selectProducts(int start) {
+		return dao.selectProducts(start);
 	}
 	public void updateProduct(ProductDTO dto) {
 		dao.updateProduct(dto);
