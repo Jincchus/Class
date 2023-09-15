@@ -88,7 +88,7 @@
             box-sizing: border-box;
         }
         header > .logo > div > form > button {
-            border: 1px solid black;
+            border: none;
             position: absolute;
             right: 6px;
             top: 10px;
@@ -352,4 +352,3 @@
             font-size: 0;
             cursor: pointer;;
         }
-       

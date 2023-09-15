@@ -47,7 +47,7 @@ public class ListController extends HttpServlet{
 		start = (currentPage - 1) * 10;
 		
 		// 전체 게시물 갯수 조회
-		total = service.selectCountTotal();
+		//total = service.selectCountTotal();
 		
 		// 페이지 번호 계산
 		if(total % 10 == 0){
