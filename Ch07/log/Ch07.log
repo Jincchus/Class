@@ -1,0 +1,183 @@
+2023-09-26T09:05:47.404+09:00  INFO 12668 --- [restartedMain] kr.ch07.Ch07Application                  : Starting Ch07Application using Java 17.0.8.1 with PID 12668 (C:\Users\Java\Desktop\Workspace\Spring\Ch07\target\classes started by Java in C:\Users\Java\Desktop\Workspace\Spring\Ch07)
+2023-09-26T09:05:47.407+09:00  INFO 12668 --- [restartedMain] kr.ch07.Ch07Application                  : No active profile set, falling back to 1 default profile: "default"
+2023-09-26T09:05:47.531+09:00  INFO 12668 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-26T09:05:47.531+09:00  INFO 12668 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-26T09:05:47.787+09:00  INFO 12668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-26T09:05:47.791+09:00  INFO 12668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JDBC repository interfaces.
+2023-09-26T09:05:48.026+09:00  INFO 12668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-26T09:05:48.032+09:00  INFO 12668 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-26T09:05:48.033+09:00  INFO 12668 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-09-26T09:05:48.068+09:00  INFO 12668 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/Ch07]   : Initializing Spring embedded WebApplicationContext
+2023-09-26T09:05:48.069+09:00  INFO 12668 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 537 ms
+2023-09-26T09:05:48.172+09:00  INFO 12668 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-26T09:05:48.357+09:00  INFO 12668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-26T09:05:48.838+09:00  INFO 12668 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1665824f
+2023-09-26T09:05:48.841+09:00  INFO 12668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-26T09:05:48.910+09:00  INFO 12668 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-26T09:05:48.927+09:00  INFO 12668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/Ch07'
+2023-09-26T09:05:48.932+09:00  INFO 12668 --- [restartedMain] kr.ch07.Ch07Application                  : Started Ch07Application in 1.698 seconds (process running for 2.027)
+2023-09-26T09:06:19.379+09:00  INFO 12668 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/Ch07]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-26T09:06:19.380+09:00  INFO 12668 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-26T09:06:19.380+09:00  INFO 12668 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-09-26T09:06:19.397+09:00  INFO 12668 --- [http-nio-8080-exec-2] kr.ch07.controller.MainController        : User1DTO(uid=A102, name=김유신, hp=010-1234-1002, age=23)
+2023-09-26T09:06:19.397+09:00  INFO 12668 --- [http-nio-8080-exec-2] kr.ch07.controller.MainController        : User1DTO(uid=A101, name=김춘추, hp=010-1234-1001, age=25)
+2023-09-26T09:06:19.397+09:00  INFO 12668 --- [http-nio-8080-exec-2] kr.ch07.controller.MainController        : User1DTO(uid=A103, name=장보고, hp=010-1234-1003, age=33)
+2023-09-26T09:06:22.577+09:00  WARN 12668 --- [http-nio-8080-exec-4] n.n.u.t.e.ExpressionProcessor            : Fragment expression "/layout/defaultLayout.html" is being wrapped as a Thymeleaf 3 fragment expression (~{...}) for backwards compatibility purposes.  This wrapping will be dropped in the next major version of the expression processor, so please rewrite as a Thymeleaf 3 fragment expression to future-proof your code.  See https://github.com/thymeleaf/thymeleaf/issues/451 for more information.
+2023-09-26T09:06:40.349+09:00  INFO 13732 --- [main] kr.ch07.mapper.User1MapperTest           : Starting User1MapperTest using Java 17.0.8.1 with PID 13732 (started by Java in C:\Users\Java\Desktop\Workspace\Spring\Ch07)
+2023-09-26T09:06:40.350+09:00  INFO 13732 --- [main] kr.ch07.mapper.User1MapperTest           : No active profile set, falling back to 1 default profile: "default"
+2023-09-26T09:06:40.747+09:00  INFO 13732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-26T09:06:40.754+09:00  INFO 13732 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+2023-09-26T09:06:41.124+09:00  INFO 13732 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-26T09:06:41.442+09:00  INFO 13732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-26T09:06:41.802+09:00  INFO 13732 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77d0dbba
+2023-09-26T09:06:41.803+09:00  INFO 13732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-26T09:06:41.898+09:00  INFO 13732 --- [main] kr.ch07.mapper.User1MapperTest           : Started User1MapperTest in 1.724 seconds (process running for 2.283)
+2023-09-26T09:06:42.522+09:00  INFO 13732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-26T09:06:42.603+09:00  INFO 13732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-26T09:07:12.071+09:00  INFO 12668 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 3 class path changes (0 additions, 0 deletions, 3 modifications)
+2023-09-26T09:07:12.079+09:00  INFO 12668 --- [Thread-5] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-26T09:07:12.080+09:00  INFO 12668 --- [Thread-5] o.a.c.c.C.[Tomcat].[localhost].[/Ch07]   : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-09-26T09:07:12.086+09:00  INFO 12668 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-26T09:07:12.192+09:00  INFO 12668 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-26T09:07:12.236+09:00  INFO 12668 --- [restartedMain] kr.ch07.Ch07Application                  : Starting Ch07Application using Java 17.0.8.1 with PID 12668 (C:\Users\Java\Desktop\Workspace\Spring\Ch07\target\classes started by Java in C:\Users\Java\Desktop\Workspace\Spring\Ch07)
+2023-09-26T09:07:12.236+09:00  INFO 12668 --- [restartedMain] kr.ch07.Ch07Application                  : No active profile set, falling back to 1 default profile: "default"
+2023-09-26T09:07:12.296+09:00  INFO 12668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-26T09:07:12.297+09:00  INFO 12668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JDBC repository interfaces.
+2023-09-26T09:07:12.329+09:00  INFO 12668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-26T09:07:12.329+09:00  INFO 12668 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-26T09:07:12.329+09:00  INFO 12668 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-09-26T09:07:12.335+09:00  INFO 12668 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/Ch07]   : Initializing Spring embedded WebApplicationContext
+2023-09-26T09:07:12.336+09:00  INFO 12668 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 99 ms
+2023-09-26T09:07:12.367+09:00  INFO 12668 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-26T09:07:12.401+09:00  INFO 12668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-09-26T09:07:12.572+09:00  INFO 12668 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c01d436
+2023-09-26T09:07:12.572+09:00  INFO 12668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-09-26T09:07:12.588+09:00  INFO 12668 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-26T09:07:12.594+09:00  INFO 12668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/Ch07'
+2023-09-26T09:07:12.596+09:00  INFO 12668 --- [restartedMain] kr.ch07.Ch07Application                  : Started Ch07Application in 0.37 seconds (process running for 85.691)
+2023-09-26T09:07:12.597+09:00  INFO 12668 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-09-26T09:09:37.638+09:00  INFO 3004 --- [main] kr.ch07.mapper.User1MapperTest           : Starting User1MapperTest using Java 17.0.8.1 with PID 3004 (started by Java in C:\Users\Java\Desktop\Workspace\Spring\Ch07)
+2023-09-26T09:09:37.639+09:00  INFO 3004 --- [main] kr.ch07.mapper.User1MapperTest           : No active profile set, falling back to 1 default profile: "default"
+2023-09-26T09:09:38.052+09:00  INFO 3004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-26T09:09:38.058+09:00  INFO 3004 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+2023-09-26T09:09:38.466+09:00  INFO 3004 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-26T09:09:38.778+09:00  INFO 3004 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-26T09:09:39.327+09:00  INFO 3004 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@70b196d3
+2023-09-26T09:09:39.331+09:00  INFO 3004 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-26T09:09:39.433+09:00  INFO 3004 --- [main] kr.ch07.mapper.User1MapperTest           : Started User1MapperTest in 1.988 seconds (process running for 2.508)
+2023-09-26T09:09:40.042+09:00  INFO 3004 --- [main] kr.ch07.mapper.User1MapperTest           : User1DTO(uid=3soon, name=삼순, hp=010-0000-0000, age=5)
+2023-09-26T09:09:40.042+09:00  INFO 3004 --- [main] kr.ch07.mapper.User1MapperTest           : User1DTO(uid=bacchus, name=카스, hp=010-0000-0000, age=5)
+2023-09-26T09:09:40.043+09:00  INFO 3004 --- [main] kr.ch07.mapper.User1MapperTest           : User1DTO(uid=A101, name=홍길동, hp=010-1234-1001, age=33)
+2023-09-26T09:09:40.043+09:00  INFO 3004 --- [main] kr.ch07.mapper.User1MapperTest           : User1DTO(uid=A101, name=홍길동, hp=010-1234-1001, age=33)
+2023-09-26T09:09:40.055+09:00  INFO 3004 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-26T09:09:40.202+09:00  INFO 3004 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-26T09:20:45.634+09:00  INFO 14272 --- [main] kr.ch07.controller.MainControllerTest    : Starting MainControllerTest using Java 17.0.8.1 with PID 14272 (started by Java in C:\Users\Java\Desktop\Workspace\Spring\Ch07)
+2023-09-26T09:20:45.635+09:00  INFO 14272 --- [main] kr.ch07.controller.MainControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2023-09-26T09:20:46.167+09:00  INFO 14272 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-26T09:20:46.269+09:00  INFO 14272 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-09-26T09:20:46.269+09:00  INFO 14272 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-09-26T09:20:46.270+09:00  INFO 14272 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-09-26T09:20:46.287+09:00  INFO 14272 --- [main] kr.ch07.controller.MainControllerTest    : Started MainControllerTest in 0.88 seconds (process running for 1.432)
+2023-09-26T09:21:10.213+09:00  INFO 10144 --- [main] kr.ch07.controller.MainControllerTest    : Starting MainControllerTest using Java 17.0.8.1 with PID 10144 (started by Java in C:\Users\Java\Desktop\Workspace\Spring\Ch07)
+2023-09-26T09:21:10.214+09:00  INFO 10144 --- [main] kr.ch07.controller.MainControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2023-09-26T09:21:10.754+09:00  INFO 10144 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-26T09:21:10.851+09:00  INFO 10144 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-09-26T09:21:10.852+09:00  INFO 10144 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-09-26T09:21:10.852+09:00  INFO 10144 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2023-09-26T09:21:10.868+09:00  INFO 10144 --- [main] kr.ch07.controller.MainControllerTest    : Started MainControllerTest in 0.884 seconds (process running for 1.415)
+2023-09-26T09:27:26.510+09:00  INFO 8524 --- [main] kr.ch07.controller.MainControllerTest    : Starting MainControllerTest using Java 17.0.8.1 with PID 8524 (started by Java in C:\Users\Java\Desktop\Workspace\Spring\Ch07)
+2023-09-26T09:27:26.511+09:00  INFO 8524 --- [main] kr.ch07.controller.MainControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2023-09-26T09:27:27.058+09:00  INFO 8524 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-26T09:27:27.157+09:00  INFO 8524 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-09-26T09:27:27.157+09:00  INFO 8524 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-09-26T09:27:27.158+09:00  INFO 8524 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-09-26T09:27:27.175+09:00  INFO 8524 --- [main] kr.ch07.controller.MainControllerTest    : Started MainControllerTest in 0.894 seconds (process running for 1.456)
+2023-09-26T09:27:27.662+09:00  INFO 8524 --- [main] kr.ch07.controller.MainController        : User1DTO(uid=A102, name=김유신, hp=010-1234-1002, age=23)
+2023-09-26T09:27:27.662+09:00  INFO 8524 --- [main] kr.ch07.controller.MainController        : User1DTO(uid=A101, name=김춘추, hp=010-1234-1001, age=25)
+2023-09-26T09:27:27.662+09:00  INFO 8524 --- [main] kr.ch07.controller.MainController        : User1DTO(uid=A103, name=장보고, hp=010-1234-1003, age=33)
+2023-09-26T09:27:50.268+09:00  INFO 9944 --- [main] kr.ch07.controller.MainControllerTest    : Starting MainControllerTest using Java 17.0.8.1 with PID 9944 (started by Java in C:\Users\Java\Desktop\Workspace\Spring\Ch07)
+2023-09-26T09:27:50.269+09:00  INFO 9944 --- [main] kr.ch07.controller.MainControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2023-09-26T09:27:50.814+09:00  INFO 9944 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-26T09:27:50.918+09:00  INFO 9944 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-09-26T09:27:50.919+09:00  INFO 9944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-09-26T09:27:50.920+09:00  INFO 9944 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-09-26T09:27:50.939+09:00  INFO 9944 --- [main] kr.ch07.controller.MainControllerTest    : Started MainControllerTest in 0.904 seconds (process running for 1.434)
+2023-09-26T09:27:51.420+09:00  INFO 9944 --- [main] kr.ch07.controller.MainController        : User1DTO(uid=A102, name=김유신, hp=010-1234-1002, age=23)
+2023-09-26T09:27:51.420+09:00  INFO 9944 --- [main] kr.ch07.controller.MainController        : User1DTO(uid=A101, name=김춘추, hp=010-1234-1001, age=25)
+2023-09-26T09:27:51.420+09:00  INFO 9944 --- [main] kr.ch07.controller.MainController        : User1DTO(uid=A103, name=장보고, hp=010-1234-1003, age=33)
+2023-09-26T09:30:33.783+09:00  INFO 12668 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-26T09:30:33.788+09:00  INFO 12668 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-26T09:30:33.791+09:00  INFO 12668 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-09-26T09:30:33.923+09:00  INFO 12668 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-09-26T09:30:33.965+09:00  INFO 12668 --- [restartedMain] kr.ch07.Ch07Application                  : Starting Ch07Application using Java 17.0.8.1 with PID 12668 (C:\Users\Java\Desktop\Workspace\Spring\Ch07\target\classes started by Java in C:\Users\Java\Desktop\Workspace\Spring\Ch07)
+2023-09-26T09:30:33.965+09:00  INFO 12668 --- [restartedMain] kr.ch07.Ch07Application                  : No active profile set, falling back to 1 default profile: "default"
+2023-09-26T09:30:34.022+09:00  INFO 12668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-26T09:30:34.023+09:00  INFO 12668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JDBC repository interfaces.
+2023-09-26T09:30:34.051+09:00  INFO 12668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-26T09:30:34.051+09:00  INFO 12668 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-26T09:30:34.051+09:00  INFO 12668 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-09-26T09:30:34.057+09:00  INFO 12668 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/Ch07]   : Initializing Spring embedded WebApplicationContext
+2023-09-26T09:30:34.057+09:00  INFO 12668 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 91 ms
+2023-09-26T09:30:34.079+09:00  INFO 12668 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-26T09:30:34.108+09:00  INFO 12668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-09-26T09:30:34.343+09:00  INFO 12668 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7972fc7
+2023-09-26T09:30:34.345+09:00  INFO 12668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-09-26T09:30:34.364+09:00  INFO 12668 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-26T09:30:34.374+09:00  INFO 12668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/Ch07'
+2023-09-26T09:30:34.377+09:00  INFO 12668 --- [restartedMain] kr.ch07.Ch07Application                  : Started Ch07Application in 0.424 seconds (process running for 1487.471)
+2023-09-26T09:30:34.378+09:00  INFO 12668 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-09-26T09:36:24.716+09:00  INFO 12668 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2023-09-26T09:36:24.720+09:00  INFO 12668 --- [Thread-11] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-09-26T09:36:24.722+09:00  INFO 12668 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-09-26T09:36:24.846+09:00  INFO 12668 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-09-26T09:36:24.888+09:00  INFO 12668 --- [restartedMain] kr.ch07.Ch07Application                  : Starting Ch07Application using Java 17.0.8.1 with PID 12668 (C:\Users\Java\Desktop\Workspace\Spring\Ch07\target\classes started by Java in C:\Users\Java\Desktop\Workspace\Spring\Ch07)
+2023-09-26T09:36:24.890+09:00  INFO 12668 --- [restartedMain] kr.ch07.Ch07Application                  : No active profile set, falling back to 1 default profile: "default"
+2023-09-26T09:36:24.943+09:00  INFO 12668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-09-26T09:36:24.944+09:00  INFO 12668 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JDBC repository interfaces.
+2023-09-26T09:36:24.968+09:00  INFO 12668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-26T09:36:24.969+09:00  INFO 12668 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-26T09:36:24.969+09:00  INFO 12668 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.13]
+2023-09-26T09:36:24.974+09:00  INFO 12668 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/Ch07]   : Initializing Spring embedded WebApplicationContext
+2023-09-26T09:36:24.974+09:00  INFO 12668 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 84 ms
+2023-09-26T09:36:24.993+09:00  INFO 12668 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-26T09:36:25.021+09:00  INFO 12668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2023-09-26T09:36:25.246+09:00  INFO 12668 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4f1f16c4
+2023-09-26T09:36:25.247+09:00  INFO 12668 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2023-09-26T09:36:25.255+09:00  INFO 12668 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-26T09:36:25.259+09:00  INFO 12668 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path '/Ch07'
+2023-09-26T09:36:25.261+09:00  INFO 12668 --- [restartedMain] kr.ch07.Ch07Application                  : Started Ch07Application in 0.382 seconds (process running for 1838.355)
+2023-09-26T09:36:25.261+09:00  INFO 12668 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-09-26T09:36:42.163+09:00  INFO 11800 --- [main] kr.ch07.controller.MainControllerTest    : Starting MainControllerTest using Java 17.0.8.1 with PID 11800 (started by Java in C:\Users\Java\Desktop\Workspace\Spring\Ch07)
+2023-09-26T09:36:42.164+09:00  INFO 11800 --- [main] kr.ch07.controller.MainControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2023-09-26T09:36:42.725+09:00  INFO 11800 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-26T09:36:42.831+09:00  INFO 11800 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-09-26T09:36:42.831+09:00  INFO 11800 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-09-26T09:36:42.832+09:00  INFO 11800 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2023-09-26T09:36:42.851+09:00  INFO 11800 --- [main] kr.ch07.controller.MainControllerTest    : Started MainControllerTest in 0.919 seconds (process running for 1.47)
+2023-09-26T09:36:43.326+09:00  INFO 11800 --- [main] kr.ch07.controller.MainController        : name : 홍길동
+2023-09-26T09:36:43.327+09:00  INFO 11800 --- [main] kr.ch07.controller.MainController        : age : 23
+2023-09-26T09:36:43.469+09:00  WARN 11800 --- [main] o.t.s.p.StandardIncludeTagProcessor      : [THYMELEAF][main][/include] Deprecated attribute {th:include,data-th-include} found in template /include, line 12, col 13. Please use {th:insert,data-th-insert} instead, this deprecated attribute will be removed in future versions of Thymeleaf.
+2023-09-26T09:36:43.481+09:00  WARN 11800 --- [main] actStandardFragmentInsertionTagProcessor : [THYMELEAF][main][/include] Deprecated unwrapped fragment expression "/fragment/_header.html" found in template /include, line 12, col 13. Please use the complete syntax of fragment expressions instead ("~{/fragment/_header.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-09-26T09:36:43.484+09:00  WARN 11800 --- [main] o.t.s.p.StandardIncludeTagProcessor      : [THYMELEAF][main][/include] Deprecated attribute {th:include,data-th-include} found in template /include, line 16, col 13. Please use {th:insert,data-th-insert} instead, this deprecated attribute will be removed in future versions of Thymeleaf.
+2023-09-26T09:36:43.485+09:00  WARN 11800 --- [main] actStandardFragmentInsertionTagProcessor : [THYMELEAF][main][/include] Deprecated unwrapped fragment expression "/fragment/_footer.html" found in template /include, line 16, col 13. Please use the complete syntax of fragment expressions instead ("~{/fragment/_footer.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-09-26T09:36:43.486+09:00  WARN 11800 --- [main] actStandardFragmentInsertionTagProcessor : [THYMELEAF][main][/include] Deprecated unwrapped fragment expression "/fragment/_header.html" found in template /include, line 20, col 8. Please use the complete syntax of fragment expressions instead ("~{/fragment/_header.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-09-26T09:36:43.487+09:00  WARN 11800 --- [main] actStandardFragmentInsertionTagProcessor : [THYMELEAF][main][/include] Deprecated unwrapped fragment expression "/fragment/_footer.html" found in template /include, line 24, col 8. Please use the complete syntax of fragment expressions instead ("~{/fragment/_footer.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-09-26T09:36:43.489+09:00  WARN 11800 --- [main] actStandardFragmentInsertionTagProcessor : [THYMELEAF][main][/include] Deprecated unwrapped fragment expression "/fragment/_header.html" found in template /include, line 28, col 8. Please use the complete syntax of fragment expressions instead ("~{/fragment/_header.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-09-26T09:36:43.490+09:00  WARN 11800 --- [main] actStandardFragmentInsertionTagProcessor : [THYMELEAF][main][/include] Deprecated unwrapped fragment expression "/fragment/_footer.html" found in template /include, line 32, col 8. Please use the complete syntax of fragment expressions instead ("~{/fragment/_footer.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-09-26T09:36:58.715+09:00  INFO 10040 --- [main] kr.ch07.controller.MainControllerTest    : Starting MainControllerTest using Java 17.0.8.1 with PID 10040 (started by Java in C:\Users\Java\Desktop\Workspace\Spring\Ch07)
+2023-09-26T09:36:58.716+09:00  INFO 10040 --- [main] kr.ch07.controller.MainControllerTest    : No active profile set, falling back to 1 default profile: "default"
+2023-09-26T09:36:59.268+09:00  INFO 10040 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-09-26T09:36:59.373+09:00  INFO 10040 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2023-09-26T09:36:59.373+09:00  INFO 10040 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2023-09-26T09:36:59.375+09:00  INFO 10040 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2023-09-26T09:36:59.396+09:00  INFO 10040 --- [main] kr.ch07.controller.MainControllerTest    : Started MainControllerTest in 0.909 seconds (process running for 1.439)
+2023-09-26T09:36:59.891+09:00  INFO 10040 --- [main] kr.ch07.controller.MainController        : name : 홍길동
+2023-09-26T09:36:59.892+09:00  INFO 10040 --- [main] kr.ch07.controller.MainController        : age : 23
+2023-09-26T09:37:00.047+09:00  WARN 10040 --- [main] o.t.s.p.StandardIncludeTagProcessor      : [THYMELEAF][main][/include] Deprecated attribute {th:include,data-th-include} found in template /include, line 12, col 13. Please use {th:insert,data-th-insert} instead, this deprecated attribute will be removed in future versions of Thymeleaf.
+2023-09-26T09:37:00.056+09:00  WARN 10040 --- [main] actStandardFragmentInsertionTagProcessor : [THYMELEAF][main][/include] Deprecated unwrapped fragment expression "/fragment/_header.html" found in template /include, line 12, col 13. Please use the complete syntax of fragment expressions instead ("~{/fragment/_header.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-09-26T09:37:00.058+09:00  WARN 10040 --- [main] o.t.s.p.StandardIncludeTagProcessor      : [THYMELEAF][main][/include] Deprecated attribute {th:include,data-th-include} found in template /include, line 16, col 13. Please use {th:insert,data-th-insert} instead, this deprecated attribute will be removed in future versions of Thymeleaf.
+2023-09-26T09:37:00.059+09:00  WARN 10040 --- [main] actStandardFragmentInsertionTagProcessor : [THYMELEAF][main][/include] Deprecated unwrapped fragment expression "/fragment/_footer.html" found in template /include, line 16, col 13. Please use the complete syntax of fragment expressions instead ("~{/fragment/_footer.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-09-26T09:37:00.060+09:00  WARN 10040 --- [main] actStandardFragmentInsertionTagProcessor : [THYMELEAF][main][/include] Deprecated unwrapped fragment expression "/fragment/_header.html" found in template /include, line 20, col 8. Please use the complete syntax of fragment expressions instead ("~{/fragment/_header.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-09-26T09:37:00.060+09:00  WARN 10040 --- [main] actStandardFragmentInsertionTagProcessor : [THYMELEAF][main][/include] Deprecated unwrapped fragment expression "/fragment/_footer.html" found in template /include, line 24, col 8. Please use the complete syntax of fragment expressions instead ("~{/fragment/_footer.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-09-26T09:37:00.061+09:00  WARN 10040 --- [main] actStandardFragmentInsertionTagProcessor : [THYMELEAF][main][/include] Deprecated unwrapped fragment expression "/fragment/_header.html" found in template /include, line 28, col 8. Please use the complete syntax of fragment expressions instead ("~{/fragment/_header.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
+2023-09-26T09:37:00.062+09:00  WARN 10040 --- [main] actStandardFragmentInsertionTagProcessor : [THYMELEAF][main][/include] Deprecated unwrapped fragment expression "/fragment/_footer.html" found in template /include, line 32, col 8. Please use the complete syntax of fragment expressions instead ("~{/fragment/_footer.html}"). The old, unwrapped syntax for fragment expressions will be removed in future versions of Thymeleaf.
