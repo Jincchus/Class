@@ -1,0 +1,39 @@
+/**
+    날짜 : 2023/10/02
+    이름 : 박경진
+    내용 : 2장 데이터베이스 기본
+*/
+
+//테이블 생성
+CREATE TABLE USER1 (
+    ID      VARCHAR2(20),
+    NAME    VARCHAR2(20),
+    HP      CHAR(13),
+    AGE     NUMBER
+);
+//테이블 삭제
+DROP TABLE USER1;
+
+//데이터 추가(INSERT)
+INSERT INTO USER1 VALUES ('A101','김유신','010-1234-1111',25);
+INSERT INTO USER1 VALUES ('A102','김춘추','010-1234-2222',23);
+INSERT INTO USER1 VALUES ('A103','장보고','010-1234-3333',32);
+INSERT INTO USER1 (id, name, age) VALUES ('A104', '강감찬', 45);
+INSERT INTO USER1 (id, name, hp) VALUES ('A105', '이순신', '010-1234-5555');
+
+//데이터 조회(SELECT)
+SELECT * FROM USER1;
+SELECT * FROM USER1 WHERE id='A101';
+SELECT * FROM USER1 WHERE name='김춘추';
+SELECT * FROM USER1 WHERE age>30;
+SELECT id, name, age FROM USER1;
+
+//데이터 수정(UPDATE)
+UPDATE User1 SET hp='010-1234-4444' WHERE id='A104';
+UPDATE User1 SET age=51 WHERE id='A105';
+UPDATE User1 SET hp='010-1234-1001', age=27 WHERE id='A101';
+
+//데이터 삭제(DELETE)
+DELETE FROM USER1 WHERE id='A101';
+DELETE FROM USER1 WHERE id='A102' AND age=25;
+DELETE FROM USER1 WHERE age >= 30;
