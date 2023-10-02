@@ -155,8 +155,16 @@ public class MainController {
 	}
 	@GetMapping("/query23")
 	public String query23() {
-		List<User1Entity> entities = repo.selectUser1ByNameParam("삼순");
-		System.out.println(entities);
+		List<Object[]> result = repo.selectUser1ByUid("3soon");
+				
+				for(Object[] obj : result) {
+					
+					System.out.println("obj[0] : " + obj[0]);
+					System.out.println("obj[1] : " + obj[1]);
+					System.out.println("obj[2] : " + obj[2]);
+						
+				}
+		
 		return "redirect:/";
 	}
 }
