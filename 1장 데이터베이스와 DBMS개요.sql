@@ -1,12 +1,12 @@
 /**
-    ³¯Â¥ : 2023/10/02
-    ÀÌ¸§ : ¹Ú°æÁø
-    ³»¿ë : 1Àå µ¥ÀÌÅÍº£ÀÌ½º¿Í DBMS°³¿ä
+    ë‚ ì§œ : 2023/10/02
+    ì´ë¦„ : ë°•ê²½ì§„
+    ë‚´ìš© : 1ì¥ ë°ì´í„°ë² ì´ìŠ¤ì™€ DBMSê°œìš”
 */
 
-//½Ç½ÀÇÏ±â 1-1.µ¥ÀÌÅÍº£ÀÌ½º »ı¼º(»ç¿ëÀÚ »ı¼º)
+//ì‹¤ìŠµí•˜ê¸° 1-1.ë°ì´í„°ë² ì´ìŠ¤ ìƒì„±(ì‚¬ìš©ì ìƒì„±)
 
-//½Ç½ÀÇÏ±â 1-2.NUMBER ÀÚ·áÇü ½Ç½À
+//ì‹¤ìŠµí•˜ê¸° 1-2.NUMBER ìë£Œí˜• ì‹¤ìŠµ
 CREATE TABLE TYPE_TEST_NUMBER (
     num1 NUMBER,
     num2 NUMBER(2),
@@ -61,7 +61,7 @@ insert into TYPE_TEST_NUMBER (num5) values (1234.5678);
 insert into TYPE_TEST_NUMBER (num5) values (12345.6789);
 insert into TYPE_TEST_NUMBER (num5) values (12345.678901);
 
-//½Ç½ÀÇÏ±â 1-3.¹®ÀÚÇü ÀÚ·áÇü ½Ç½À
+//ì‹¤ìŠµí•˜ê¸° 1-3.ë¬¸ìí˜• ìë£Œí˜• ì‹¤ìŠµ
 CREATE TABLE TYPE_TEST_CHAR(
     char1 CHAR(1),
     char2 CHAR(2),
@@ -76,18 +76,18 @@ CREATE TABLE TYPE_TEST_CHAR(
 
 //CHAR
 insert into TYPE_TEST_CHAR (char1) values ('A');
-insert into TYPE_TEST_CHAR (char1) values ('°¡');
+insert into TYPE_TEST_CHAR (char1) values ('ê°€');
 insert into TYPE_TEST_CHAR (char2) values ('AB');
 insert into TYPE_TEST_CHAR (char2) values ('ABC');
-insert into TYPE_TEST_CHAR (char2) values ('°¡');
-insert into TYPE_TEST_CHAR (char3) values ('°¡');
+insert into TYPE_TEST_CHAR (char2) values ('ê°€');
+insert into TYPE_TEST_CHAR (char3) values ('ê°€');
 
 //VARCHAR2
 insert into TYPE_TEST_CHAR (vchar1) values ('A');
 insert into TYPE_TEST_CHAR (vchar2) values ('AB');
-insert into TYPE_TEST_CHAR (vchar3) values ('°¡');
+insert into TYPE_TEST_CHAR (vchar3) values ('ê°€');
 
 //NVARCHAR2
 insert into TYPE_TEST_CHAR (nvchar1) values ('A');
 insert into TYPE_TEST_CHAR (nvchar2) values ('AB');
-insert into TYPE_TEST_CHAR (nvchar3) values ('°¡³ª´Ù');
+insert into TYPE_TEST_CHAR (nvchar3) values ('ê°€ë‚˜ë‹¤');
