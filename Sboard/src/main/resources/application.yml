@@ -1,0 +1,49 @@
+jwt:
+    issuer: chopoo2001@gmail.com
+    secret: fZknx4Od2cDciVjZ4ywfjcbon2CBqMLu
+logging:
+    file:
+        name: log/Sboard.log
+    level:
+        jdbc:
+            connection: info
+            resultsettable: info
+            sqlonly: info
+            sqltiming: info
+        org:
+            hibernate: info
+            springframework:
+                security: info
+        root: info
+server:
+    servlet:
+        context-path: /
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: Qwe123!@#
+        url: jdbc:mysql://3.39.234.171/Jboard
+        username: jboard
+    devtools:
+        livereload:
+            enabled: true
+        restart:
+            enabled: false
+    jpa:
+        database: mysql
+        hibernate:
+            ddl-auto: update
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        properties:
+            hibernate:
+                format_sql: true
+                show_sql: true
+                use_sql_comments: true
+    security:
+        user:
+            name: user
+            password: 1234
+    thymeleaf:
+        cache: false
+        prefix: file:src/main/resources/templates/
