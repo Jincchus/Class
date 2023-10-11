@@ -22,7 +22,7 @@ spring:
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
         password: Qwe123!@#
-        url: jdbc:mysql://3.39.234.171/Jboard
+        url: jdbc:mysql://15.164.100.204/Jboard
         username: jboard
     devtools:
         livereload:
