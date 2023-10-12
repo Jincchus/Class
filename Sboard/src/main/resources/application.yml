@@ -46,4 +46,11 @@ spring:
             password: 1234
     thymeleaf:
         cache: false
+        # prefix 설정을 안하면 HTML 수정 후 브라우저에서 새로고침 반영안됨
         prefix: file:src/main/resources/templates/
+
+    # 파일 첨부 설정 확인
+    servlet:
+        multipart:
+            location: src/main/resources/static/file #경로
+            max-file-size: 10MB #크기

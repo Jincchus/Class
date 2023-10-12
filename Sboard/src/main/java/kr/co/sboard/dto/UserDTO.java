@@ -1,6 +1,5 @@
 package kr.co.sboard.dto;
 
-import jakarta.persistence.Id;
 import kr.co.sboard.entity.UserEntity;
 import lombok.*;
 
@@ -13,7 +12,6 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class UserDTO {
 
-    @Id
     private String uid;
     private String pass1;
     private String name;

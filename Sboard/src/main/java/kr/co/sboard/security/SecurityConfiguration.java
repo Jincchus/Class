@@ -25,8 +25,14 @@ public class SecurityConfiguration {
 				.csrf(CsrfConfigurer::disable) // 메서드 참조 연산자로 람다식을 간결하게 표현
 				// 폼 로그인 설정
 				.formLogin(config -> config.loginPage("/user/login")
-						.defaultSuccessUrl("/")
+						.defaultSuccessUrl("/", true)
 						.failureUrl("/user/login?success=100")
+//						.successHandler(new AuthenticationSuccessHandler() {
+//							@Override
+//							public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
+//								response.sendRedirect("/");
+//							}
+//						})
 						.usernameParameter("uid")
 						.passwordParameter("pass"))
 				// 로그아웃 설정
@@ -37,11 +43,12 @@ public class SecurityConfiguration {
 						.logoutSuccessUrl("/user/login?success=200"))
 				// 인가 권한 설정
 				.authorizeHttpRequests(authorizeHttpRequests -> authorizeHttpRequests
-						.requestMatchers("/admin/**").hasAuthority("ADMIN")
-						.requestMatchers("/manager/**").hasAnyAuthority("ADMIN", "MANAGER")
+						.requestMatchers("/admin/**").hasAnyRole("ADMIN")
+						.requestMatchers("/article/**").hasAnyRole("ADMIN", "MANAGER","USER")
 						.requestMatchers("/user/**").permitAll()
 						.requestMatchers("/").authenticated()
-						.requestMatchers("/**").permitAll());
+						.requestMatchers("/vendor/**","/js/**","/dist/**","/data/**","/less/**").permitAll());
+						//.requestMatchers("/**").permitAll()
 		return http.build();
 	}
 
