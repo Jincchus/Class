@@ -10,20 +10,17 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: ListView(
-          children: [
-            const SizedBox(height: xlarge_gap),
-            // logo 위젯 생성
-            const Logo('Login'),
-            const SizedBox(height: large_gap),
-            CustomForm(),
-            TextButton(
-              onPressed: () {
-                // 사용자가 입력한 유효성 검사
-              },
-              child: Text("Login"),
-            )
-          ],
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: ListView(
+            children: [
+              const SizedBox(height: xlarge_gap),
+              // logo 위젯 생성
+              const Logo('Login'),
+              const SizedBox(height: large_gap),
+              CustomForm(),
+            ],
+          ),
         ),
       ),
     );
