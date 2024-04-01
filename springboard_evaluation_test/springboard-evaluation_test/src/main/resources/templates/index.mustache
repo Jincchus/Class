@@ -1,0 +1,58 @@
+{{> layout/header}}
+<div class="container p-5">
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성자</th>
+            <th></th>
+        </tr>
+        </thead>
+        {{#boardPageList}}
+        <tbody>
+        <tr>
+            <td>{{no}}</td>
+            <td>{{title}}</td>
+            <td>{{content}}</td>
+            <td>{{author}}</td>
+            <td>
+                <div class="d-flex">
+                    <form action="/board/{{no}}/delete" method="post">
+                        <button class="btn btn-danger">삭제</button>
+                    </form>
+                    <form action="/board/{{no}}/updateForm" method="get">
+                        <button class="btn btn-warning">수정</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+        {{/boardPageList}}
+    </table>
+
+    <ul class="pagination justify-content-center">
+        {{#startPage}}
+            <li class="page-item"><a class="page-link" href="?page={{previous}}">Previous</a></li>
+        {{/startPage}}
+
+        {{#currentPage}}
+            <li class="page-item active"><a class="page-link" href="?page={{currentPage}}">{{currentPage}}</a></li>
+        {{/currentPage}}
+
+        {{#endPage}}
+            <li class="page-item"><a class="page-link" href="?page={{next}}">Next</a></li>
+        {{/endPage}}
+
+        {{^endPage}}
+            {{#next}}
+            {{/next}}
+        {{/endPage}}
+    </ul>
+
+
+
+</div>
+{{> layout/footer}}
