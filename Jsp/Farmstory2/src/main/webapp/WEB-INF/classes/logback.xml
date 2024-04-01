@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="NAME" value="Farmstory2" />
+	
+	<!-- 경로 설정 -->
+	<!-- 개발용 / 배포시 주석 처리 -->
+	<!-- <property name="LOG_DIR" value="/logs/" /> -->
+	<!-- 배포용 / 개발시 주석 처리 -->
+	<property name="LOG_DIR" value="/home/jsp/logs" /> 
+	
+	
+	<!-- 콘솔출력  -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern> %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n </pattern>
+		</encoder>
+	</appender>
+
+	<!-- 파일출력 -->
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>${LOG_DIR}/${NAME}.log</file>
+		<append>true</append>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern> %d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n </pattern>
+		</encoder>
+	</appender>
+	
+
+	<!-- 롤링 어펜더(일자별) -->	 
+	<appender name="ROLLING_DAILY" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">	    
+			<fileNamePattern>${LOG_DIR}/${NAME}-%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<!-- 롤링 어펜더(크기별) -->	 
+	<appender name="ROLLING_SIZE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_DIR}/${NAME}.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_DIR}/${NAME}-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>1MB</maxFileSize>
+				<maxHistory>7</maxHistory>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+  
+	
+  
+	<root level="debug">					<!-- 레벨 / 배포시에는 error, 개발시 debug로 조절 -->
+		<appender-ref ref="STDOUT" />	<!-- 콘솔 출력, 배포시 주석처리 -->
+		<appender-ref ref="ROLLING_DAILY" />	<!-- 파일 출력, 개발시 주석처리 -->
+	</root>
+</configuration>
