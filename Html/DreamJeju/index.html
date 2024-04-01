@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Drea Jeju</title>
+        <!--
+            참고 : http://chhak.click/jeju/
+        -->
+
+        <!--외부 css 파일 적용-->
+        <link rel="stylesheet" href="./css/style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script>
+            $(function(){
+                const slides = $('.slides');
+
+                let i = 0;
+
+                $('.left').click(function(){
+
+                    slides.eq(i).animate({'left':'-100%'},1000 );
+                    i++;
+                    
+                    if(i == 3){
+                        i =0;
+                    }
+
+                    slides.eq(i).css('left', '100%').animate({'left':'0'},1000);
+
+                });
+
+                $('.right').click(function(){
+                    slides.eq(i).animate({'left':'100%'},1000);
+                    i--;
+
+                    if(i == 3){
+                        i = 0;
+                    }
+
+                    slides.eq(i).css('left','-100%').animate({'left':'0'},1000);
+                });
+
+                window.onload = function(){
+
+                    const tabBtn = document.querySelectorAll('#tabMenu > label');
+                    const tabContent = document.querySelectorAll('#tabMenu > section > article');
+
+                    tabBtn[0].onclick = function(){
+                        tabBtn[1].classList.remove('on');
+                        this.classList.add('on');
+                        tabContent[0].classList.add('on');
+                        tabContent[1].classList.remove('on');
+                    }
+                    tabBtn[1].onclick = function(){
+                        tabBtn[0].classList.remove('on');
+                        this.classList.add('on');
+                        tabContent[0].classList.remove('on');
+                        tabContent[1].classList.add('on');
+                    }
+
+
+                }
+
+
+
+            });
+
+
+
+        </script>
+    </head>
+
+    <body>
+        
+        <div id="container">
+            <header>
+                <!-- 로고 -->
+                <a href="./index.html" class="logo">
+                    <h1>Dream Jeju</h1>
+
+                </a>
+
+                <!-- GNB -->
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">단체여행<span>▼</span></a>
+                            <ol>
+                                <li><a href="#">회사연수</a></li>
+                                <li><a href="#">수학여행</a></li>
+                            </ol>
+                        </li>
+                        <li>
+                            <a href="#">맞춤여행<span>▼</span></a>
+                            <ol>
+                                <li><a href="#">4.3평화 기행</a></li>
+                                <li><a href="#">곶자왈 체험</a></li>
+                                <li><a href="#">힐링 워크숍</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="#">갤러리</a></li>
+                        <li><a href="#">문의하기</a></li>
+                    </ul>
+                </nav>
+
+            </header>
+            <main>
+                <div id="slideShow">
+                    <section>
+                        <img src="./images/photo-1.jpg" alt="유채꽃" class="slides">
+                        <img src="./images/photo-2.jpg" alt="제주바다" class="slides">
+                        <img src="./images/photo-3.jpg" alt="돌담벼락" class="slides">
+                    </section>
+                    <button class="left">〈</button>
+                    <button class="right">〉</button>
+
+                </div>
+                <div id="contents">
+                    <div id="tabMenu">
+                        <label class="on"><input type="radio" name="tabs" id="tab1" checked>공지사항</label>
+                        <label><input type="radio" name="tabs" id="tab2">갤러리</label>
+                        <section>
+                            <article class="on">
+                                <ul>
+                                    <li><a href="#">사무실을 이전했습니다</a></li>
+                                    <li><a href="#">[참가 모집] 카약 체험에 초대합니다.</a></li>
+                                    <li><a href="#">[참가 모집] 여름 방학 기간, 오름 체험단을 모집합니다.</a></li>
+                                    <li><a href="#">겨울, 추천 여행지</a></li>
+                                    <li><a href="#">가을, 추천 여행지</a></li>
+                                </ul>
+                            </article>
+                            <article>
+                                <ol>
+                                    <li><a href="#"><img src="./images/img-1.jpg" alt="꽃"></a></li>
+                                    <li><a href="#"><img src="./images/img-2.jpg" alt="고양이"></a></li>
+                                    <li><a href="#"><img src="./images/img-3.jpg" alt="꿀벌"></a></li>
+                                    <li><a href="#"><img src="./images/img-1.jpg" alt="꽃"></a></li>
+                                    <li><a href="#"><img src="./images/img-2.jpg" alt="고양이"></a></li>
+                                    <li><a href="#"><img src="./images/img-3.jpg" alt="꿀벌"></a></li>
+                                </ol>
+                            </article>
+                        </section>
+
+
+
+                    </div>
+                    <div id="links">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <span class="icon1"></span>
+                                    <h3>평화 기행</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon2"></span>
+                                    <h3>힐링 워크샵</h3>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <span class="icon3"></span>
+                                    <h3>문의하기</h3>
+                                </a>
+                            </li>
+                        </ul>
+                            
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div id="bottomMenu">
+                    <ul>
+                        <li>
+                            <a href="#">회사 소개</a>
+                        </li>
+                        <li>
+                            <a href="#">개인정보처리방침</a>
+                        </li>
+                        <li>
+                            <a href="#">여행약관</a>
+                        </li>
+                        <li>
+                            <a href="#">사이트맵</a>
+                        </li>
+                    </ul>
+                    <div id="sns">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src="../DreamJeju/images/sns-1.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="../DreamJeju/images/sns-2.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="../DreamJeju/images/sns-3.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="company">
+                    <p>제주특별자치도 ***동 ***로 *** (대표전화) 123-456-7890</p>
+                </div>
+            </footer>
+        </div>
+
+    </body>
+</html>

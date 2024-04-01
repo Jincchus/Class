@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>3.CSS구조선택자</title>
+        <!--
+            날짜 : 2023/07/04
+            이름 : 박경진
+            내용 : CSS 구조 선택자
+        -->
+
+        <style>
+            /* 구조선택자 */
+            .city > li:first-child{ color: orange; }
+            .city > li:nth-child(2) {color: green; }
+            .city > li:nth-child(4) {color:aqua;}
+            .city > em:nth-child(6) {background:yellow;}
+            .city > em:nth-of-type(2) {background: blue;}
+            body > ul:nth-child(2) > li:nth-child(2) {background : violet;}
+
+        </style>
+    </head>
+    <body>
+        <h3>CSS구조선택자</h3>
+
+        <ul class="city">
+            <li>서울</li>
+            <li>대전</li>
+            <li>대구</li>
+            <li>부산</li>
+            <li>광주</li>
+            <em>인천</em>
+            <em>울산</em>
+            <em>세종</em>
+        </ul>
+
+        <ul>
+            <li>한국</li>
+            <li>미국</li>
+            <li>중국</li>
+            <li>일본</li>
+            <li>호주</li>
+        </ul>
+
+
+
+
+    </body>
+</html>
